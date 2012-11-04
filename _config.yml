@@ -1,0 +1,2 @@
+permalink: title
+exclude: sass, config.rb, CNAME, Rakefile
