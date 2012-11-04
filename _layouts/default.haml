@@ -1,0 +1,68 @@
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+%html.no-js
+  <!--<![endif]-->
+  %head
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+  %title King Sidharth 
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="css/app.css">
+
+  <script src="js/foundation/modernizr.foundation.js"></script>
+  <script src="js/foundation/jquery.js"></script>  
+  <script src="js/scripts.js"></script>
+ 
+  <link rel="icon" href="images/favicons/favicon.ico" type="image/x-icon" />
+  
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  %body
+    #header_area
+    /#header_area
+
+    #content_area
+      .row
+        #sidebar
+          %ul.side-nav
+            %li.name
+              //if homepage
+              %h1#logo King Sidharth
+            %li.divider
+            %li.active
+              %a{:href=>"/"} Home
+            %li
+              %a{:href=>"/projects"} Projects
+            %li
+              %a{:href=>"/speaking"} Speaking
+            %li
+              %a{:href=>"/writings"} Writings
+            %li
+              %a{:href=>"/media-mentions"} Media Mentions
+            %li
+              %a{:href=>"/contact"} Contact
+            %li.divider
+            %li.facebook
+              Facebook
+            %li.twitter
+              Twitter
+            %li.gplus
+              Google+
+            %li.divider
+            %li.copyright
+              &copy; Does it matter? 
+        /#sidebar
+        #content
+          //content here
+          {{ content }}
+
+        /#content
+    /#content_area

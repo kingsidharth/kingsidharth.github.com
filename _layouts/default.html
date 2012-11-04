@@ -1,0 +1,79 @@
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class='no-js'>
+  <!--<![endif]-->
+  <head></head>
+  <meta charset="utf-8" />
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+  <title>King Sidharth</title>
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/foundation/modernizr.foundation.js"></script>
+  <script src="js/foundation/jquery.js"></script>
+  <script src="js/scripts.js"></script>
+  <link rel="icon" href="images/favicons/favicon.ico" type="image/x-icon" />
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <body>
+    <div id='header_area'></div>
+    <!-- #header_area -->
+    <div id='content_area'>
+      <div class='row'>
+        <div id='sidebar'>
+          <ul class='side-nav'>
+            <li class='name'>
+              <!-- /if homepage -->
+              <h1 id='logo'>King Sidharth</h1>
+            </li>
+            <li class='divider'></li>
+            <li class='active'>
+              <a href='/'>Home</a>
+            </li>
+            <li>
+              <a href='/projects'>Projects</a>
+            </li>
+            <li>
+              <a href='/speaking'>Speaking</a>
+            </li>
+            <li>
+              <a href='/writings'>Writings</a>
+            </li>
+            <li>
+              <a href='/media-mentions'>Media Mentions</a>
+            </li>
+            <li>
+              <a href='/contact'>Contact</a>
+            </li>
+            <li class='divider'></li>
+            <li class='facebook'>
+              Facebook
+            </li>
+            <li class='twitter'>
+              Twitter
+            </li>
+            <li class='gplus'>
+              Google+
+            </li>
+            <li class='divider'></li>
+            <li class='copyright'>
+              &copy; Does it matter?
+            </li>
+          </ul>
+        </div>
+        <!-- #sidebar -->
+        <div id='content'>
+          <!-- /content here -->
+          {{ content }}
+        </div>
+        <!-- #content -->
+      </div>
+    </div>
+    <!-- #content_area -->
+  </body>
+</html>
