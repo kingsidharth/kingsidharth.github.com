@@ -5804,12 +5804,12 @@ table.hide-for-medium {
   margin: 0;
 }
 
-/* line 6, ../sass/_layout.sass */
+/* line 5, ../sass/_layout.sass */
 #sidebar {
   width: 30%;
 }
 
-/* line 8, ../sass/_layout.sass */
+/* line 7, ../sass/_layout.sass */
 #content {
   width: 70%;
 }
@@ -5820,9 +5820,15 @@ body {
   color: #fafafa;
 }
 
-/* line 13, ../sass/_style.sass */
+/* line 12, ../sass/_style.sass */
+#sidebar {
+  text-align: right;
+}
+
+/* line 15, ../sass/_style.sass */
 #logo {
   background: url("/images/king-sidharth.jpg") center center no-repeat;
+  color: transparent;
   display: block;
   width: 180px;
   height: 180px;
@@ -5833,9 +5839,18 @@ body {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
+  -webkit-background-size: center;
+  -moz-background-size: center;
+  -o-background-size: center;
+  background-size: center;
 }
 
-/* line 23, ../sass/_style.sass */
+/* line 27, ../sass/_style.sass */
 .home {
   padding-top: 4em;
+}
+
+/* line 32, ../sass/_style.sass */
+ul {
+  list-style-type: square;
 }

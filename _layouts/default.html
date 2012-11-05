@@ -9,11 +9,11 @@
   <meta charset="utf-8" />
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
-  <title>King Sidharth</title>
+  <title>{{ page.title }}</title>
   <!-- Included CSS Files -->
   <link rel="stylesheet" href="css/app.css">
-  <script src="js/foundation/modernizr.foundation.js"></script>
   <script src="js/foundation/jquery.js"></script>
+  <script src="js/foundation/app.js"></script>
   <script src="js/scripts.js"></script>
   <link rel="icon" href="images/favicons/favicon.ico" type="image/x-icon" />
   <!-- IE Fix for HTML5 Tags -->
@@ -29,11 +29,15 @@
           <ul class='side-nav'>
             <li class='name'>
               <!-- /if homepage -->
+              {% if page.slug == 'home' %}
               <h1 id='logo'>King Sidharth</h1>
+              {% else %}
+              <div id='logo'>King Sidharth</div>
+              {% endif %}
             </li>
             <li class='divider'></li>
-            <li class='active'>
-              <a href='/'>Home</a>
+            <li data-magellan-arrival="home">
+            <a href='/'>Home</a>
             </li>
             <li>
               <a href='/projects'>Projects</a>
@@ -47,22 +51,26 @@
             <li>
               <a href='/media-mentions'>Media Mentions</a>
             </li>
-            <li>
-              <a href='/contact'>Contact</a>
+            <li data-magellan-arrival="contact">
+            <a href='/contact'>Contact</a>
             </li>
             <li class='divider'></li>
             <li class='facebook'>
-              Facebook
+              <div class="fb-subscribe"
+              data-href="https://www.facebook.com/KingSidharth"
+              data-layout="button_count" data-show-faces="false" data-colorscheme="dark"
+              data-font="lucida grande" data-width="450"></div>
             </li>
             <li class='twitter'>
-              Twitter
+              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false"
+              data-show-screen-name="false">Follow @kingsidharth</a>
             </li>
             <li class='gplus'>
-              Google+
+              <a href="https://plus.google.com/100630005600562803456/" rel="author">Google+</a>
             </li>
             <li class='divider'></li>
             <li class='copyright'>
-              &copy; Does it matter?
+              <small>&copy; 2009-2012.</small>
             </li>
           </ul>
         </div>
@@ -75,5 +83,26 @@
       </div>
     </div>
     <!-- #content_area -->
+    <div id='fb-root'></div>
   </body>
+  <!-- body -->
+  <script>
+    (function(doc, script) {
+    var js,
+    fjs = doc.getElementsByTagName(script)[0],
+    add = function(url, id) {
+    if (doc.getElementById(id)) {return;}
+    js = doc.createElement(script);
+    js.src = url;
+    id && (js.id = id);
+    fjs.parentNode.insertBefore(js, fjs);
+    };
+    <!-- / Google Analytics -->
+    add(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js', 'ga');
+    <!-- / Facebook SDK -->
+    add('//connect.facebook.net/en_US/all.js', 'facebook-jssdk');
+    <!-- / Twitter SDK -->
+    add('//platform.twitter.com/widgets.js', 'twitter-wjs');
+    }(document, 'script'));
+  </script>
 </html>

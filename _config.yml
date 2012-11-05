@@ -1,2 +1,3 @@
-permalink: title
-exclude: sass, config.rb, CNAME, Rakefile
+permalink: /posts/:title
+exclude: sass, config.rb, CNAME, Rakefile, contact.haml
+auto: true
