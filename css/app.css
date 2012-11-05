@@ -1,10 +1,10 @@
 /* line 51, ../../../../.rvm/gems/ruby-1.9.3-p125/gems/zurb-foundation-3.2.0/scss/foundation/mixins/_semantic-grid.scss */
-#sidebar, #content {
+#content_box, #sidebar, #content {
   float: left;
 }
 
 /* line 62, ../../../../.rvm/gems/ruby-1.9.3-p125/gems/zurb-foundation-3.2.0/scss/foundation/mixins/_semantic-grid.scss */
-#sidebar, #content {
+#content_box, #sidebar, #content {
   position: relative;
   min-height: 1px;
   padding: 0 15px;
@@ -5805,52 +5805,80 @@ table.hide-for-medium {
 }
 
 /* line 5, ../sass/_layout.sass */
+#content_box {
+  width: 100%;
+}
+
+/* line 7, ../sass/_layout.sass */
 #sidebar {
   width: 30%;
 }
 
-/* line 7, ../sass/_layout.sass */
+/* line 9, ../sass/_layout.sass */
 #content {
   width: 70%;
 }
 
 /* line 8, ../sass/_style.sass */
 body {
-  background: #333333;
+  background: url("/images/backgrounds/doon-2012-1.jpg") center center #333333 no-repeat;
   color: #fafafa;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-/* line 12, ../sass/_style.sass */
+/* line 14, ../sass/_style.sass */
+#content_box {
+  background: url("/images/backgrounds/background-texture.png") left top repeat;
+  border-right: rgba(0, 0, 0, 0.8);
+}
+
+/* line 18, ../sass/_style.sass */
 #sidebar {
   text-align: right;
 }
+/* line 20, ../sass/_style.sass */
+#sidebar .name {
+  text-align: center;
+}
 
-/* line 15, ../sass/_style.sass */
+/* line 23, ../sass/_style.sass */
 #logo {
-  background: url("/images/king-sidharth.jpg") center center no-repeat;
+  background: url("/images/logo.png") center center no-repeat;
   color: transparent;
   display: block;
-  width: 180px;
-  height: 180px;
-  margin-left: 15px;
+  width: 30%;
+  margin: 0 auto;
   text-indent: -9999px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  -webkit-background-size: center;
-  -moz-background-size: center;
-  -o-background-size: center;
-  background-size: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-/* line 27, ../sass/_style.sass */
+/* line 33, ../sass/_style.sass */
+#content {
+  background: url("/images/backgrounds/highlight.png") right top no-repeat;
+}
+
+/* line 37, ../sass/_style.sass */
 .home {
   padding-top: 4em;
 }
 
-/* line 32, ../sass/_style.sass */
+/* line 43, ../sass/_style.sass */
+body ul.side-nav li.divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 45, ../sass/_style.sass */
 ul {
   list-style-type: square;
 }

@@ -6,22 +6,32 @@ $white: #FAFAFA
 $blue:  #2ba6cb
 
 body
-  background: $black
+  background: url('/images/backgrounds/doon-2012-1.jpg') center center $black no-repeat
   color: $white
+  +background-size(cover)
+
+#content_area
+#content_box
+  background: url('/images/backgrounds/background-texture.png') left top repeat
+  border-right: rgba(0,0,0,0.8)
 
 #sidebar
   text-align: right
+  .name
+    text-align: center
 
 #logo
-  background: url('/images/king-sidharth.jpg') center center no-repeat
+  background: url('/images/logo.png') center center no-repeat
   color: transparent
   display: block
-  width:   180px
-  height: 180px
-  margin-left: 15px
+  width: 30%
+  margin: 0 auto
   text-indent: -9999px
   +border-radius(50%)
-  +background-size(center)
+  +background-size(cover)
+
+#content
+  background: url('/images/backgrounds/highlight.png') right top no-repeat
 
 // Page Specific
 .home
@@ -29,5 +39,9 @@ body
  
 
 // Defaults
+body
+  ul.side-nav li.divider
+    border-top: 1px solid rgba(255,255,255,0.2)
 ul
   list-style-type: square
+

@@ -13,9 +13,9 @@
   <!-- Included CSS Files -->
   <link rel="stylesheet" href="css/app.css">
   <script src="js/foundation/jquery.js"></script>
-  <script src="js/foundation/app.js"></script>
   <script src="js/scripts.js"></script>
-  <link rel="icon" href="images/favicons/favicon.ico" type="image/x-icon" />
+  <script src="js/foundation/app.js"></script>
+  <link rel="icon" href="images/favicons/favicon_32.png" type="image/x-icon" />
   <!-- IE Fix for HTML5 Tags -->
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,61 +25,63 @@
     <!-- #header_area -->
     <div id='content_area'>
       <div class='row'>
-        <div id='sidebar'>
-          <ul class='side-nav'>
-            <li class='name'>
-              <!-- /if homepage -->
-              {% if page.slug == 'home' %}
-              <h1 id='logo'>King Sidharth</h1>
-              {% else %}
-              <div id='logo'>King Sidharth</div>
-              {% endif %}
-            </li>
-            <li class='divider'></li>
-            <li data-magellan-arrival="home">
-            <a href='/'>Home</a>
-            </li>
-            <li>
-              <a href='/projects'>Projects</a>
-            </li>
-            <li>
-              <a href='/speaking'>Speaking</a>
-            </li>
-            <li>
-              <a href='/writings'>Writings</a>
-            </li>
-            <li>
-              <a href='/media-mentions'>Media Mentions</a>
-            </li>
-            <li data-magellan-arrival="contact">
-            <a href='/contact'>Contact</a>
-            </li>
-            <li class='divider'></li>
-            <li class='facebook'>
-              <div class="fb-subscribe"
-              data-href="https://www.facebook.com/KingSidharth"
-              data-layout="button_count" data-show-faces="false" data-colorscheme="dark"
-              data-font="lucida grande" data-width="450"></div>
-            </li>
-            <li class='twitter'>
-              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false"
-              data-show-screen-name="false">Follow @kingsidharth</a>
-            </li>
-            <li class='gplus'>
-              <a href="https://plus.google.com/100630005600562803456/" rel="author">Google+</a>
-            </li>
-            <li class='divider'></li>
-            <li class='copyright'>
-              <small>&copy; 2009-2012.</small>
-            </li>
-          </ul>
+        <div id='content_box'>
+          <div id='sidebar'>
+            <ul class='side-nav'>
+              <li class='name'>
+                <!-- /if homepage -->
+                {% if page.slug == 'home' %}
+                <h1 id='logo'>King Sidharth</h1>
+                {% else %}
+                <div id='logo'>King Sidharth</div>
+                {% endif %}
+              </li>
+              <li class='divider'></li>
+              <li data-magellan-arrival="home">
+              <a href='/'>Home</a>
+              </li>
+              <li>
+                <a href='/projects'>Projects</a>
+              </li>
+              <li>
+                <a href='/speaking'>Speaking</a>
+              </li>
+              <li>
+                <a href='/writings'>Writings</a>
+              </li>
+              <li>
+                <a href='/media-mentions'>Media Mentions</a>
+              </li>
+              <li data-magellan-arrival="contact">
+              <a href='/contact'>Contact</a>
+              </li>
+              <li class='divider'></li>
+              <li class='facebook'>
+                <div class="fb-subscribe"
+                data-href="https://www.facebook.com/KingSidharth"
+                data-layout="button_count" data-show-faces="false" data-colorscheme="dark"
+                data-font="lucida grande" data-width="450"></div>
+              </li>
+              <li class='twitter'>
+                <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false"
+                data-show-screen-name="false">Follow @kingsidharth</a>
+              </li>
+              <li class='gplus'>
+                <a href="https://plus.google.com/100630005600562803456/" rel="author">Google+</a>
+              </li>
+              <li class='divider'></li>
+              <li class='copyright'>
+                <small>&copy; 2009-2012.</small>
+              </li>
+            </ul>
+          </div>
+          <!-- #sidebar -->
+          <div id='content'>
+            <!-- /content here -->
+            {{ content }}
+          </div>
+          <!-- #content -->
         </div>
-        <!-- #sidebar -->
-        <div id='content'>
-          <!-- /content here -->
-          {{ content }}
-        </div>
-        <!-- #content -->
       </div>
     </div>
     <!-- #content_area -->

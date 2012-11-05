@@ -15,11 +15,10 @@
   <link rel="stylesheet" href="css/app.css">
 
   <script src="js/foundation/jquery.js"></script>  
+  <script src="js/scripts.js"></script>  
   <script src="js/foundation/app.js"></script>  
-  <script src="js/scripts.js"></script>
  
-  <link rel="icon" href="images/favicons/favicon.ico" type="image/x-icon" />
-  
+  <link rel="icon" href="images/favicons/favicon_32.png" type="image/x-icon" />
 
   <!-- IE Fix for HTML5 Tags -->
   <!--[if lt IE 9]>
@@ -31,50 +30,51 @@
 
     #content_area
       .row
-        #sidebar
-          %ul.side-nav
-            %li.name
-              //if homepage
-              {% if page.slug == 'home' %}
-              %h1#logo King Sidharth
-              {% else %}
-              #logo King Sidharth
-              {% endif %}
-            %li.divider
-            <li data-magellan-arrival="home">
-            %a{:href=>"/"} Home
-            </li>
-            %li
-              %a{:href=>"/projects"} Projects
-            %li
-              %a{:href=>"/speaking"} Speaking
-            %li
-              %a{:href=>"/writings"} Writings
-            %li
-              %a{:href=>"/media-mentions"} Media Mentions
-            <li data-magellan-arrival="contact">
-            %a{:href=>"/contact"} Contact
-            </li>
-            %li.divider
-            %li.facebook
-              <div class="fb-subscribe" 
-              data-href="https://www.facebook.com/KingSidharth" 
-              data-layout="button_count" data-show-faces="false" data-colorscheme="dark" 
-              data-font="lucida grande" data-width="450"></div>
-            %li.twitter
-              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false" 
-              data-show-screen-name="false">Follow @kingsidharth</a> 
-            %li.gplus
-              <a href="https://plus.google.com/100630005600562803456/" rel="author">Google+</a>
-            %li.divider
-            %li.copyright
-              %small &copy; 2009-2012. 
-        /#sidebar
-        #content
-          //content here
-          {{ content }}
+        #content_box 
+          #sidebar
+            %ul.side-nav
+              %li.name
+                //if homepage
+                {% if page.slug == 'home' %}
+                %h1#logo King Sidharth
+                {% else %}
+                #logo King Sidharth
+                {% endif %}
+              %li.divider
+              <li data-magellan-arrival="home">
+              %a{:href=>"/"} Home
+              </li>
+              %li
+                %a{:href=>"/projects"} Projects
+              %li
+                %a{:href=>"/speaking"} Speaking
+              %li
+                %a{:href=>"/writings"} Writings
+              %li
+                %a{:href=>"/media-mentions"} Media Mentions
+              <li data-magellan-arrival="contact">
+              %a{:href=>"/contact"} Contact
+              </li>
+              %li.divider
+              %li.facebook
+                <div class="fb-subscribe" 
+                data-href="https://www.facebook.com/KingSidharth" 
+                data-layout="button_count" data-show-faces="false" data-colorscheme="dark" 
+                data-font="lucida grande" data-width="450"></div>
+              %li.twitter
+                <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false" 
+                data-show-screen-name="false">Follow @kingsidharth</a> 
+              %li.gplus
+                <a href="https://plus.google.com/100630005600562803456/" rel="author">Google+</a>
+              %li.divider
+              %li.copyright
+                %small &copy; 2009-2012. 
+          /#sidebar
+          #content
+            //content here
+            {{ content }}
 
-        /#content
+          /#content
     /#content_area
     #fb-root
   /body
