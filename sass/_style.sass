@@ -6,26 +6,27 @@ $white: #FAFAFA
 $blue:  #2ba6cb
 
 body
-  background: url('/images/backgrounds/doon-2012-1.jpg') center center $black no-repeat
+  background: center center $black no-repeat
   color: $white
+  -webkit-font-smoothing: initial
   +background-size(cover)
 
 #content_area
+  border-top: 3px solid #000
+
 #content_box
   background: url('/images/backgrounds/background-texture.png') left top repeat
   border-right: rgba(0,0,0,0.8)
 
 #sidebar
   text-align: right
-  .name
-    text-align: center
 
 #logo
   background: url('/images/logo.png') center center no-repeat
   color: transparent
   display: block
-  width: 30%
-  margin: 0 auto
+  width: 60px
+  height: 60px
   text-indent: -9999px
   +border-radius(50%)
   +background-size(cover)
@@ -36,12 +37,14 @@ body
 // Page Specific
 .home
   padding-top: 4em
- 
 
 // Defaults
 body
   ul.side-nav li.divider
     border-top: 1px solid rgba(255,255,255,0.2)
-ul
-  list-style-type: square
+  ul,li,ol
+    list-style-position: inside
+  ul
+    list-style-type: square
+
 

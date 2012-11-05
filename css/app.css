@@ -5821,8 +5821,9 @@ table.hide-for-medium {
 
 /* line 8, ../sass/_style.sass */
 body {
-  background: url("/images/backgrounds/doon-2012-1.jpg") center center #333333 no-repeat;
+  background: center center #333333 no-repeat;
   color: #fafafa;
+  -webkit-font-smoothing: initial;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -5830,27 +5831,28 @@ body {
 }
 
 /* line 14, ../sass/_style.sass */
+#content_area {
+  border-top: 3px solid black;
+}
+
+/* line 17, ../sass/_style.sass */
 #content_box {
   background: url("/images/backgrounds/background-texture.png") left top repeat;
   border-right: rgba(0, 0, 0, 0.8);
 }
 
-/* line 18, ../sass/_style.sass */
+/* line 21, ../sass/_style.sass */
 #sidebar {
   text-align: right;
 }
-/* line 20, ../sass/_style.sass */
-#sidebar .name {
-  text-align: center;
-}
 
-/* line 23, ../sass/_style.sass */
+/* line 24, ../sass/_style.sass */
 #logo {
   background: url("/images/logo.png") center center no-repeat;
   color: transparent;
   display: block;
-  width: 30%;
-  margin: 0 auto;
+  width: 60px;
+  height: 60px;
   text-indent: -9999px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -5863,12 +5865,12 @@ body {
   background-size: cover;
 }
 
-/* line 33, ../sass/_style.sass */
+/* line 34, ../sass/_style.sass */
 #content {
   background: url("/images/backgrounds/highlight.png") right top no-repeat;
 }
 
-/* line 37, ../sass/_style.sass */
+/* line 38, ../sass/_style.sass */
 .home {
   padding-top: 4em;
 }
@@ -5877,8 +5879,11 @@ body {
 body ul.side-nav li.divider {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 /* line 45, ../sass/_style.sass */
-ul {
+body ul, body li, body ol {
+  list-style-position: inside;
+}
+/* line 47, ../sass/_style.sass */
+body ul {
   list-style-type: square;
 }

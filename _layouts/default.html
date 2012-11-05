@@ -5,22 +5,29 @@
 <!--[if gt IE 8]><!-->
 <html class='no-js'>
   <!--<![endif]-->
-  <head></head>
-  <meta charset="utf-8" />
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-  <title>{{ page.title }}</title>
-  <!-- Included CSS Files -->
-  <link rel="stylesheet" href="css/app.css">
-  <script src="js/foundation/jquery.js"></script>
-  <script src="js/scripts.js"></script>
-  <script src="js/foundation/app.js"></script>
-  <link rel="icon" href="images/favicons/favicon_32.png" type="image/x-icon" />
-  <!-- IE Fix for HTML5 Tags -->
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <body>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>{{ page.title }}</title>
+    <!-- Included CSS Files -->
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/foundation/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/foundation/app.js"></script>
+    <link rel="icon" href="images/favicons/favicon_32.png" type="image/x-icon" />
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background: 
+    {% if page.background %}
+    url('/images/backgrounds/{{page.background}}') 
+    {% else %}
+    url('{{site.url}}/images/backgrounds/default.jpg')
+    {% endif %}
+     right center fixed no-repeat; background-size: cover;">
     <div id='header_area'></div>
     <!-- #header_area -->
     <div id='content_area'>
@@ -29,33 +36,33 @@
           <div id='sidebar'>
             <ul class='side-nav'>
               <li class='name'>
-                <!-- /if homepage -->
                 {% if page.slug == 'home' %}
-                <h1 id='logo'>King Sidharth</h1>
+                  <h1 id='logo'>King Sidharth</h1>
                 {% else %}
-                <div id='logo'>King Sidharth</div>
+                  <div id='logo'>King Sidharth</div>
                 {% endif %}
               </li>
               <li class='divider'></li>
-              <li data-magellan-arrival="home">
-              <a href='/'>Home</a>
+              <li class="{% if page.slug == 'home' %} active {% endif %}">
+                <a href='/'>Home</a>
               </li>
-              <li>
+              <li class="{% if page.slug == 'projects' %} active {% endif %}">
                 <a href='/projects'>Projects</a>
               </li>
-              <li>
+              <li class="{% if page.slug == 'speaking' %} active {% endif %}">
                 <a href='/speaking'>Speaking</a>
               </li>
-              <li>
+              <li class="{% if page.slug == 'writings' %} active {% endif %}">
                 <a href='/writings'>Writings</a>
               </li>
-              <li>
+              <li class="{% if page.slug == 'media-mentions' %} active {% endif %}">
                 <a href='/media-mentions'>Media Mentions</a>
               </li>
-              <li data-magellan-arrival="contact">
-              <a href='/contact'>Contact</a>
+              <li  class="{% if page.slug == 'contact' %} active {% endif %}">
+                <a href='/contact'>Contact</a>
               </li>
               <li class='divider'></li>
+              <!--social media -->
               <li class='facebook'>
                 <div class="fb-subscribe"
                 data-href="https://www.facebook.com/KingSidharth"
@@ -71,7 +78,10 @@
               </li>
               <li class='divider'></li>
               <li class='copyright'>
-                <small>&copy; 2009-2012.</small>
+                <small>
+                  <a href="https://github.com/kingsidharth/kingsidharth.github.com">Source</a>  
+                  &copy; 2009-2012.
+                </small>
               </li>
             </ul>
           </div>
@@ -90,21 +100,22 @@
   <!-- body -->
   <script>
     (function(doc, script) {
-    var js,
-    fjs = doc.getElementsByTagName(script)[0],
-    add = function(url, id) {
-    if (doc.getElementById(id)) {return;}
-    js = doc.createElement(script);
-    js.src = url;
-    id && (js.id = id);
-    fjs.parentNode.insertBefore(js, fjs);
-    };
-    <!-- / Google Analytics -->
-    add(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js', 'ga');
-    <!-- / Facebook SDK -->
-    add('//connect.facebook.net/en_US/all.js', 'facebook-jssdk');
-    <!-- / Twitter SDK -->
-    add('//platform.twitter.com/widgets.js', 'twitter-wjs');
+      var js,
+      fjs = doc.getElementsByTagName(script)[0],
+      add = function(url, id) {
+        if (doc.getElementById(id)) {return;}
+        js = doc.createElement(script);
+        js.src = url;
+        id && (js.id = id);
+        fjs.parentNode.insertBefore(js, fjs);
+      };
+      <!-- / Google Analytics -->
+      add(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js', 'ga');
+      <!-- / Facebook SDK -->
+      add('//connect.facebook.net/en_US/all.js', 'facebook-jssdk');
+      <!-- / Twitter SDK -->
+      add('//platform.twitter.com/widgets.js', 'twitter-wjs');
     }(document, 'script'));
   </script>
 </html>
+<!-- Looking for soruce code? Check this https://github.com/kingsidharth/kingsidharth.github.com -->
