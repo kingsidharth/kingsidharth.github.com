@@ -1,11 +1,16 @@
 ---
 layout: default
 ---
-<div class="poetry {{page.slug}}">
+<div class="poem {{page.slug}}">
   <h1>{{ page.title }}</h1>
+    <div class="poem_body">
+    {{ content }}  
+  </div><!-- poem_body -->
   <div class="meta">
-    on <span class="date">{{ post.date | date: "%d %b, %Y"}}</span>
-    {% if post.intro %}<span class="intro">{{ post.intro }}</span> {% endif %}
+    <p class="date">on <span>{{ page.date | date: "%d %B, %Y"}}</span></p>
+    {% if page.intro %}
+    <p class="intro">{{ page.intro }}</p> 
+    {% endif %}
   </div><!-- meta -->
-  {{ content }}  
+
 </div><!-- page -->
