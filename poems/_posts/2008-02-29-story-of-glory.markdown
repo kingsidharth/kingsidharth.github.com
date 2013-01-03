@@ -3,7 +3,7 @@ layout: poems
 category: poems 
 title: Story of Our Glory 
 intro: "I hope I wrote this one! Found it in my old diary. It does speak to my expectations and promises to myself. So must be mine. I guess."
-background: dehradoon-1-tree.jpg
+background: king-sidharth-sufi.jpg
 ---
 
 Look there's a star
