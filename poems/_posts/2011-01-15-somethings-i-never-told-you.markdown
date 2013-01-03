@@ -67,3 +67,7 @@ And I know that you do too
 I know you will see it soon
 
 Thus I never told you
+
+----
+
+*Edited version of the [original](https://github.com/kingsidharth/kingsidharth.github.com/blob/4ac9f496dc4f0f49480c6abbbb0a3d9964d56ce1/poems/_posts/2011-01-15-somethings-i-never-told-you.markdown)*
