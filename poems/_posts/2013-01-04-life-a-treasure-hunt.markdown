@@ -2,7 +2,7 @@
 layout: poems
 category: poems 
 title: Life - A Treasure Hunt 
-background: king-sidharth-hathipan-lookout.jpg
+background: king-sidharth-meditation.jpg 
 ---
 
 Since time forever
