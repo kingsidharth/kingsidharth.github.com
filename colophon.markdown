@@ -12,7 +12,7 @@ background: king-sidharth-shooting.jpg
 * [Source Code of this website](https://github.com/kingsidharth/kingsidharth.github.com) is on Github.
 
 ## Design
-* The typeface is my fall time favourite **Lucida Grande**.
+* The typeface is my all time favourite **Lucida Grande**.
 * I don't really like colors on interfaces but that evil blue is #2BA6CB.
 * Photographs are either clicked by me or are clicks of me. More on those later. 
 
