@@ -4112,6 +4112,40 @@ html.flexbox {
 }
 /* endif */
 /* The Rules */
+/* ----:[Typography]:---- */
+#content ul {
+  list-style-type: square;
+}
+#content ul, #content ol {
+  margin-left: 2.2rem;
+}
+#content .entry-title {
+  letter-spacing: -1px;
+}
+#content h2 {
+  font-size: 1.5em;
+  font-weight: 100;
+  line-height: 1.6em;
+  margin-bottom: 0.25em;
+}
+#content .poem p {
+  margin-bottom: 0.4em;
+}
+#content .poem hr {
+  width: 50%;
+  border-width: 1px 0 0 0;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+#content .poem .date {
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#content .poem .intro {
+  font-size: 0.9em;
+  font-weight: 100;
+}
+
 body {
   background: #444444;
   color: #fafafa;
@@ -4122,5 +4156,46 @@ a {
 }
 
 .page {
-  max-width: 800px;
+  max-width: 900px;
+}
+
+#sidebar {
+  text-align: right;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#logo {
+  margin: 20px 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.6em;
+  /*a
+   * background: url('../../../images/logo.png') center center no-repeat
+   * background-size: cover
+   * display: block
+   * height: 100px
+   * text-indent: -100000px
+   * font-size: 0px */
+}
+#logo a {
+  color: #fafafa;
+}
+#logo a:hover {
+  text-decoration: none;
+}
+
+#content {
+  padding-top: 75px;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 1px 0 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 1px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.8) 1px 0 0;
+}
+
+#fixed-side {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
