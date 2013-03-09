@@ -4113,6 +4113,10 @@ html.flexbox {
 /* endif */
 /* The Rules */
 /* ----:[Typography]:---- */
+body {
+  font-family: museo-sans, "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
+}
+
 #content ul {
   list-style-type: square;
 }
@@ -4198,4 +4202,17 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+#content .headline_area {
+  margin-bottom: 1.6rem;
+}
+#content .headline_area .entry-title {
+  margin-bottom: 0;
+}
+#content .headline_area .sub-title {
+  font-weight: normal;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
