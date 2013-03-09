@@ -9,18 +9,24 @@
     {% if page.slug == 'home' %}
     prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#"
     {% endif %}
-    >
-    <meta charset="utf-8" />
+  >
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/app.css">
-    <script src="/js/foundation/jquery.js"></script>
-    <script src="/js/scripts.js"></script>
-    <script src="/js/foundation/app.js"></script>
     <link rel="icon" href="/images/favicons/favicon_32.png" type="image/x-icon" />
+
+    <!-- CSS -->
+    <link href="/design/assets/css/details.css" media="all" rel="stylesheet" type="text/css"/>
+
+    <!-- Javascript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/design/assets/js/magic.js"></script>
+
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    
     {% if page.slug == 'home' %}
     <meta property="og:type" content="profile" />    
     <meta property="og:title" content="King Sidharth" />
@@ -36,71 +42,43 @@
   </head>
   <body style="background: url('/images/backgrounds/{{page.background}}') right center fixed #333 no-repeat; 
     background-size: cover;">
-    <div id='header_area'></div>
-    <!-- #header_area -->
-    <div id='content_area'>
-      <div class='row'>
-        <div id='content_box'>
-          <div id='sidebar'>
-            <ul class='side-nav'>
-              <li class='name'>
-                {% if page.slug == 'home' %}
-                  <h1 id='logo'>King Sidharth</h1>
-                {% else %}
-                  <div id='logo'>King Sidharth</div>
-                {% endif %}
-              </li>
-              <li class='divider'></li>
-              <li class="{% if page.slug == 'home' %} active {% endif %}">
-                <a href='/'>Home</a>
-              </li>
-              <!--<li class="{% if page.slug == 'projects' %} active {% endif %}">
-                <a href='/projects'>Projects</a>
-                </li>-->
-              <li class="{% if page.slug == 'speaking' %} active {% endif %}">
-                <a href='http://64notes.com/speaking'>Speaking</a>
-              </li>
-              <li class="{% if page.slug == 'writings' %} active {% endif %}">
-                <a href='/writings'>Writings</a>
-              </li>
-              <li class="{% if page.slug == 'media-mentions' %} active {% endif %}">
-                <a href='/media-mentions'>Media Mentions</a>
-              </li>
-              <li  class="{% if page.slug == 'contact' %} active {% endif %}">
-                <a href='/contact'>Contact</a>
-              </li>
-              <li class='divider'></li>
-              <!--social media -->
-              <li class='facebook'>
-                <div id='fb-root'></div>
-                <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-font="lucida grande" data-width="450"></div>
-              </li>
-              <li class='twitter'>
-                <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false"
-                data-show-screen-name="false">Follow @kingsidharth</a>
-              </li>
-              <li class='gplus'>
-                <a href="https://plus.google.com/100630005600562803456/" rel="author">Google+</a>
-              </li>
-              <li class='divider'></li>
-              <li class='copyright hide-for-small'>
-                <small>
-                  &copy; 2009-2012.
-                  <a href="/colophon">Colophon</a>                    
-                </small>
-              </li>
-            </ul>
-          </div>
-          <!-- #sidebar -->
-          <div id='content'>
-            <!-- /content here -->
-            {{ content }}
-          </div>
-          <!-- #content -->
+    <div id="content_area" class="gw">
+      <div class="page">
+        <div id="sidebar" class="g three-eighths palm-one-whole">
+          <div id=fixed-side>
+          {% if page.slug == 'home' %}
+          <h1 id='logo'><a href="{{site.url}}">King Sidharth</a></h1>
+          {% else %}
+          <div id='logo'><a href="{{site.url}}">King Sidharth</a></div>
+          {% endif %}
+
+          <nav id=main-navigation class="navbar">
+          <ul class="nav nav--stacked">
+            <li><a href="{{site.url}}">Home</a></li>
+            <li><a href="/writings">Writings</a><li>
+            <li><a href="">Poetry</a></li>
+            <li><a href="">Media Mentions + Interviews</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+          </nav>
         </div>
+        </div><!-- #sidebar -->
+
+        <div id="content" class="g five-eighths palm-one-whole">
+          {{content}}
+        </div><!-- #content -->
+
       </div>
-    </div>
-    <!-- #content_area -->
+    </div><!-- #content_area -->
+  <script type="text/javascript">
+    (function() {
+      var config = {
+        kitId: 'tvm0vge',
+        scriptTimeout: 3000
+      };
+      var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+    })();
+  </script>
   <script>
     (function(doc, script) {
       var js,
@@ -120,7 +98,6 @@
   </script>
   
   </body>
-  <!-- body -->
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -135,6 +112,5 @@
     })();
 
   </script>
-  
 </html>
 <!-- Looking for soruce code? Check this https://github.com/kingsidharth/kingsidharth.github.com -->

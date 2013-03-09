@@ -1,0 +1,24 @@
+// Here I can define my own variables, in addition to overwriting any that
+// are defined in inuit.css. As long as this file is included before inuit,
+// then we can override anything defined as !default in inuit's _vars.scss.
+
+// Inuit Variables
+// ---------------
+// We can override anything defined with !default in /vendor/inuit.css/_vars.scss
+// here. For anything we don't explicitly overwrite here then the default value
+// is used.
+
+
+/*----:[Colors]:---*/
+$black: #444
+$white: #FAFAFA
+$blue: #1BAFE0
+
+
+/*----:[Typography]:----*/
+@mixin sans
+  font-family: museo-sans, 'Lucida Grande', 'Lucida Sans', Tahoma, sans-serif
+
+$base-font-size:    16px
+$base-line-height:  $base-font-size*1.6
+
