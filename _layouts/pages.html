@@ -1,8 +1,11 @@
 ---
 layout: default
 ---
-<div class="page {{page.slug}}">
-  <h1>{{ page.title }}</h1>
+<div class="pages {{page.slug}}">
+  <div class="headline_area">
+    <h1 class="entry-title">{{ page.title }}</h1>
+    <h2 class="sub-title">{{ page.subtitle }}</h2>
+  </div>
   {{ content }}  
 </div><!-- page -->
   

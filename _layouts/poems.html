@@ -2,8 +2,12 @@
 layout: default
 ---
 <div class="poem {{page.slug}}">
-  <h1>{{ page.title }}</h1>
-    <div class="poem_body">
+  <div class="headline_area">
+    <h1 class="entry-title">{{ page.title }}</h1>
+    <h2 class="sub-title">{{ page.subtitle }}</h2>
+  </div>
+
+  <div class="poem_body">
     {{ content }}  
   </div><!-- poem_body -->
   <div class="meta">
