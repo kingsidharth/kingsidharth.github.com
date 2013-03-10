@@ -4223,3 +4223,34 @@ a {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+/* ----:[Responsive]:---- */
+@media only screen and (max-width: 480px) {
+  #sidebar {
+    background: rgba(0, 0, 0, 0.75);
+    text-align: center;
+  }
+  #sidebar #main-navigation .nav li {
+    margin-bottom: 5px;
+  }
+  #sidebar #main-navigation .nav li a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  #sidebar #fixed-side {
+    position: relative !important;
+    top: 0;
+    left: 0;
+  }
+  #sidebar #social-media-follow {
+    display: none;
+  }
+
+  #content {
+    background: rgba(0, 0, 0, 0.75);
+    padding-top: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  #content .main-body {
+    padding: 0 1em;
+  }
+}

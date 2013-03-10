@@ -105,3 +105,29 @@ a
     font-size: 1em
     text-transform: uppercase 
     letter-spacing: 1px
+
+
+/* ----:[Responsive]:---- */
+@include media-query(palm)
+  #sidebar
+    background: rgba(0,0,0,0.75)  
+    text-align: center
+    #main-navigation
+      .nav
+        li 
+          margin-bottom: 5px
+          a
+            border-bottom: 1px solid rgba(255,255,255,0.3)
+    #fixed-side
+      position: relative!important
+      top: 0
+      left: 0
+    #social-media-follow
+      display: none
+  #content
+    background: rgba(0,0,0,0.75)  
+    padding-top: 1em
+    border-top: 1px solid rgba(255,255,255,0.5)
+    .main-body
+      padding: 0 1em
+    
