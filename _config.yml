@@ -2,4 +2,3 @@ permalink: /:categories/:title
 exclude: [sass, config.rb, CNAME, Rakefile]
 url: http://www.kingsidharth.com
 name: King Sidharth 
-auto: true
