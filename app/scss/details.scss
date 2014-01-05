@@ -17,46 +17,6 @@
 /* ----:[Typography]:---- */
 body {
   @include sans;
-}
-
-#content {
-  ul {
-    list-style-type: square;
-  }
-  ul, ol {
-    margin-left: 2.2rem;
-  }
-  .entry-title {
-    letter-spacing: -1px;
-  }
-  h2 {
-    font-size: 1.5em;
-    font-weight: 100;
-    line-height: 1.6em;
-    margin-bottom: 0.25em;
-  }
-  .poem {
-    p {
-      margin-bottom: 0.4em;
-    }
-    hr {
-      width: 50%;
-      border-width: 1px 0 0 0;
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-    .date {
-      font-size: 0.8em;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .intro {
-      font-size: 0.9em;
-      font-weight: 100;
-    }
-  }
-}
-
-body {
   background: $black;
   color: $white;
 }
@@ -67,65 +27,97 @@ a {
 }
 
 .page {
+  background: rgba(0, 0, 0, 0.6);
   max-width: 800px;
+  min-height: 100%;
+  height: auto;
 }
 
 #content_area {}
 
-#sidebar {
-  text-align: right;
-  background: rgba(0, 0, 0, 0.6);
-  small {
-    font-weight: 100;
-  }
-}
-
-#social-media-follow {
-  li {
-    margin-bottom: 0.8em;
-  }
-}
-
-#logo {
-  margin: 20px 0;
-  font-size: 1.4em;
-  font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.6em;
-  a {
-    color: $white;
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
+  #content {
+    ul {
+      list-style-type: square;
+    }
+    ul, ol {
+      margin-left: 2.2rem;
+    }
+    .entry-title {
+      letter-spacing: -1px;
+    }
+    h2 {
+      font-size: 1.5em;
+      font-weight: 100;
+      line-height: 1.6em;
+      margin-bottom: 0.25em;
+    }
+    .poem {
+      p {
+        margin-bottom: 0.4em;
+      }
+      hr {
+        width: 50%;
+        border-width: 1px 0 0 0;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      .date {
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .intro {
+        font-size: 0.9em;
+        font-weight: 100;
+      }
     }
   }
-  /*a
-   * background: url('../../../images/logo.png') center center no-repeat
-   * background-size: cover
-   * display: block
-   * height: 100px
-   * text-indent: -100000px
-   * font-size: 0px */
-}
 
-#content {
-  padding-top: 75px;
-  @include box-shadow(rgba(0, 0, 0, 0.8) 1px 0 0);
-}
+  #sidebar {
+    text-align: right;
+    small {
+      font-weight: 100;
+    }
+  }
 
-#content .headline_area {
-  margin-bottom: 1.6rem;
-  .entry-title {
-    margin-bottom: 0;
+    #social-media-follow {
+      li {
+        margin-bottom: 0.8em;
+      }
+    }
+
+    #logo {
+      margin: 20px 0;
+      font-size: 1.4em;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.6em;
+      a {
+        color: $white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+  #content {
+    padding-top: 75px;
+    @include box-shadow(rgba(0, 0, 0, 0.8) 1px 0 0);
   }
-  .sub-title {
-    font-weight: normal;
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+
+  #content .headline_area {
+    margin-bottom: 1.6rem;
+    .entry-title {
+      margin-bottom: 0;
+    }
+    .sub-title {
+      font-weight: normal;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
   }
-}
 
 /* ----:[Responsive]:---- */
 @include media-query(desk) {
@@ -146,11 +138,6 @@ a {
           }
         }
       }
-    }
-    #fixed-side {
-      position: relative !important;
-      top: 0;
-      left: 0;
     }
     #social-media-follow {
       display: none;
