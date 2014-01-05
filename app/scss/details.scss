@@ -7,8 +7,8 @@
  * Initialize inuit.css framework */
 
 @import "variables";
-@import "../vendor/inuit.css/defaults";
-@import "../vendor/inuit.css/inuit";
+@import "../_bower_components/inuit.css/defaults";
+@import "../_bower_components/inuit.css/inuit";
 
 @import "compass";
 
@@ -111,14 +111,7 @@ a {
 
 #content {
   padding-top: 75px;
-  background: rgba(0, 0, 0, 0.6);
   @include box-shadow(rgba(0, 0, 0, 0.8) 1px 0 0);
-}
-
-#fixed-side {
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 #content .headline_area {
@@ -135,6 +128,11 @@ a {
 }
 
 /* ----:[Responsive]:---- */
+@include media-query(desk) {
+  #sidebar {
+  }
+}
+
 @include media-query(palm) {
   #sidebar {
     background: rgba(0, 0, 0, 0.75);
