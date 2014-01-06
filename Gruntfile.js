@@ -222,21 +222,25 @@ module.exports = function (grunt) {
       }
     },
     // Usemin adds files to concat
-    //concat: {},
+    /* concat: {
+     
+    },*/
     // Usemin adds files to uglify
     //uglify: {},
     // Usemin adds files to cssmin
     cssmin: {
-      combine: {
-        files: {
-          'assets/css/details.min.css': ['assets/css/details.css']
-        }
+      minify: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/assets/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: '<%= yeoman.dist %>/assets/css/',
+        ext: '.min.css'
       },
       dist: {
         options: {
           check: 'gzip'
         }
-      }
+      },
     },
     imagemin: {
       dist: {
