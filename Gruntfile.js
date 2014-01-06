@@ -14,14 +14,15 @@ module.exports = function (grunt) {
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
   // Load FTP Deploy
-  grunt.loadNpmTasks('grunt-ftp-deploy');
 
   grunt.initConfig({
-    // Configurable paths
+
+    /* __________ CONFIGURABLE PATHS __________ */
     yeoman: {
       app: 'app',
       dist: 'dist'
     },
+
     watch: {
       compass: {
         files: ['<%= yeoman.app %>/scss/**/*.{scss,sass}'],
@@ -51,6 +52,8 @@ module.exports = function (grunt) {
         ]
       }
     },
+
+    /* __________ CONNECT __________ */
     connect: {
       options: {
         port: 9000,
@@ -106,6 +109,8 @@ module.exports = function (grunt) {
         '.jekyll'
       ]
     },
+
+    /* __________ COMPASS __________ */
     compass: {
       options: {
         // If you're using global Sass gems, require them here.
@@ -155,6 +160,8 @@ module.exports = function (grunt) {
         }]
       }
     },
+
+    /* __________ JEKYLL __________ */
     jekyll: {
       options: {
         bundleExec: true,
@@ -178,6 +185,8 @@ module.exports = function (grunt) {
         }
       }
     },
+
+    /* __________ USEMIN __________ */
     // UseminPrepare will only scan a single page for usemin blocks. If you
     // use usemin blocks that aren't in index.html, create a usemin manifest
     // page (hackery!) and point this task there.
@@ -212,11 +221,16 @@ module.exports = function (grunt) {
       }
     },
     // Usemin adds files to concat
-    concat: {},
+    //concat: {},
     // Usemin adds files to uglify
-    uglify: {},
+    //uglify: {},
     // Usemin adds files to cssmin
     cssmin: {
+      combine: {
+        files: {
+          'assets/css/details.min.css': ['assets/css/details.css']
+        }
+      },
       dist: {
         options: {
           check: 'gzip'
@@ -257,7 +271,7 @@ module.exports = function (grunt) {
             // Usemin moves CSS and javascript inside of Usemin blocks.
             // Copy moves asset files and directories.
             'images/**/*',
-            'assets/fonts/**/*',
+            //'assets/fonts/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}'
             // Explicitly add any files your site needs for distribution here.
@@ -368,6 +382,8 @@ module.exports = function (grunt) {
   });
 
   // Define Tasks
+  grunt.loadNpmTasks('grunt-ftp-deploy');
+  
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -409,10 +425,10 @@ module.exports = function (grunt) {
     'jekyll:dist',
     'concurrent:dist',
     'useminPrepare',
-    'concat',
+    //'concat',
     'autoprefixer:dist',
     'cssmin',
-    'uglify',
+    //'uglify',
     'imagemin',
     'svgmin',
     'rev',
