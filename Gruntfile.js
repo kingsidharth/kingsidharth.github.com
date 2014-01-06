@@ -381,7 +381,7 @@ module.exports = function (grunt) {
         },
         src: 'dist',
         dest: '/home/sites/kingsidharth.com',
-        exclusions: ['dist/.DS_Store', 'dist/tmp']
+        exclusions: ['dist/**/DS_Store', 'dist/tmp', 'Readme.md',]
       }
     }
   });
