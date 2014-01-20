@@ -13,8 +13,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
-  // Load FTP Deploy
-
+  
   grunt.initConfig({
 
     /* __________ CONFIGURABLE PATHS __________ */
@@ -371,24 +370,10 @@ module.exports = function (grunt) {
         'compass:dist',
         'copy:dist'
       ]
-    },
-    'ftp-deploy': {
-      build: {
-        auth: {
-          host: '146.185.143.169',
-          port: 21,
-          authKey: 'kingsidharth_main'
-        },
-        src: 'dist',
-        dest: '/home/sites/kingsidharth.com',
-        exclusions: ['dist/**/DS_Store', 'dist/tmp', 'Readme.md',]
-      }
     }
   });
 
   // Define Tasks
-  grunt.loadNpmTasks('grunt-ftp-deploy');
-  
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
