@@ -32,6 +32,59 @@ a {
   margin: 0 auto;
 }
 
+header {}
+#header {
+  text-shadow: rgba(0,0,0,0.65) 0 0px 7px;
+  a {
+    color: $white;
+  }
+  .nav {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .nav--block li {
+    @include media-query(palm) {
+      display: block;
+      width: 100%;
+    }
+    a {
+      text-align: center;
+      @include media-query(desk) {
+        padding-top: 4.5em;
+        padding-bottom: 4.5em;
+      }
+      @include media-query(palm) {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+  #logo {
+      font-size: 1.4em;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      word-spacing: -3px;
+      line-height: 1.6em;
+      @include media-query(desk) {
+        padding-top: 2.8em;
+        padding-bottom: 2.8em;
+      }
+      @include media-query(palm) {
+        text-align: center;
+      }
+
+      a {
+        color: $white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+
 
 #content_area {
   .page {
@@ -82,21 +135,6 @@ a {
       }
     }
 
-    #logo {
-      margin: 20px 0;
-      font-size: 1.4em;
-      font-weight: normal;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      line-height: 1.6em;
-      a {
-        color: $white;
-        text-decoration: none;
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
 
   #content {
     padding-top: 75px;
@@ -129,4 +167,9 @@ a {
       padding: 0 1em;
     }
   }
+}
+
+/* ---:[Helper Classes]:--- */
+.no-bottom-margin {
+  margin-bottom: 0px!important;
 }
