@@ -28,12 +28,17 @@ a {
 
 .page {
   background: rgba(0, 0, 0, 0.6);
-  max-width: 800px;
-  min-height: 100%;
+  max-width: 960px;
   height: auto;
+  margin: 0 auto;
 }
 
-#content_area {}
+
+#content_area {
+  .page {
+    max-width: 600px;
+  }
+}
 
   #content {
     ul {
