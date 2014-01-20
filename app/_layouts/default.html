@@ -34,9 +34,9 @@
      <meta property="app_id"                  content="171634969647127">
     {% endif %}
   </head>
-  <body style="background: url('/images/backgrounds/{{page.background}}') right center fixed #333 no-repeat; 
+  <body style="b: url('/images/backgrounds/{{page.background}}') right center fixed #333 no-repeat; 
     background-size: cover;">
-    <header>
+    <header style="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed #333 repeat-x;">
       <div class="page">
         <div id="header">
           {% if page.slug == 'home' %}
