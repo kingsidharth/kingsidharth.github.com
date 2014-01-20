@@ -27,7 +27,6 @@ a {
 }
 
 .page {
-  background: rgba(0, 0, 0, 0.6);
   max-width: 960px;
   height: auto;
   margin: 0 auto;
@@ -77,13 +76,6 @@ a {
     }
   }
 
-  #sidebar {
-    text-align: right;
-    small {
-      font-weight: 100;
-    }
-  }
-
     #social-media-follow {
       li {
         margin-bottom: 0.8em;
@@ -108,7 +100,6 @@ a {
 
   #content {
     padding-top: 75px;
-    @include box-shadow(rgba(0, 0, 0, 0.8) 1px 0 0);
   }
 
   #content .headline_area {
@@ -129,27 +120,11 @@ a {
 }
 
 @include media-query(palm) {
-  #sidebar {
-    background: rgba(0, 0, 0, 0.75);
-    text-align: center;
-    #main-navigation {
-      .nav {
-        li {
-          margin-bottom: 5px;
-          a {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-          }
-        }
-      }
-    }
-    #social-media-follow {
-      display: none;
-    }
+  #social-media-follow {
+    display: none;
   }
   #content {
-    background: rgba(0, 0, 0, 0.75);
     padding-top: 1em;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
     .main-body {
       padding: 0 1em;
     }
