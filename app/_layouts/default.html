@@ -38,17 +38,17 @@
   </head>
   <body style="b: url('/images/backgrounds/{{page.background}}') right center fixed #333 no-repeat; 
     background-size: cover;">
-    <header style="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed #333 repeat-x;">
+    <header id="header_area" style="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed #333 repeat-x;">
       <div class="page">
         <div id="header">
           {% if page.slug == 'home' %}
-          <h1 id='logo' class="grid__item one-fifth palm-one-whole no-bottom-margin "><a href="/">King <strong>Sidharth</strong></a></h1><!--
+          <h1 id='logo' class="grid__item one-whole">King <strong>Sidharth</strong></h1>
           {% else %}
-          <div id='logo' class="grid__item one-fifth palm-one-whole no-bottom-margin"><a href="/">King <strong>Sidharth</strong></a></div><!--
+          <div id='logo' class="grid__item one-whole"><a href="/">King <strong>Sidharth</strong></a></div>
           {% endif %}
 
-          --><nav id=main-navigation class="navbar grid__item four-fifths palm-one-whole">
-          <ul class="nav nav--block no-bottom-margin text--right">
+          <nav id=main-navigation class="navbar grid__item one-whole">
+          <ul class="nav nav--block no-bottom-margin text--center">
             <!--<li><a href="/">Home</a></li>-->
             <li><a href="http://www.64notes.com/speaking">Speaking</a></li>
             <li><a href="/writings">Writings</a><li>

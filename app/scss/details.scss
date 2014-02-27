@@ -32,57 +32,52 @@ a {
   margin: 0 auto;
 }
 
-header {}
-#header {
-  text-shadow: rgba(0,0,0,0.65) 0 0px 7px;
-  a {
-    color: $white;
-  }
-  .nav {
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  .nav--block li {
-    @include media-query(palm) {
-      display: block;
-      width: 100%;
-    }
-    a {
-      text-align: center;
-      @include media-query(desk) {
-        padding-top: 4.5em;
-        padding-bottom: 4.5em;
-      }
-      @include media-query(palm) {
-        width: 100%;
-        display: block;
-      }
-    }
-  }
+#header_area {
+  margin: 1.2em;
 }
-  #logo {
-      font-size: 1.4em;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: -1px;
-      word-spacing: -3px;
-      line-height: 1.6em;
-      @include media-query(desk) {
-        padding-top: 2.8em;
-        padding-bottom: 2.8em;
-      }
-      @include media-query(palm) {
-        text-align: center;
-      }
+  #header {
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    text-shadow: rgba(0,0,0,0.65) 0 0px 7px;
+    color: $white;
 
+    a {
+      color: $white;
+    }
+
+    .nav {
+      text-transform: uppercase;
+    }
+    .nav--block li {
+      @include media-query(palm) {
+        display: block;
+        width: 100%;
+      }
       a {
-        color: $white;
-        text-decoration: none;
-        &:hover {
-          text-decoration: none;
+        letter-spacing: 1px;
+        @include media-query(palm) {
+          width: 100%;
+          display: block;
         }
       }
     }
+  }
+    #logo {
+        font-size: 1.4em;
+        font-weight: normal;
+        text-transform: uppercase;
+        line-height: 1em;
+        letter-spacing: 3px;
+        margin-bottom: 1em;
+        @extend .text--center;
+
+        a {
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
 
 
 
