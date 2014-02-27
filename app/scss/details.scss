@@ -19,6 +19,7 @@ body {
   @include sans;
   background: $black;
   color: $white;
+  @extend .text--center;
 }
 
 a {
@@ -30,6 +31,7 @@ a {
   max-width: 960px;
   height: auto;
   margin: 0 auto;
+  @extend .text--left;
 }
 
 #header_area {
