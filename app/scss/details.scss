@@ -25,6 +25,14 @@ body {
 a {
   color: $blue;
   text-decoration: none;
+  border-bottom: 1px dotted $blue;
+  &:hover, &:active {
+    border-bottom-style: solid;
+  }
+  &:active {
+    border-bottom-color: adjust-lightness($blue, -10%);
+    color: adjust-lightness($blue, -10%);
+  }
 }
 
 .page {
