@@ -33,7 +33,11 @@ a {
 }
 
 #header_area {
-  margin: 1.2em;
+  .page {
+    margin-top: 1.2em;
+    width: 100%;
+    max-width: 100%;
+  }
 }
   #header {
     padding-top: 2.5em;
@@ -55,6 +59,12 @@ a {
       }
       a {
         letter-spacing: 1px;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        @include transition(border 0.3s);
+        &:hover, &:active, &.active {
+          border-color: $white;
+        }
         @include media-query(palm) {
           width: 100%;
           display: block;
