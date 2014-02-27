@@ -24,16 +24,7 @@
     
 
     {% if page.slug == 'home' %}
-    <meta property="og:type" content="profile" />    
-    <meta property="og:title" content="King Sidharth" />
-    <meta property="og:url" content="http://www.kingsidharth.com" />
-    <meta property="og:description" content="King Sidharth is a 21 years old Entrepreneur, Designer, Artist & Public Speaker from India. He is co-founder of Web Mutiny and is oftne found solving design & startup problems." />
-    <meta property="og:image" content="https://secure.gravatar.com/avatar/4706f45842b8fc2c032e0d1114d01931?s=420" />
-     <meta property="profile:first_name"      content="King">
-     <meta property="profile:last_name"       content="Sidharth">
-     <meta property="profile:gender"          content="male">
-     <meta property="fb:profile_id"           content="kingsidharth">    
-     <meta property="app_id"                  content="171634969647127">
+    {% include _home_meta.html %}
     {% endif %}
   </head>
   <body style="b: url('/images/backgrounds/{{page.background}}') right center fixed #333 no-repeat; 
