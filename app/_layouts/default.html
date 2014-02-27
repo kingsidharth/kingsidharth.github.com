@@ -1,119 +1,14 @@
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class='no-js'>
-  <!--<![endif]-->
-  <head
-    {% if page.slug == 'home' %}
-    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#"
-    {% endif %}
-  >
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    
-    <title>{{ page.title }}</title>
-    <link rel="icon" href="/images/favicons/favicon_32.png" type="image/x-icon">
+---
+layout: base
+---
+{% include header.html %}
 
-    <!-- CSS -->
-    <!-- build:css /assets/css/details.min.css -->
-    <link href="/assets/css/details.css" media="all" rel="stylesheet" type="text/css">
-    <!-- endbuild -->
+<div id="content_area" class="grid">
+  <div class="page">
+    <div id="content" class="">
+      {{ content }}
+    </div><!-- #content -->
+  </div>
+</div><!-- #content_area -->
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    
-
-    {% if page.slug == 'home' %}
-    {% include _home_meta.html %}
-    {% endif %}
-  </head>
-  <body style="b: url('/images/backgrounds/{{page.background}}') right center fixed #333 no-repeat; 
-    background-size: cover;">
-    <header id="header_area" class="grid">
-      <div class="page" style="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed #333 repeat-x;">
-        <div id="header">
-          {% if page.slug == 'home' %}
-          <h1 id='logo' class="grid__item one-whole">King <strong>Sidharth</strong></h1>
-          {% else %}
-          <div id='logo' class="grid__item one-whole"><a href="/">King <strong>Sidharth</strong></a></div>
-          {% endif %}
-
-          <nav id=main-navigation class="navbar grid__item one-whole">
-          <ul class="nav nav--block no-bottom-margin text--center">
-            <!--<li><a href="/">Home</a></li>-->
-            <li><a href="http://www.64notes.com/speaking">Speaking</a></li>
-            <li><a href="/writings">Writings</a><li>
-            <!--<li><a href="/poems">Poems</a></li>-->
-            <li><a href="/media-mentions">Media + Interviews</a></li>
-            <!--<li><a href="/contact">Contact</a></li>-->
-          </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <div id="content_area" class="grid">
-      <div class="page">
-        <div id="content" class="">
-          {{content}}
-        </div><!-- #content -->
-      </div>
-    </div><!-- #content_area -->
-
-    <footer id="footer_area" class="grid">
-      <div class="page">
-        <div id="footer">
-          <ul id=social-media-follow class="nav nav--stacked">
-            <li class='facebook'>
-              <div id='fb-root'></div>
-              <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-font="lucida grande" data-width="450"></div>
-            </li>
-            <li class='twitter'>
-              <a href="https://twitter.com/kingsidharth" target="_blank" class="twitter-follow-button" data-show-count="false"
-                data-show-screen-name="false">@kingsidharth</a>
-            </li>
-          </ul><!-- #social-media-follow -->
-          <small class="copy">&copy; 2008 - 2013.</small>
-          <small><a href="/colophon">Colophon</a><a href="https://plus.google.com/100630005600562803456/" rel="author">.</a></small>
-        </div>
-      </div>
-    </footer>
-  <!-- Javascript -->
-  <!--<script src="_bower_components/jquery/jquery.min.js"></script>
-  <script src="/assets/js/magic.js"></script>-->
-  <script>
-    (function(doc, script) {
-      var js,
-      fjs = doc.getElementsByTagName(script)[0],
-      add = function(url, id) {
-        if (doc.getElementById(id)) {return;}
-        js = doc.createElement(script);
-        js.src = url;
-        id && (js.id = id);
-        fjs.parentNode.insertBefore(js, fjs);
-      };
-      <!-- Facebook SDK -->
-      add('//connect.facebook.net/en_GB/all.js#xfbml=1&appId=171634969647127', 'facebook-jssdk');
-      <!-- Twitter SDK -->
-      // add('//platform.twitter.com/widgets.js', 'twitter-wjs');
-    }(document, 'script')); 
-  </script>
-  
-  </body>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-4910697-13']);
-    _gaq.push(['_setDomainName', 'kingsidharth.com']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
-</html>
-<!-- Looking for soruce code? Check this https://github.com/kingsidharth/kingsidharth.github.com -->
+{% include footer.html %}

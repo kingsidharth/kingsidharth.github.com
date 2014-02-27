@@ -1,0 +1,22 @@
+<header id="header_area" class="grid">
+  <div class="page" style="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed #333 repeat-x;">
+    <div id="header">
+      {% if page.slug == 'home' %}
+      <h1 id='logo' class="grid__item one-whole">King <strong>Sidharth</strong></h1>
+      {% else %}
+      <div id='logo' class="grid__item one-whole"><a href="/">King <strong>Sidharth</strong></a></div>
+      {% endif %}
+
+      <nav id=main-navigation class="navbar grid__item one-whole">
+      <ul class="nav nav--block no-bottom-margin text--center">
+        <!--<li><a href="/">Home</a></li>-->
+        <li><a href="http://www.64notes.com/speaking">Speaking</a></li>
+        <li><a href="/writings">Writings</a><li>
+        <!--<li><a href="/poems">Poems</a></li>-->
+        <li><a href="/media-mentions">Media + Interviews</a></li>
+        <!--<li><a href="/contact">Contact</a></li>-->
+      </ul>
+      </nav>
+    </div>
+  </div>
+</header>
