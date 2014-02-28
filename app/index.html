@@ -1,22 +1,52 @@
 ---
-layout: default
+layout: base 
 title: "King Sidharth"
 slug: "home"
-backgroundurl: http://thepatternlibrary.com/img/al.png
+background: default.jpg
 ---
-<div class="post home" data-destination="home">
-  <p>I am a <strike>19+3 years old</strike> timeless conciousness, just like you!</p>
+<div id="home_background" styles="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed no-repeat; background-size: cover; height: 100%;"></div>
 
-  <p><strong>Entrepreneur, Designer &amp; Artist</strong>.<br/>I commit crimes at <a href="http://www.instamojo.com">Instamojo</a>.</p>
-
-  <p>I talk a lot. A little too much. Sometimes they invite me to give a talk <a href="http://www.64notes.com/speaking">on Entrepreneurship, Philosophy or Design</a>.</p> 
-  
-  <p>Not to mention I am a <strong>philosophy p*rn star</strong>. Yeah I do 'it' for the moniez. It being philosophy, what were you thinking?</p>
-
-  <p>
-  <a href="https://www.instamojo.com">Instamojo</a> 
-  <br/><strong><a href="/writings">Writing:</a></strong> <a href="http://www.64notes.com">64 Notes</a> | <a href="/poems">Poetry</a> | <a href="http://anamorphic.in">Anamorphic</a> | <a href="http://github.com/kingsidharth">Code</a>
-  <br/><strong>Past:</strong> <a href="http://thefriendz.biz">the Friendz</a> | <a href="http://www.64notes.com/end-of-web-mutiny/">Web Mutiny</a>
-  </p>
+<div id="home_content_area">
+<div id="home_header_area" class="grid" >
+  <div class="page">
+    <h1 id="logo" class="grid__item one-whole">King <strong>Sidharth</strong></h1>
+    <h2 class="grid__item one-whole text--center">
+      A Young Entrepreneur, Designer, Artist & Public Speaker.
+    </h2>
+  </div>
 </div>
+<div id="content_area" class="grid">
+  <div class="page">
+    <div class="grid__item one-whole">
+      <p>I work at <a href="https://www.instamojo.com" target="_blank">Instamojo</a>. In past, I've been part of several crazy things.</p>
+    <p>
+    <ul class="block-list">
+      <li><strong>I love:</strong></li>
+      <li><strong>Reading:</strong> <a href="http://anamorphic.in">Anamorphic</a></li>
+      <li><strong>Writing:</strong> <a href="http://www.64notes.com">64 Notes</a>, <a href="http://www.64notes.com/design/">Design</a>, <a href="http://github.com/kingsidharth">Code</a>, <a href="/poems">Poetry</a>, <a href="/writings">Others</a></li>
+      <li><strong>Traveling</strong></li>
+      <li><strong>Public Speaking:</strong> TEDx, WordCamp, Startup Saturday, <a href="http://www.64notes.com/speaking/">More</a></li>
+    </ul>
 
+# Other Things
+</p>
+</div>
+    <!--
+    <div class="post grid__item one-whole" data-destination="home">
+      <p>I am a <strike>19+3 years old</strike> timeless conciousness, just like you!</p>
+
+      <p><strong>Entrepreneur, Designer &amp; Artist</strong>.<br/>I commit crimes at <a href="http://www.instamojo.com">Instamojo</a>.</p>
+
+      <p>I talk a lot. A little too much. Sometimes they invite me to give a talk <a href="http://www.64notes.com/speaking">on Entrepreneurship, Philosophy or Design</a>.</p> 
+  
+      <p>Not to mention I am a <strong>philosophy p*rn star</strong>. Yeah I do 'it' for the moniez. It being philosophy, what were you thinking?</p>
+
+      <p>
+      <a href="https://www.instamojo.com">Instamojo</a> 
+      <br/><strong><a href="/writings">Writing:</a></strong> <a href="http://www.64notes.com">64 Notes</a> | <a href="/poems">Poetry</a> | <a href="http://anamorphic.in">Anamorphic</a> | <a href="http://github.com/kingsidharth">Code</a>
+      <br/><strong>Past:</strong> <a href="http://thefriendz.biz">the Friendz</a> | <a href="http://www.64notes.com/end-of-web-mutiny/">Web Mutiny</a>
+      </p>
+    </div>-->
+
+  </div>
+</div><!-- content_area -->
