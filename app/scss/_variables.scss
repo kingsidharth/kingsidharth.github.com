@@ -17,7 +17,7 @@ $blue: #2BA6CB;
 
 /*----:[Typography]:----*/
 @mixin sans {
-  font-family: 'Merriweather', 'Open Sans', 'Lucida Grande', 'Lucida Sans', Tahoma, sans-serif
+  font-family: 'Merriweather Sans', 'Open Sans', 'Lucida Grande', 'Lucida Sans', Tahoma, sans-serif;
 }
 
 /*------------------------------------*\
@@ -45,7 +45,7 @@ $base-line-height:  $base-font-size*1.6;
 /**
  * Base font-family.
  */
-$base-font-family: 'museo-sans', 'Lucida Grande', 'Lucida Sans', Tahoma, sans-serif
+$base-font-family: 'Merriweather Sans', 'Open Sans', 'Lucida Grande', 'Lucida Sans', Tahoma, sans-serif; 
 ;
 
 /**
