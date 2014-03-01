@@ -211,6 +211,20 @@ a {
   }
 }
 
+blockquote {
+  quotes: "“" "”";
+  &:before, &:after {
+    font-size: 1.3em;
+    font-family: 'Noto Serif', Georgia, sans-serif; 
+    color: $grey;
+  }
+  &:before {
+    content: open-quote;
+  }
+  &:after {
+    content: close-quote;
+  }
+}
 
 /* ----:[Responsive]:---- */
 @include media-query(palm) {
