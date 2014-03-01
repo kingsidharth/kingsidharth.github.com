@@ -16,7 +16,6 @@
 
 /* ----:[Typography]:---- */
 body {
-  @include sans;
   background: $black;
   color: $white;
   @extend .text--center;
