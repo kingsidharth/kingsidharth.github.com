@@ -10,11 +10,14 @@
 
 
 /*----:[Colors]:---*/
-$black: #444;
+$black: #222;
 $white: #FAFAFA;
 $blue: #2BA6CB;
 $grey: #CCC;
 
+$directions: -top -right -bottom -left;
+$resolutions: palm lap portable desk;
+$subres: palm lap desk;
 
 /*------------------------------------*\
     $BORDER-BOX
