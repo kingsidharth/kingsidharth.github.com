@@ -226,6 +226,30 @@ blockquote {
   }
 }
 
+    
+
+#intro_area {
+  > div {
+  }
+  blockquote {
+    @extend .no-bottom-margin;
+    @extend .delta;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  p {
+    color: $grey;
+  }
+}
+
+  #tagline {
+    @extend .text--center;
+    @extend .delta;
+    font-weight: normal;
+    letter-spacing: 0.5px
+  }
+
+
 /* ----:[Responsive]:---- */
 @include media-query(palm) {
   #social-media-follow {
