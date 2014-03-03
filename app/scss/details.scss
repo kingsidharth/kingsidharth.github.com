@@ -37,7 +37,7 @@ a {
 }
 
 .page {
-  max-width: 960px;
+  max-width: 650px;
   height: auto;
   margin: 0 auto;
   @extend .text--left;
@@ -46,8 +46,6 @@ a {
 #header_area {
   .page {
     margin-top: 1.2em;
-    width: 600px;
-    //max-width: 100%;
   }
 }
   #header {
@@ -110,11 +108,7 @@ a {
 
 
 #content_area {
-  .page {
-    max-width: 600px;
-  }
 }
-
   #content {
     ul {
       list-style-type: square;
@@ -176,25 +170,6 @@ a {
     }
   }
 
-#home_background{
-  top: 0px;
-  display: none;
-  left: 0px;
-  width: 100%;
-  max-width: 1300px;
-  height: 100%;
-  z-index: 1;
-  @include experimental(filter, blur(0px), true, true, true, true, false, true);
-
-  @include transition(filter 0.5s);
-
-  @include media-query(palm) {
-    @include experimental(filter, blur(5px), true, true, true, true, false, true);
-  }
-    
-}
-#home_content_area {
-}
 .home {
   .block-list {
     list-style-type: none;
@@ -232,6 +207,9 @@ blockquote {
     @extend .delta;
     font-weight: bold;
     letter-spacing: 2px;
+    // Dirty, dirty hacks
+    margin-left: 8px;
+    margin-right: -6px;
   }
   p {
     color: $grey;
