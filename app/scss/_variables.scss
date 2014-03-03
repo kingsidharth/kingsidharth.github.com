@@ -40,19 +40,19 @@ $base-ui-color:     #ccc!default;
 $responsive:        true!default;
 $responsive-extra:  false!default;
 
-$push:              true;
+$push:              false!default;
 $palm-push:         false!default;
 $lap-push:          false!default;
 $lap-and-up-push:   false!default;
 $portable-push:     false!default;
-$desk-push:         true;
+$desk-push:         false!default;
 
-$pull:              false!default;
-$palm-pull:         false!default;
-$lap-pull:          false!default;
-$lap-and-up-pull:   false!default;
-$portable-pull:     false!default;
-$desk-pull:         false!default;
+$pull:              true;
+$palm-pull:         true;
+$lap-pull:          true;
+$lap-and-up-pull:   true;
+$portable-pull:     true;
+$desk-pull:         true;
 
 $lap-start:         481px!default;
 $desk-start:        1024px!default;

@@ -41,6 +41,10 @@ a {
   height: auto;
   margin: 0 auto;
   @extend .text--left;
+  @include media-query(palm) {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
 }
 
 #header_area {
@@ -180,6 +184,12 @@ a {
       margin-bottom: 0.2em;
     }
   }
+
+  #header_area .page {
+    @include media-query(lap-and-up) {
+      height: 118px;
+    }
+  }
 }
 
 blockquote {
@@ -200,11 +210,19 @@ blockquote {
     
 
 #intro_area {
-  > div {
+  @include media-query(palm) {
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+  }
+  > .page > div {
+    @extend .grid__item;
+    @extend .desk-one-half;
+    @extend .palm-one-whole;
+    @extend .palm-center;
   }
   blockquote {
-    @extend .no-bottom-margin;
     @extend .delta;
+    @extend .no-bottom-margin;
     font-weight: bold;
     letter-spacing: 2px;
     // Dirty, dirty hacks
