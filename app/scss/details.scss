@@ -46,8 +46,8 @@ a {
 #header_area {
   .page {
     margin-top: 1.2em;
-    width: 100%;
-    max-width: 100%;
+    width: 600px;
+    //max-width: 100%;
   }
 }
   #header {
@@ -90,7 +90,7 @@ a {
   text-transform: uppercase;
   line-height: 1em;
   letter-spacing: 3px;
-  @extend .text--center;
+  //@extend .text--center;
   a {
     text-decoration: none;
     &:hover {
