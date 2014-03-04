@@ -23,6 +23,12 @@ body {
   @extend .text--center;
 }
 
+::selection {
+  background: $blue;
+  color: $white;
+}
+
+
 a {
   color: $blue;
   text-decoration: none;
@@ -92,7 +98,7 @@ a {
   text-transform: uppercase;
   line-height: 1em;
   letter-spacing: 3px;
-  //@extend .text--center;
+  
   a {
     text-decoration: none;
     &:hover {
@@ -192,7 +198,7 @@ a {
   }
 }
 
-blockquote {
+%blockquote {
   quotes: "“" "”";
   &:before, &:after {
     font-size: 1.3em;
@@ -223,8 +229,6 @@ blockquote {
   blockquote {
     @extend .delta;
     @extend .no-bottom-margin;
-    font-weight: bold;
-    letter-spacing: 2px;
     // Dirty, dirty hacks
     margin-left: 8px;
     margin-right: -6px;
