@@ -413,7 +413,7 @@ module.exports = function (grunt) {
     'clean:dist',
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
-    'compass:dist',            
+    'compass:dist',
     'concurrent:dist',
     'useminPrepare',
     //'compass:server',
