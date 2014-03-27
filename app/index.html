@@ -2,16 +2,16 @@
 layout: base 
 title: "King Sidharth"
 slug: "home"
-background: default.jpg
+background: default.jpg 
 ---
-<div id="home_background" styles="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed no-repeat; background-size: cover; height: 100%;"></div>
-
-<div id="header_area" class="grid" >
+<div id="header_area" class="grid" style="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed no-repeat; background-size: cover;">
   <div class="page">
-    <h1 id="logo" class="grid__item one-whole">King <strong>Sidharth</strong></h1>
+    <h1 id="logo" class="grid__item one-whole center">King <strong>Sidharth</strong></h1>
+    <!--
     <div class="grid__item one-third pull--desk-one-third lap-one-quarter pull--lap-one-quarter palm-one-whole">
       <img src="/images/king-sidharth.jpg" class="no-bottom-margin circle" alt="King Sidharth" title="King Sidharth">
     </div>
+    -->
   </div>
 </div>
 
@@ -37,12 +37,36 @@ background: default.jpg
   <div class="page">
     <div class="grid__item one-whole">
       <p>A 22 year-old Entrepreneur, Designer, Artist &amp; Public Speaker from Mumbai, India. Who builds <a href="https://www.instamojo.com" target="_blank">Instamojo</a> with <a href="#">these crazy people</a>. Often found:</p>
+    </div>
+    <div class="grid__item one-third lap-one-half palm-one-whole">
       <ul class="block-list">
-        <li><strong>Reading:</strong> <a href="http://anamorphic.in">Anamorphic</a></li>
-        <li><strong><a href="/writings">Writing</a>:</strong> <a href="http://www.64notes.com">64 Notes</a>, <a href="http://www.64notes.com/design/">Design</a>, <a href="/poems">Poetry</a></li>
-        <li><strong>Traveling</strong></li>
-        <li><strong><a href="http://www.64notes.com/speaking/">Public Speaking</a>:</strong> TEDx, WordCamp, Startup Saturday</li>
+        <li><strong>Reading</strong></li>
+        <li><a href="http://anamorphic.in">Anamorphic</a></li>
       </ul>
+      <ul class="block-list">
+        <li><strong>Writing</strong><li>
+        <li><a href="http://www.64notes.com">64 Notes</a></li> 
+        <li><a href="http://www.64notes.com/design/">Design</a></li> 
+        <li><a href="/poems">Poetry</a></li>
+        <li><a href="/writings">See the full list</a></li>
+      </ul>
+    </div><!--
+    --><ul class="block-list grid__item one-third lap-one-half palm-one-whole">
+      <li><strong>Writing</strong><li>
+      <li><a href="http://www.64notes.com">64 Notes</a></li> 
+      <li><a href="http://www.64notes.com/design/">Design</a></li> 
+      <li><a href="/poems">Poetry</a></li>
+      <li><a href="/writings">See the full list</a></li>
+      <li><strong>Traveling</strong></li>
+    </ul><!--
+    --><ul class="block-list grid__item one-third lap-one-half palm-one-whole">
+      <li><strong>Speaking</strong></li>
+      <li>TEDx</li>
+      <li>WordCamp</li>
+      <li>Startup Saturday</li>
+      <li>See the full list</li>
+    </ul>
+    <div class="grid__item one-whole">
       <p>It's also been noted that he is obsessed with The Teachings of Abraham, Pink Floyd, Lucy in the Sky with Diamonds, cribbing, shoes, &amp; ampersand. He even dropped-out of college. <em>Weiredo</em>.</p>
       <p>He likes people to wonder about <a href="">the 'King' part</a>.</p>
       <ul class="nav nav--block">

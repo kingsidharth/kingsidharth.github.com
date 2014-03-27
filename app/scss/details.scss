@@ -43,14 +43,16 @@ a {
 }
 
 .page {
-  max-width: 650px;
-  height: auto;
-  margin: 0 auto;
   @extend .text--left;
   @include media-query(palm) {
     padding-left: 1.5em;
     padding-right: 1.5em;
   }
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+  max-width: 650px;
+  height: auto;
+  margin: 0 auto;
 }
 
 #header_area {
@@ -98,7 +100,7 @@ a {
   text-transform: uppercase;
   line-height: 1em;
   letter-spacing: 3px;
-  
+
   a {
     text-decoration: none;
     &:hover {
@@ -193,7 +195,7 @@ a {
 
   #header_area .page {
     @include media-query(lap-and-up) {
-      height: 118px;
+      //height: 118px;
     }
   }
 }
@@ -202,7 +204,7 @@ a {
   quotes: "“" "”";
   &:before, &:after {
     font-size: 1.3em;
-    font-family: 'Noto Serif', Georgia, sans-serif; 
+    font-family: 'Noto Serif', Georgia, sans-serif;
     color: $grey;
   }
   &:before {
@@ -213,7 +215,7 @@ a {
   }
 }
 
-    
+
 
 #intro_area {
   @include media-query(palm) {
