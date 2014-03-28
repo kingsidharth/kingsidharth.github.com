@@ -193,9 +193,15 @@ a {
     }
   }
 
-  #header_area .page {
+  #header_area {
+    background-repeat: no-repeat;
+    background-color: #000;
     @include media-query(lap-and-up) {
-      //height: 118px;
+      min-height: 260px;
+      background-size: contain;
+    }
+    @include media-query(portable) {
+      background-size: cover;
     }
   }
 }

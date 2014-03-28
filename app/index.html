@@ -4,9 +4,11 @@ title: "King Sidharth"
 slug: "home"
 background: king-sidharth-eyes.jpg 
 ---
-<div id="header_area" class="grid" style="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed no-repeat; background-size: cover;">
+<div id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});" data-0="filter: blur(0px);" data-300="filter: blur(5px);">
   <div class="page">
-    <h1 id="logo" class="grid__item one-whole center">King <strong>Sidharth</strong></h1>
+    <h1 id="logo" class="grid__item one-whole center" data-0="filter: blur(0px);" data-200="filter: blur(2px);"> 
+      King <strong>Sidharth</strong>
+    </h1>
     <!--
     <div class="grid__item one-third pull--desk-one-third lap-one-quarter pull--lap-one-quarter palm-one-whole">
       <img src="/images/king-sidharth.jpg" class="no-bottom-margin circle" alt="King Sidharth" title="King Sidharth">
@@ -17,7 +19,7 @@ background: king-sidharth-eyes.jpg
 
 <div id="intro_area" class="grid">
   <div class="page">
-    <div class="grid__item g one-half palm-one-whole">
+    <div class="grid__item g one-half palm-one-whole" data-0="opacity: 0;" data-100="opacity: 1;">
       <blockquote>That you are</blockquote>
       <p class="milli">Tat-tvam-asi &bull; तत् त्वम् असि</p>
     </div><!--
@@ -79,6 +81,10 @@ background: king-sidharth-eyes.jpg
     </div>
   </div>
 </div><!-- content_area -->
+<script src="_bower_components/skrollr/dist/skrollr.min.js"></script>
+<script>
+  var s = skrollr.init();
+</script>
 <!--
     <div class="post grid__item one-whole" data-destination="home">
       <p>I am a <strike>19+3 years old</strike> timeless conciousness, just like you!</p>
