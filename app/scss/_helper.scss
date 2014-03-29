@@ -222,3 +222,15 @@ $floats: left right none;
 .rounded {
   border-radius: 3px;
 }
+
+// STICKY
+%sticky {
+  @include media-query(lap-and-up) {
+    position: fixed;
+    width: 100%;
+    margin-left: 0;
+    top: 0px;
+    left: 0px;
+    // Override.
+  }
+}
