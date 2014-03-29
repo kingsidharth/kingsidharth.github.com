@@ -183,10 +183,10 @@ a {
   #header_area {
     background-repeat: no-repeat;
     background-color: #000;
+    background-size: 90%;
     @extend %sticky;
     @include media-query(lap-and-up) {
-      min-height: 260px;
-      background-size: contain;
+      background-size: 90%;
     }
     @include media-query(portable) {
       background-size: cover;

@@ -5,9 +5,9 @@ slug: "home"
 background: king-sidharth-eyes.jpg 
 ---
 <div id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});" 
-  data-0="min-height: 260px; background-size: 90%; background-position: 0% 50%;"
-  data-80="min-height: 160px; background-position: 0% 60%;"
-  data-160="background-size: 90%; background-position: 0% 70%;"
+  data-0="min-height: 260px; background-position: 0% 50%;"
+  data-30="min-height: 160px;"
+  data-160="background-position: 0% 70%;"
   data-100p="background-position: 0% 90%;">
   <div class="page">
     <header id="header">
@@ -93,7 +93,7 @@ background: king-sidharth-eyes.jpg
 <script>
 var s = skrollr.init({
   forceHeight: false,
-  easing: 'cubic',
+  easing: 'cubicOut',
 });
 </script>
 <!--
