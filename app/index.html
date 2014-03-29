@@ -4,22 +4,30 @@ title: "King Sidharth"
 slug: "home"
 background: king-sidharth-eyes.jpg 
 ---
-<div id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});" data-0="filter: blur(0px);" data-300="filter: blur(5px);">
+<div id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});" 
+  data-0="min-height: 260px; background-size: 90%; background-position: 0% 50%;"
+  data-80="min-height: 160px; background-position: 0% 60%;"
+  data-160="background-size: 90%; background-position: 0% 70%;"
+  data-100p="background-position: 0% 90%;">
   <div class="page">
-    <h1 id="logo" class="grid__item one-whole center" data-0="filter: blur(0px);" data-200="filter: blur(2px);"> 
+    <header id="header">
+    <h1 id="logo" class="grid__item one-whole center"
+      data-0="margin-top: 2em;" data-80="margin-top: 0.5em;"> 
       King <strong>Sidharth</strong>
     </h1>
-    <!--
-    <div class="grid__item one-third pull--desk-one-third lap-one-quarter pull--lap-one-quarter palm-one-whole">
-      <img src="/images/king-sidharth.jpg" class="no-bottom-margin circle" alt="King Sidharth" title="King Sidharth">
-    </div>
-    -->
+    <nav id=main-navigation class="navbar grid__item one-whole" 
+      data-0="opacity: 0; display:!block;" data-100="opacity: 1; display:! block;" data-200="opacity: 1;">
+    <ul class="nav nav--block no-bottom-margin text--center">
+      {% include nav_items.html %} 
+    </ul>
+    </nav>
+  </header>
   </div>
 </div>
 
 <div id="intro_area" class="grid">
   <div class="page">
-    <div class="grid__item g one-half palm-one-whole" data-0="opacity: 0;" data-100="opacity: 1;">
+    <div class="grid__item g one-half palm-one-whole">
       <blockquote>That you are</blockquote>
       <p class="milli">Tat-tvam-asi &bull; तत् त्वम् असि</p>
     </div><!--
@@ -83,7 +91,10 @@ background: king-sidharth-eyes.jpg
 </div><!-- content_area -->
 <script src="_bower_components/skrollr/dist/skrollr.min.js"></script>
 <script>
-  var s = skrollr.init();
+var s = skrollr.init({
+  forceHeight: false,
+  easing: 'cubic',
+});
 </script>
 <!--
     <div class="post grid__item one-whole" data-destination="home">
