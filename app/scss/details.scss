@@ -16,7 +16,7 @@
 
 /* The Rules */
 
-/* ----:[Typography]:---- */
+/* __________ GENERAL RULES __________ */
 body {
   background: $black;
   color: $white;
@@ -27,7 +27,6 @@ body {
   background: $blue;
   color: $white;
 }
-
 
 a {
   color: $blue;
@@ -55,14 +54,29 @@ a {
   margin: 0 auto;
 }
 
-#header_area {
-  .page {
-    margin-top: 1.2em;
+%logo {
+  font-size: 1.4em;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: 3px;
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
+
+#logo {
+  @extend %logo;
+}
+
+/* __________ AREAS __________ */
+
+#header_area {}
   #header {
-    padding-top: 2.5em;
-    padding-bottom: 2.5em;
     text-shadow: rgba(0,0,0,0.65) 0 0px 7px;
     color: $white;
 
@@ -93,30 +107,6 @@ a {
       }
     }
   }
-
-%logo {
-  font-size: 1.4em;
-  font-weight: normal;
-  text-transform: uppercase;
-  line-height: 1em;
-  letter-spacing: 3px;
-
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-#logo {
-  @extend %logo;
-}
-.home #logo {
-  @extend %logo;
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
 
 
 #content_area {
@@ -164,11 +154,6 @@ a {
       }
     }
 
-
-  #content {
-    padding-top: 75px;
-  }
-
   #content .headline_area {
     margin-bottom: 1.6rem;
     .entry-title {
@@ -181,6 +166,8 @@ a {
       letter-spacing: 1px;
     }
   }
+
+/* __________ PAGE SPECIFIC __________ */
 
 .home {
   .block-list {
@@ -196,6 +183,7 @@ a {
   #header_area {
     background-repeat: no-repeat;
     background-color: #000;
+    @extend %sticky;
     @include media-query(lap-and-up) {
       min-height: 260px;
       background-size: contain;
@@ -221,12 +209,9 @@ a {
   }
 }
 
-
-
 #intro_area {
-  @include media-query(palm) {
-    margin-top: 1.2em;
-    margin-bottom: 1.2em;
+  @include media-query(lap-and-up) {
+    margin-top: 260px;
   }
   > .page > div {
     @extend .grid__item;
