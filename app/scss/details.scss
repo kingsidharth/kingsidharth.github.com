@@ -44,11 +44,10 @@ a {
 .page {
   @extend .text--left;
   @include media-query(palm) {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding: 1.2em;
   }
-  padding-top: 1.2em;
-  padding-bottom: 1.2em;
+  padding-top: 2.2em;
+  padding-bottom: 2.2em;
   max-width: 650px;
   height: auto;
   margin: 0 auto;
@@ -73,6 +72,10 @@ a {
   @extend %logo;
 }
 
+.text--dark-shadow {
+  text-shadow: rgba(0, 0, 0, 0.8) 0 1px 10px;
+}
+
 /* __________ AREAS __________ */
 
 #header_area {}
@@ -85,7 +88,7 @@ a {
     }
 
     .nav {
-      text-transform: uppercase;
+      //text-transform: uppercase;
     }
     .nav--block li {
       @include media-query(palm) {
@@ -93,12 +96,12 @@ a {
         width: 100%;
       }
       a {
-        letter-spacing: 1px;
+        //letter-spacing: 1px;
         border-top: 2px solid transparent;
         border-bottom: 2px solid transparent;
         @include transition(border 0.3s);
         &:hover, &:active, &.active {
-          border-color: $white;
+          border-color: $grey;
         }
         @include media-query(palm) {
           width: 100%;
@@ -184,7 +187,8 @@ a {
     background-repeat: no-repeat;
     background-color: #000;
     background-size: 90%;
-    @extend %sticky;
+    z-index: 10000;
+    //@extend %sticky;
     @include media-query(lap-and-up) {
       background-size: 90%;
     }
@@ -192,6 +196,12 @@ a {
       background-size: cover;
     }
   }
+}
+
+#instamojo_area {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #000;
 }
 
 %blockquote {
@@ -211,7 +221,7 @@ a {
 
 #intro_area {
   @include media-query(lap-and-up) {
-    margin-top: 260px;
+    //margin-top: 260px;
   }
   > .page > div {
     @extend .grid__item;

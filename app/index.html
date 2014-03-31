@@ -5,14 +5,22 @@ slug: "home"
 background: king-sidharth-eyes.jpg 
 ---
 <div id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});" 
-  data-0="min-height: 260px; background-position: 0% 50%;"
+  data-0="min-height: 260px; background-position: 0% 50%; opacity: 1; top: 0px;"
   data-30="min-height: 160px;"
   data-160="background-position: 0% 70%;"
-  data-100p="background-position: 0% 90%;">
+  data-_instamojo--300="min-height: 160px; background-position: 0% 90%;"
+  data-_instamojo="min-height: 0px;"
+  {% comment %}
+  data-_instamojo--180="opacity: 1; top: 0px;"
+  data-_instamojo-100="opacity: 0; top: -200px;"{%endcomment %}>
   <div class="page">
     <header id="header">
     <h1 id="logo" class="grid__item one-whole center"
-      data-0="margin-top: 2em;" data-80="margin-top: 0.5em;"> 
+      data-0="display:! block; position:! relative; top: 0px; opacity: 1; margin-top: 2em; margin-bottom: 20px;" 
+      data-80="margin-top: 0.5em;"
+      data-_instamojo--200="top: 0px; opacity: 1; margin-top: 0.5em; margin-bottom: 20px;"
+      data-_instamojo--10="top: -100px; opacity: 0; margin-top: 0em; margin: 0px; "
+      data-_instamojo="display:! none;">
       King <strong>Sidharth</strong>
     </h1>
     <nav id=main-navigation class="navbar grid__item one-whole" 
@@ -43,39 +51,39 @@ background: king-sidharth-eyes.jpg
   </div>
 </div><!-- #intro_area -->
 
-<div id="content_area" class="grid">
+<div id="content_area" class="grid has_multi_page">
+  <div class="page" id="bio">
+    <div class="grid__item one-whole">
+      <p class="delta">A 22 year-old Entrepreneur, Designer, Artist &amp; Public Speaker from Mumbai, India. Who builds <a href="https://www.instamojo.com" target="_blank">Instamojo</a> with <a href="#">these crazy people</a>.</p>
+    </div>
+  </div><!-- #bio -->
+</div>
+<div id="instamojo_area" class="grid" 
+  data-styles="background-image: url('/images/backgrounds/instamojo-team.jpg');"
+  data-_instamojo--200="background-position: 0 50%; position:! relative; top:0px; left: 0px; min-height: 100px;"
+  data-_instamojo--100="min-height: 300px;"
+  data-_instamojo-300="background-position: 0 90%;"
+  {% comment %}data-top="position:! fixed; top: 0px; left: 0px; margin-left:! 0px;"{% endcomment %}>
+  <div class="page" id="instamojo">
+    <h2 class="grid__item one-whole text--dark-shadow">I work with crazy people at Instamojo</h2>
+    <p class="grid__item one-whole">Instamojo is bringing the power of online payments in hands of the masses. It's the easiest way to start collecting payments online.</p>
+  </div><!-- #instamojo -->
+</div><!-- #instamojo_area -->
+<div class="grid">
   <div class="page">
     <div class="grid__item one-whole">
-      <p>A 22 year-old Entrepreneur, Designer, Artist &amp; Public Speaker from Mumbai, India. Who builds <a href="https://www.instamojo.com" target="_blank">Instamojo</a> with <a href="#">these crazy people</a>. Often found:</p>
+      <h2>I write at...</h2>
+      <ul class="block-list">
+        <li><a href="http://www.64notes.com">64 Notes</a> about <strong>Entrepreneurship</strong>, life &amp; <strong><a href="http://www.64notes.com/design/">Design</a></strong>.</li>
+        <li><a href="http://anamorphic.in">Anamorphic</a> about the <strong>Books</strong> I read &amp; the <strong>Films</strong> I watch.</li>
+        <li>Sometimes I fancy myself to be a <a href="/poems">poet</a>.</li>
+        <li class="milli"><a href="/writings">See the full list &rarr;</a></li>
+      </ul>
     </div>
-    <div class="grid__item one-third lap-one-half palm-one-whole">
-      <ul class="block-list">
-        <li><strong>Reading</strong></li>
-        <li><a href="http://anamorphic.in">Anamorphic</a></li>
-      </ul>
-      <ul class="block-list">
-        <li><strong>Writing</strong><li>
-        <li><a href="http://www.64notes.com">64 Notes</a></li> 
-        <li><a href="http://www.64notes.com/design/">Design</a></li> 
-        <li><a href="/poems">Poetry</a></li>
-        <li><a href="/writings">See the full list</a></li>
-      </ul>
-    </div><!--
-    --><ul class="block-list grid__item one-third lap-one-half palm-one-whole">
-      <li><strong>Writing</strong><li>
-      <li><a href="http://www.64notes.com">64 Notes</a></li> 
-      <li><a href="http://www.64notes.com/design/">Design</a></li> 
-      <li><a href="/poems">Poetry</a></li>
-      <li><a href="/writings">See the full list</a></li>
-      <li><strong>Traveling</strong></li>
-    </ul><!--
-    --><ul class="block-list grid__item one-third lap-one-half palm-one-whole">
-      <li><strong>Speaking</strong></li>
-      <li>TEDx</li>
-      <li>WordCamp</li>
-      <li>Startup Saturday</li>
-      <li>See the full list</li>
-    </ul>
+    <div class="grid__item one-whole">
+      <h2>I talk a lot.</h2>
+      <p>A little too much. I've talked about <strong>Entrepreneurship, Design</strong> &amp; other stuff. I've given talks at <strong>TEDx, WordCamps,</strong> Startup Saturday, Engineering Colleges, Schools, etc.</p>
+    </div>
     <div class="grid__item one-whole">
       <p>It's also been noted that he is obsessed with The Teachings of Abraham, Pink Floyd, Lucy in the Sky with Diamonds, cribbing, shoes, &amp; ampersand. He even dropped-out of college. <em>Weiredo</em>.</p>
       <p>He likes people to wonder about <a href="">the 'King' part</a>.</p>
@@ -89,11 +97,16 @@ background: king-sidharth-eyes.jpg
     </div>
   </div>
 </div><!-- content_area -->
+<!-- build:js /assets/js/lib.min.js -->
+<script src="_bower_components/jquery/jquery.min.js"></script>
 <script src="_bower_components/skrollr/dist/skrollr.min.js"></script>
-<script>
-var s = skrollr.init({
-  forceHeight: false,
-  easing: 'cubicOut',
+<!-- endbuild -->
+<!-- build:js /assets/magic.min.js -->
+<script src="assets/js/magic.js"></script>
+<!-- endbuild -->
+<script> 
+$(document).ready(function() {
+  homeScripts(); 
 });
 </script>
 <!--
