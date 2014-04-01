@@ -34,14 +34,26 @@ var setWidth = function(target, value) {
 var setHeight = function(target, value) {
   setCSS(target, 'min-height', Math.round(value));
 }
+
+function getDeviceType(width, height) {
+  if (width > 1600 && height > 1100) {
+    return 'desk-wide';
+  }
+  else if (width > 1000) {
+    return 'desk';
+  }
+  else if (width < 1000 && width > 481) {
+    return 'portable';
+  }
+  else if (width < 481) {
+    return 'palm';
+  }
+  else {
+    return 'unknown';
+  }
 }
 
-var homeScripts = function()  {
-  dataStyle('#instamojo_area', 'data-style', 'style');
 
-  // Layout & Height Settings
-  var windowHeight = $(window).height();
-  //setHeight('#content_area', $('#intro_area').height() + $('#header_area').height() ); 
 
 
   // skrollr functions
