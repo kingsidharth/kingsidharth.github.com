@@ -13,6 +13,7 @@ var dsm = debug_stage_msg; // Alias
 
 
 
+// TODO: Rewrite below to make data-attr-* work automatically.
 var dataStyle = function(source, attribute, target) {
   var content = $(source).attr(attribute);
   if(content !="" && content) {
@@ -22,8 +23,17 @@ var dataStyle = function(source, attribute, target) {
   }
 }
 
-var setHeight = function(target, height) {
-  $(target).css('min-height', Math.round(height));
+var setCSS = function(target, property, value) {
+  $(target).css(property, value);
+}
+
+var setWidth = function(target, value) {
+  setCSS(target, 'min-width', Math.round(value));
+}
+
+var setHeight = function(target, value) {
+  setCSS(target, 'min-height', Math.round(value));
+}
 }
 
 var homeScripts = function()  {
