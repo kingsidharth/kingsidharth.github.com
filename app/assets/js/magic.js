@@ -54,8 +54,38 @@ function getDeviceType(width, height) {
 }
 
 
+var layout = function() {
+  
+  // Static Variables — I know the oxymoron
+
+  // Get to know the viewport
+  // https://stackoverflow.com/questions/1248081/get-the-browser-viewport-dimensions-with-javascript
+  var width = Math.max(window.innerWidth)
+  var height = Math.max(window.innerHeight)
+  device = getDeviceType(width, height);
+  dsm('Static variables initialized: ' + 
+      'height = ' + height +
+      'width  =' + width +
+      'device =' + device);
 
 
+  //Intializing js classes
+  if(device != 'desk-wide') {
+    $('.full-height').css('min-height', height);
+    $('.half-height').css('min-height', height / 2);
+  } else {
+    setHeight('.full-height', 900);
+    setHeight('.half-height', 1500);
+  }
+}
+
+var initScripts = function() {
+  layout();
+}
+
+
+
+var homeScripts = function()  {
   // skrollr functions
   /*var s = skrollr.init({
     //forceHeight: false,
@@ -68,5 +98,5 @@ function getDeviceType(width, height) {
 }
 
 $(document).ready(function() {
-  
+  initScripts();
 });
