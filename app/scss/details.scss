@@ -74,6 +74,10 @@ a {
     @extend .kilo;
   }
 }
+
+.tagline {
+  @extend .delta;
+  line-height: 2em;
 }
 
 .text--dark-shadow {
@@ -205,7 +209,6 @@ a {
 #instamojo_area {
   background-position: center top;
   background-repeat: no-repeat;
-  background-color: #000;
 }
 
 %blockquote {
