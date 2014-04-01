@@ -1,4 +1,17 @@
 
+var debug = true;
+var height, width, device;
+
+
+var debug_stage_msg = function(message) {
+  if(debug) {
+    console.log(message);
+  }
+}
+
+var dsm = debug_stage_msg; // Alias
+
+
 
 var dataStyle = function(source, attribute, target) {
   var content = $(source).attr(attribute);
