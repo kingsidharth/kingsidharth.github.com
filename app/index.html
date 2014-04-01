@@ -4,28 +4,16 @@ title: "King Sidharth"
 slug: "home"
 background: king-sidharth-eyes.jpg 
 ---
-<div id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});" 
-  data-0="min-height: 260px; background-position: 0% 50%; opacity: 1; top: 0px;"
-  data-30="min-height: 160px;"
-  data-160="background-position: 0% 70%;"
-  data-_instamojo--300="min-height: 160px; background-position: 0% 90%;"
-  data-_instamojo="min-height: 0px;"
-  {% comment %}
-  data-_instamojo--180="opacity: 1; top: 0px;"
-  data-_instamojo-100="opacity: 0; top: -200px;"{%endcomment %}>
+<div id="header_area" class="grid full-height" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});">
   <div class="page">
     <header id="header">
-    <h1 id="logo" class="grid__item one-whole center"
-      data-0="display:! block; position:! relative; top: 0px; opacity: 1; margin-top: 2em; margin-bottom: 20px;" 
-      data-80="margin-top: 0.5em;"
-      data-_instamojo--200="top: 0px; opacity: 1; margin-top: 0.5em; margin-bottom: 20px;"
-      data-_instamojo--10="top: -100px; opacity: 0; margin-top: 0em; margin: 0px; "
-      data-_instamojo="display:! none;">
+    <h1 id="logo" class="grid__item one-whole center">
       King <strong>Sidharth</strong>
     </h1>
-    <nav id=main-navigation class="navbar grid__item one-whole" 
-      data-0="opacity: 0; display:!block;" data-100="opacity: 1; display:! block;" data-200="opacity: 1;">
-    <ul class="nav nav--block no-bottom-margin text--center">
+    <p class="tagline text--center">22. Entrepreneur. Designer. Artist. Public Speaker.
+    <br><span class="zeta">from <strong>Mumbai, India</strong></span></p>
+    <nav id=main-navigation class="navbar grid__item one-whole">
+      <ul class="nav nav--block no-bottom-margin text--center">
       {% include nav_items.html %} 
     </ul>
     </nav>
@@ -52,21 +40,10 @@ background: king-sidharth-eyes.jpg
 </div><!-- #intro_area -->
 
 <div id="content_area" class="grid has_multi_page">
-  <div class="page" id="bio">
-    <div class="grid__item one-whole">
-      <p class="delta">A 22 year-old Entrepreneur, Designer, Artist &amp; Public Speaker from Mumbai, India. Who builds <a href="https://www.instamojo.com" target="_blank">Instamojo</a> with <a href="#">these crazy people</a>.</p>
-    </div>
-  </div><!-- #bio -->
-</div>
-<div id="instamojo_area" class="grid" 
-  data-styles="background-image: url('/images/backgrounds/instamojo-team.jpg');"
-  data-_instamojo--200="background-position: 0 50%; position:! relative; top:0px; left: 0px; min-height: 100px;"
-  data-_instamojo--100="min-height: 300px;"
-  data-_instamojo-300="background-position: 0 90%;"
-  {% comment %}data-top="position:! fixed; top: 0px; left: 0px; margin-left:! 0px;"{% endcomment %}>
+<div id="instamojo_area" class="grid" >
   <div class="page" id="instamojo">
-    <h2 class="grid__item one-whole text--dark-shadow">I work with crazy people at Instamojo</h2>
-    <p class="grid__item one-whole">Instamojo is bringing the power of online payments in hands of the masses. It's the easiest way to start collecting payments online.</p>
+    <h2 class="grid__item one-whole">I work with crazy people at Instamojo</h2>
+    <p class="grid__item one-whole">Till now online payments was a luxury which only big companies or developers could afford. Instamojo is bringing online payments to masses. Just imagine the lives it will change.</p>
   </div><!-- #instamojo -->
 </div><!-- #instamojo_area -->
 <div class="grid">
