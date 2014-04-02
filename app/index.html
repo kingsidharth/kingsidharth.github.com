@@ -4,7 +4,7 @@ title: "King Sidharth"
 slug: "home"
 background: king-sidharth-eyes.jpg 
 ---
-<div id="header_area" class="grid full-height" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});">
+<div id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});">
   <div class="page">
     <header id="header">
     <h1 id="logo" class="grid__item one-whole center">
@@ -12,7 +12,7 @@ background: king-sidharth-eyes.jpg
     </h1>
     <p class="tagline text--center">22. Entrepreneur. Designer. Artist. Public Speaker.
     <br><span class="zeta">from <strong>Mumbai, India</strong></span></p>
-    <nav id=main-navigation class="navbar grid__item one-whole">
+    <nav id=main-navigation class="navbar grid__item one-whole hidden">
       <ul class="nav nav--block no-bottom-margin text--center">
       {% include nav_items.html %} 
     </ul>
@@ -21,16 +21,17 @@ background: king-sidharth-eyes.jpg
   </div>
 </div>
 
-<div id="intro_area" class="grid">
+<div id="intro_area" class="grid" >
   <div class="page">
-    <div class="grid__item g one-half palm-one-whole">
+    <div class="grid__item one-half palm-one-whole">
       <blockquote>That you are</blockquote>
       <p class="milli">Tat-tvam-asi &bull; तत् त्वम् असि</p>
     </div><!--
-    --><div class="grid__item g one-half palm-one-whole desk-right">
+    --><div class="grid__item  one-half palm-one-whole desk-right grid__item--rev-padding">
       <blockquote>That I am</blockquote>
       <p class="milli">So-aham &bull; सो ऽहम्</p>
     </div>
+    <img src="/images/backgrounds/painting-trip-3.jpg" alt="Buddha" class="one-whole">
     {% comment %}
     <h2 id="tagline" class="grid__item one-whole">
       A consciousness thinking itself into being.

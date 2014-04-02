@@ -70,9 +70,6 @@ a {
 
 #logo {
   @extend %logo;
-  .home & {
-    @extend .kilo;
-  }
 }
 
 .tagline {
@@ -84,6 +81,10 @@ a {
   text-shadow: rgba(0, 0, 0, 0.8) 0 1px 10px;
 }
 
+.grid__item--rev-padding {
+  padding-left: 0px;
+  padding-right: $base-spacing-unit;
+}
 /* __________ AREAS __________ */
 
 #header_area {}
@@ -194,12 +195,11 @@ a {
   #header_area {
     background-repeat: no-repeat;
     background-color: #000;
-    background-size: 90%;
+    background-size: contain;
     z-index: 10000;
+    height: 250px;
+    max-height: 400px;
     //@extend %sticky;
-    @include media-query(lap-and-up) {
-      background-size: 90%;
-    }
     @include media-query(portable) {
       background-size: cover;
     }
@@ -230,21 +230,21 @@ a {
   @include media-query(lap-and-up) {
     //margin-top: 260px;
   }
-  > .page > div {
-    @extend .grid__item;
-    @extend .desk-one-half;
-    @extend .palm-one-whole;
-    @extend .palm-center;
+  > .page {
+    > div {
+      @extend .palm-center;
+    }
   }
   blockquote {
     @extend .delta;
     @extend .no-bottom-margin;
     // Dirty, dirty hacks
+    font-weight: bold;
     margin-left: 8px;
     margin-right: -6px;
   }
   p {
-    color: $grey;
+    color: $black;
   }
 }
 
