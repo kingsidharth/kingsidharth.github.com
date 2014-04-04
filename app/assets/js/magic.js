@@ -122,11 +122,17 @@ var homeScripts = function()  {
         scrollPosition = data.curTop;
         if (scrollPosition > 10 ) {
           if($('#logo').is(':visible')) {
-            $('#logo, .home .tagline').slideUp();
+            $('#logo, .home .tagline').slideUp({
+              'duartion': 280, 
+              'specialEasing': 'easeInOutCubic'
+            });
           }
         } else {
           if($('#logo').is(':hidden')) {
-            $('#logo, .home .tagline').slideDown();
+            $('#logo, .home .tagline').slideDown({
+              'duartion': 280, 
+              'specialEasing': 'easeInOutCubic'
+            });
           }
         }
       }
