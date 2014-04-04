@@ -43,13 +43,10 @@ a {
 
 .page {
   @extend .text--left;
-  @include media-query(palm) {
-    padding: 1.2em;
-  }
   padding-top: 2.2em;
   padding-bottom: 2.2em;
   max-width: 650px;
-  height: auto;
+  //height: auto;
   margin: 0 auto;
 }
 
@@ -195,16 +192,21 @@ a {
   #header_area {
     background-repeat: no-repeat;
     background-color: #000;
-    background-size: contain;
+    //background-size: contain;
     z-index: 10000;
-    height: 250px;
-    max-height: 400px;
-    //@extend %sticky;
+    //height: 250px;
+    //max-height: 400px;
+    @extend %sticky;
+    @include media-query(lap-and-up) {
+      background-size: 90%;
+    }
     @include media-query(portable) {
       background-size: cover;
     }
+
   }
 }
+
 
 #instamojo_area {
   background-position: center top;
@@ -244,7 +246,7 @@ a {
     margin-right: -6px;
   }
   p {
-    color: $black;
+    color: $white;
   }
 }
 
