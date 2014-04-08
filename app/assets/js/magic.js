@@ -85,7 +85,7 @@ skrollrData = function() {
     dsm('Home Page Detected');
     $('#header_area')
       .attr('data-0', 'background-position: 0% 90%;')
-      .attr('data-200', 'background-position: 0% 70%;');
+      .attr('data-end', 'background-position: 0% 90%;');
 
     var stickyOffset = $('#header_area').height();
     $('#intro_area')
@@ -96,8 +96,9 @@ skrollrData = function() {
       .attr('data-100', 'opacity: 0.8;')
       .attr('data-200', 'opacity: 0;');
     $('#main_navigation')
-      .attr('data-0', 'opacity: 0;')
-      .attr('data-150', 'opacity: 1;');
+      .attr('data-0', 'opacity: 0; width: 0%;')
+      .attr('data-100', 'opacity: 0; width: 0%;')
+      .attr('data-250', 'opacity: 1; width: 75%;');
   }
   dsm('skrollr data is in place...');
 }
@@ -113,24 +114,29 @@ var homeScripts = function()  {
   // skrollr functions
   var s = skrollr.init({
     forceHeight: false,
-    easing: 'cubicOut',
+    easing: 'easeInOutCubic',
       constants: {
         //instamojo: Math.round($('#instamojo_area').offset().top),
         instamojo: $('#instamojo_area').offset().top,
       },
       render: function(data) {
         scrollPosition = data.curTop;
-        if (scrollPosition > 10 ) {
-          if($('#logo').is(':visible')) {
-            $('#logo, .home .tagline').slideUp({
-              'duartion': 280, 
+        if (scrollPosition > 5 ) {
+          $('#logo').removeClass('one-whole').addClass('one-quarter delta text--left');
+        } else {
+          $('#logo').removeClass('one-quarter delta text--left').addClass('one-whole');
+        }
+        if (scrollPosition > 10) {
+          if($('.tagline').is(':visible')) {
+            $('.tagline').slideUp({
+              'duartion': 600, 
               'specialEasing': 'easeInOutCubic'
             });
           }
         } else {
-          if($('#logo').is(':hidden')) {
-            $('#logo, .home .tagline').slideDown({
-              'duartion': 280, 
+          if($('.tagline').is(':hidden')) {
+            $('.tagline').slideDown({
+              'duartion': 600, 
               'specialEasing': 'easeInOutCubic'
             });
           }

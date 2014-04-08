@@ -2,17 +2,17 @@
 layout: base 
 title: "King Sidharth"
 slug: "home"
-background: king-sidharth-eyes.jpg 
+background: king-sidharth-meditation.jpg 
 ---
 <div id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});">
   <div class="page">
     <header id="header">
-    <h1 id="logo" class="grid__item one-whole center">
+    <h1 id="logo" class="grid__item one-whole center no-bottom-margin">
       King <strong>Sidharth</strong>
-    </h1>
-    <p class="tagline text--center">22. Entrepreneur. Designer. Artist. Public Speaker.
-    <br><span class="zeta">from <strong>Mumbai, India</strong></span></p>
-    <nav id=main_navigation class="navbar grid__item one-whole">
+    </h1><!--
+    --><p class="tagline text--center no-bottom-margin">22. Entrepreneur. Designer. Artist. Public Speaker.
+    <br><span class="zeta">from <strong>Mumbai, India</strong></span></p><!--
+    --><nav id=main_navigation class="navbar grid__item three-quarters">
       <ul class="nav nav--block no-bottom-margin text--center">
       {% include nav_items.html %} 
     </ul>
@@ -22,7 +22,7 @@ background: king-sidharth-eyes.jpg
 </div>
 
 <div id="intro_area" class="grid" >
-  <div class="page">
+  <div class="page page--double-padding">
     <div class="grid__item one-half palm-one-whole">
       <blockquote>That you are</blockquote>
       <p class="milli">Tat-tvam-asi &bull; तत् त्वम् असि</p>
@@ -78,7 +78,7 @@ background: king-sidharth-eyes.jpg
 <!-- build:js /assets/js/lib.min.js -->
 <script src="_bower_components/jquery/jquery.min.js"></script>
 <script src="_bower_components/skrollr/dist/skrollr.min.js"></script>
-<script src=//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <!-- endbuild -->
 <!-- build:js /assets/magic.min.js -->
 <script src="assets/js/magic.js"></script>

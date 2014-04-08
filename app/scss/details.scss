@@ -46,9 +46,13 @@ a {
   padding-top: 2.2em;
   padding-bottom: 2.2em;
   max-width: 650px;
-  //height: auto;
   margin: 0 auto;
+  &.page--double-padding {
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
+  }
 }
+
 
 %logo {
   font-weight: normal;
@@ -67,6 +71,13 @@ a {
 
 #logo {
   @extend %logo;
+  .home & {
+    transition: 0.3s;
+    padding: $half-spacing-unit;
+  }
+  .home .skrollable-after & {
+    bottom-margin: none;
+  }
 }
 
 .tagline {
@@ -190,18 +201,19 @@ a {
   }
 
   #header_area {
-    background-repeat: no-repeat;
-    background-color: #000;
-    //background-size: contain;
-    z-index: 10000;
-    //height: 250px;
-    //max-height: 400px;
     @extend %sticky;
+    background-repeat: no-repeat;
+    background-color: #5e5958;
+    z-index: 10000;
+    background-size: contain;
     @include media-query(lap-and-up) {
-      background-size: 90%;
+      //background-size: 0% 90%;
     }
     @include media-query(portable) {
-      background-size: cover;
+      //background-size: cover;
+    }
+    .page {
+      max-width: 900px;
     }
 
   }
