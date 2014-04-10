@@ -97,10 +97,15 @@ skrollrData = function() {
         .attr('data-150', 'opacity: 0; height: ' + taglineHeight / 2 + 'px; padding: 0px 0px;')
         .attr('data-200', 'opacity: 0; height: 0px; padding: 0px 0px; display:! none;');
 
+      $('#logo')
+        .attr('data-0',  'transform: translate(100%, 0%);')
+        .attr('data-70', 'transform: translate(100%, 0%);')
+        .attr('data-170', 'transform: translate(0%, 0%;);');
+
       $('#main_navigation')
         .attr('data-0', 'opacity: 0;') 
         .attr('data-100', 'opacity: 0;')
-        .attr('data-250', 'opacity: 1;');
+        .attr('data-200', 'opacity: 1;');
     }
   }
 
