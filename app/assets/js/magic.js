@@ -3,6 +3,8 @@ var debug = true;
 var height, width, device;
 var scrollPosition;
 
+
+// Debugging Message Control
 var debug_stage_msg = function(message) {
   if(debug) {
     console.log(message);
@@ -11,17 +13,7 @@ var debug_stage_msg = function(message) {
 
 var dsm = debug_stage_msg; // Alias
 
-
-// TODO: Rewrite below to make data-attr-* work automatically.
-var dataStyle = function(source, attribute, target) {
-  var content = $(source).attr(attribute);
-  if(content !="" && content) {
-    $(source).attr(target, content);
-  } else {
-    $(source).attr(target, 'No content');
-  }
-}
-
+// CSS Methods
 var setCSS = function(target, property, value) {
   $(target).css(property, value);
 }
@@ -34,36 +26,39 @@ var setHeight = function(target, value) {
   setCSS(target, 'min-height', Math.round(value));
 }
 
-function getDeviceType(width, height) {
+// Get Device Type — Responsive Querries
+var getDeviceType = function(width, height) {
   if (width > 1600 && height > 1100) {
-    return 'desk-wide';
+    device = 'desk-wide';
   }
   else if (width > 1000) {
-    return 'desk';
+    device = 'desk';
   }
   else if (width < 1000 && width > 481) {
-    return 'portable';
+    device = 'portable';
   }
   else if (width < 481) {
-    return 'palm';
+    device = 'palm';
   }
   else {
-    return 'unknown';
+    device = 'unknown';
   }
+
+  return device;
 }
 
-
-var layout = function() {
-  
-  // Static Variables — I know the oxymoron
-
+var deviceDimensions = function() {
   // Get to know the viewport
   // https://stackoverflow.com/questions/1248081/get-the-browser-viewport-dimensions-with-javascript
+
   window.width = Math.max(window.innerWidth)
   window.height = Math.max(window.innerHeight)
-  device = getDeviceType(width, height);
 
-  //Intializing js classes
+  return width, height;
+}
+
+// Classes that need viewport data to Initialize
+var viewportDependentClasses = function(device) {
   if(device != 'desk-wide') {
     $('.full-height').css('min-height', height);
     $('.half-height').css('min-height', height / 2);
@@ -72,17 +67,26 @@ var layout = function() {
     setHeight('.half-height', 1500);
   }
 
-  return width, height;
+  return false;
 }
 
-skrollrData = function() {
+var layout = function() {
+  
+  deviceDimensions();
+  getDeviceType(width, height);
+  viewportDependentClasses(device);
+  
+}
+
+var skrollrData = function() {
   var stickyOffset = $('#header_area').height();
   var staticHeaderHeight = 46 + ( 37*2 ); 
 
-  $(document.body).css('padding-top', stickyOffset);
-
   if (device === 'desk-wide' || device === 'desk') { 
     dsm('Desktop detected, running skrollr...');
+
+    // Always pad body to adjust content for sticky #header_area
+    $(document.body).css('padding-top', stickyOffset);
 
     // HOME skrollr ELEMENTS
     if($(document.body).hasClass('home')) {
@@ -107,7 +111,7 @@ skrollrData = function() {
         .attr('data-100', 'opacity: 0;')
         .attr('data-200', 'opacity: 1;');
     }
-  }
+  } // endif device === 'desk' | 'desk-wide'
 
   dsm('skrollr data is in place...');
 }
@@ -117,7 +121,7 @@ var initScripts = function() {
   skrollrData();
 }
 
-var homeScripts = function()  {
+var commonScripts = function()  {
   // skrollr functions
   var s = skrollr.init({
     //forceHeight: false,
@@ -130,5 +134,5 @@ var homeScripts = function()  {
 
 $(document).ready(function() {
   initScripts();
-  homeScripts();
+  commonScripts();
 });
