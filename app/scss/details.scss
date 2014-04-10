@@ -43,18 +43,19 @@ a {
 
 .page {
   @extend .text--left;
-  padding-top: 2.2em;
-  padding-bottom: 2.2em;
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
   max-width: 650px;
   margin: 0 auto;
   &.page--double-padding {
-    padding-top: 4.5em;
-    padding-bottom: 4.5em;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
 
 %logo {
+  margin-bottom: 0px;
   font-weight: normal;
   text-transform: uppercase;
   line-height: 1em;
@@ -71,18 +72,21 @@ a {
 
 #logo {
   @extend %logo;
-  .home & {
-    transition: 0.3s;
-    padding: $half-spacing-unit;
-  }
-  .home .skrollable-after & {
+  transition: 0.3s;
+  padding-top: $half-spacing-unit;
+  padding-bottom: $half-spacing-unit;
+  .skrollable-after & {
     bottom-margin: none;
+  }
+  .home & {
+    font-size: 1em;
   }
 }
 
 .tagline {
-  @extend .delta;
   line-height: 2em;
+  padding-top: $base-spacing-unit*4;
+  padding-bottom: $base-spacing-unit*4;
 }
 
 .text--dark-shadow {
@@ -108,14 +112,16 @@ a {
       //text-transform: uppercase;
     }
     .nav--block li {
+      margin-left: $base-spacing-unit/8;
+      margin-right: $base-spacing-unit/8;
       @include media-query(palm) {
         display: block;
         width: 100%;
       }
       a {
         //letter-spacing: 1px;
-        border-top: 2px solid transparent;
-        border-bottom: 2px solid transparent;
+        //border-top: 2px solid transparent;
+        border-bottom: 2px solid $white;
         @include transition(border 0.3s);
         &:hover, &:active, &.active {
           border-color: $grey;
@@ -266,7 +272,7 @@ a {
     @extend .text--center;
     @extend .delta;
     font-weight: normal;
-    letter-spacing: 0.5px
+    letter-spacing: 0.5px;
   }
 
 .circle {
