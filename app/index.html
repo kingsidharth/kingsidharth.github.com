@@ -1,9 +1,12 @@
 ---
-layout: base 
+layout: base
 title: "King Sidharth"
 slug: "home"
 background: king-sidharth-meditation.jpg 
 ---
+
+{% include header.html %}
+{% comment %}
 <div id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});">
   <div class="page">
     <header id="header">
@@ -20,6 +23,7 @@ background: king-sidharth-meditation.jpg
   </header>
   </div>
 </div>
+{% endcomment %}
 
 <div id="intro_area" class="grid" >
   <div class="page page--double-padding">

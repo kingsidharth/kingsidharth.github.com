@@ -1,17 +1,25 @@
-<header id="header_area" class="grid">
-  <div class="page" style="background: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%}) center top fixed #333 repeat-x;">
+<header id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});">
+  <div class="page" >
     <div id="header">
-      {% if page.slug == 'home' %}
-      <h1 id='logo' class="grid__item one-whole">King <strong>Sidharth</strong></h1>
-      {% else %}
-      <div id='logo' class="grid__item one-whole"><a href="/">King <strong>Sidharth</strong></a></div>
-      {% endif %}
-
-      <nav id=main-navigation class="navbar grid__item one-whole">
-      <ul class="nav nav--block no-bottom-margin text--center">
+      <div id="banner" class="grid__item two-fifths palm-one-whole">
+        {% if page.slug == 'home' %}
+        <h1 id='logo'>King <strong>Sidharth</strong></h1>
+        {% else %}
+          <div id='logo'><a href="/">King <strong>Sidharth</strong></a></div>      
+        {% endif %}
+      </div><!-- #banner
+      --><nav id=main-navigation class="navbar grid__item three-fifths palm-one-whole desk-right">
+      <ul class="nav nav--block no-bottom-margin ">
         {% include nav_items.html %} 
       </ul>
       </nav>
+
+      {% if page.slug == 'home' %}
+      <p class="tagline text--center no-bottom-margin grid__item one-whole beta">22. Entrepreneur. Designer. Artist. Public Speaker.
+      <br><span class="zeta">from <strong>Mumbai, India</strong></span></p>
+      {% endif %}
+
+      
     </div>
   </div>
 </header>
