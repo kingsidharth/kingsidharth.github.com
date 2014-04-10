@@ -22,9 +22,16 @@ body {
   background: $black;
   color: $white;
 
-  h1, h2, h3, h4, h5, .serif {
+  .serif {
     font-family: $serif;
   }
+
+  h1:not(#logo), h2, h3, h4, h5, h6 {
+    @extend .serif;
+    margin-bottom: 0.7em;
+    margin-top: $base-spacing-unit;
+  }
+
 }
 
 ::selection {
