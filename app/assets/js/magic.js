@@ -60,8 +60,8 @@ var layout = function() {
 
   // Get to know the viewport
   // https://stackoverflow.com/questions/1248081/get-the-browser-viewport-dimensions-with-javascript
-  var width = Math.max(window.innerWidth)
-  var height = Math.max(window.innerHeight)
+  window.width = Math.max(window.innerWidth)
+  window.height = Math.max(window.innerHeight)
   device = getDeviceType(width, height);
   dsm('Static variables initialized: ' + 
       'height = ' + height +
@@ -78,27 +78,33 @@ var layout = function() {
     setHeight('.half-height', 1500);
   }
 
+  return width, height;
 }
 
 skrollrData = function() {
-  if($(document.body).hasClass('home')) {
-    dsm('Home Page Detected');
-    $('#header_area')
-      .attr('data-0', 'background-position: 0% 90%;')
-      .attr('data-end', 'background-position: 0% 90%;');
+  var stickyOffset = $('#header_area').height();
+  var staticHeaderHeight = 46 + ( 37*2 ); 
+  
+  $('#header_area')
+      .attr('data-0', 'background-position: 0% 90%; height:' + stickyOffset +'px;')
+      .attr('data-200', 'background-position: 0% 10%; height:' + stickyOffset +'px;')
+      .attr('data-300', 'background-position: 0% 0%; height: ' + staticHeaderHeight +'px;'); 
 
-    var stickyOffset = $('#header_area').height();
+  if($(document.body).hasClass('home')) {
+    dsm('Home Page signal');
+
     $('#intro_area')
       .attr('data-0', 'margin-top: ' + stickyOffset + 'px;')
-      .attr('data-400', 'margin-top: ' + 100 + 'px;');
+      .attr('data-500', 'margin-top: ' + (stickyOffset + 300) + 'px;');
     $('.tagline')
-      .attr('data-0', 'opacity: 1;')
-      .attr('data-100', 'opacity: 0.8;')
-      .attr('data-200', 'opacity: 0;');
+      .attr('data-0', 'opacity: 1; display:! block;')
+      .attr('data-100', 'opacity: 0.6; display:! block;')
+      .attr('data-200', 'opacity: 0; display:! block')
+      .attr('data-210', 'opacity: 0; display:! none;');
     $('#main_navigation')
-      .attr('data-0', 'opacity: 0; width: 0%;')
-      .attr('data-100', 'opacity: 0; width: 0%;')
-      .attr('data-250', 'opacity: 1; width: 75%;');
+      .attr('data-0', 'opacity: 0;') 
+      .attr('data-100', 'opacity: 0;')
+      .attr('data-250', 'opacity: 1;');
   }
   dsm('skrollr data is in place...');
 }
@@ -115,32 +121,9 @@ var homeScripts = function()  {
   var s = skrollr.init({
     forceHeight: false,
     easing: 'easeInOutCubic',
-      constants: {
-        //instamojo: Math.round($('#instamojo_area').offset().top),
-        instamojo: $('#instamojo_area').offset().top,
-      },
       render: function(data) {
         scrollPosition = data.curTop;
-        if (scrollPosition > 5 ) {
-          $('#logo').removeClass('one-whole').addClass('one-quarter delta text--left');
-        } else {
-          $('#logo').removeClass('one-quarter delta text--left').addClass('one-whole');
-        }
-        if (scrollPosition > 10) {
-          if($('.tagline').is(':visible')) {
-            $('.tagline').slideUp({
-              'duartion': 600, 
-              'specialEasing': 'easeInOutCubic'
-            });
-          }
-        } else {
-          if($('.tagline').is(':hidden')) {
-            $('.tagline').slideDown({
-              'duartion': 600, 
-              'specialEasing': 'easeInOutCubic'
-            });
-          }
-        }
+        console.log(scrollPosition);
       }
   });
 }
