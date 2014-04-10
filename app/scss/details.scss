@@ -21,6 +21,10 @@ body {
   @extend .text--center;
   background: $black;
   color: $white;
+
+  h1, h2, h3, h4, h5, .serif {
+    font-family: $serif;
+  }
 }
 
 ::selection {
@@ -60,6 +64,7 @@ a {
   text-transform: uppercase;
   line-height: 1em;
   letter-spacing: 0.1em;
+  font-family: $base-font-family;
 
   a {
     text-decoration: none;
@@ -84,9 +89,14 @@ a {
 }
 
 .tagline {
+  @extend .serif;
+  letter-spacing: 1px;
   line-height: 2em;
   padding-top: $base-spacing-unit*4;
   padding-bottom: $base-spacing-unit*4;
+  span {
+    letter-spacing: normal;
+  }
 }
 
 .text--dark-shadow {

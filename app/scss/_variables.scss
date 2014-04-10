@@ -32,7 +32,8 @@ $global-border-box: true!default;
 $base-font-size:    17px;
 $base-line-height:  $base-font-size*1.6;
 
-$base-font-family: 'Merriweather Sans', 'Open Sans', 'Lucida Grande', 'Lucida Sans', Tahoma, sans-serif; 
+$base-font-family: 'Merriweather Sans', 'Open Sans', 'Lucida Grande', 'Lucida Sans', Tahoma, sans-serif;
+$serif: 'Merriweather', 'Georgia', serif;
 
 $base-ui-color:     #ccc!default;
 
@@ -90,7 +91,7 @@ $micro-size:        10px!default;
  * Brand stuff
  */
 $brand-color:       #4a8ec2!default;
-$brand-face:        "Helvetica Neue", sans-serif!default;
+$brand-face:        "Merriweather Sans", "Open Sans", sans-serif;
 
 /**
  * How big would you like round corners to be by default?
