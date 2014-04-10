@@ -158,7 +158,7 @@ a {
         border-bottom: 2px solid $white;
         @include transition(border 0.3s);
         &:hover, &:active, &.active {
-          border-color: $grey;
+          border-color: $blue;
         }
         @include media-query(palm) {
           width: 100%;
@@ -307,4 +307,52 @@ a {
 .nav {
   letter-spacing: normal;
   word-spacing: normal;
+}
+
+/* --:[Buttons]:--- */
+
+@mixin button-base {
+  padding: $base-spacing-unit/2 $base-spacing-unit;
+  display: inline-block;
+  text-decoration: none!important;
+  line-height: 1em;
+}
+
+@mixin button($accent-color, $text-color) {
+  @include button-base;
+  background-color: $accent-color;
+  color: $text-color!important;
+  border-radius: 3em;
+  border: none;
+  position: relative;
+  @include transition(all 0.3s);
+  &:hover, &:focus, .active {
+    background-color: adjust-lightness($accent-color, -10%);
+    border: none;
+  }
+  &:active {
+    background-color: adjust-lightness($accent-color, -20%);
+    @include box-shadow($accent-color 0px 0px 0px 0.2em);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    @include transition( all 0.3s);
+  }
+  &:after {
+    width: 0%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $text-color;
+  }
+  &:hover:after {
+    width: 100%;
+  }
+}
+
+.button, .btn, button {
+  @include button($blue, $white);
 }
