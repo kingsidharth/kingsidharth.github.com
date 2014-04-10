@@ -45,6 +45,11 @@ a {
   }
 }
 
+ul {
+  list-style-type: square;
+  margin-left: 2rem;
+}
+
 .page {
   @extend .text--left;
   padding-top: $base-spacing-unit;
