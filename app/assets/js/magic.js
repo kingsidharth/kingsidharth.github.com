@@ -12,7 +12,6 @@ var debug_stage_msg = function(message) {
 var dsm = debug_stage_msg; // Alias
 
 
-
 // TODO: Rewrite below to make data-attr-* work automatically.
 var dataStyle = function(source, attribute, target) {
   var content = $(source).attr(attribute);
@@ -63,11 +62,6 @@ var layout = function() {
   window.width = Math.max(window.innerWidth)
   window.height = Math.max(window.innerHeight)
   device = getDeviceType(width, height);
-  dsm('Static variables initialized: ' + 
-      'height = ' + height +
-      'width  =' + width +
-      'device =' + device);
-
 
   //Intializing js classes
   if(device != 'desk-wide') {
@@ -84,28 +78,32 @@ var layout = function() {
 skrollrData = function() {
   var stickyOffset = $('#header_area').height();
   var staticHeaderHeight = 46 + ( 37*2 ); 
-  
-  $('#header_area')
-      .attr('data-0', 'background-position: 0% 90%; height:' + stickyOffset +'px;')
-      .attr('data-200', 'background-position: 0% 10%; height:' + stickyOffset +'px;')
-      .attr('data-300', 'background-position: 0% 0%; height: ' + staticHeaderHeight +'px;'); 
 
-  if($(document.body).hasClass('home')) {
-    dsm('Home Page signal');
+  $(document.body).css('padding-top', stickyOffset);
 
-    $('#intro_area')
-      .attr('data-0', 'margin-top: ' + stickyOffset + 'px;')
-      .attr('data-500', 'margin-top: ' + (stickyOffset + 300) + 'px;');
-    $('.tagline')
-      .attr('data-0', 'opacity: 1; display:! block;')
-      .attr('data-100', 'opacity: 0.6; display:! block;')
-      .attr('data-200', 'opacity: 0; display:! block')
-      .attr('data-210', 'opacity: 0; display:! none;');
-    $('#main_navigation')
-      .attr('data-0', 'opacity: 0;') 
-      .attr('data-100', 'opacity: 0;')
-      .attr('data-250', 'opacity: 1;');
+  if (device === 'desk-wide' || device === 'desk') { 
+    dsm('Desktop detected, running skrollr...');
+
+    // HOME skrollr ELEMENTS
+    if($(document.body).hasClass('home')) {
+      dsm('Home Page signal');
+
+      // Tagline
+      var taglinePaddingInit = $('.tagline').css('padding-top');
+      var taglineHeight = parseInt($('.tagline').css('height'), 10) + (parseInt(taglinePaddingInit, 10) * 2);
+
+      $('.tagline')
+        .attr('data-0', 'opacity: 1; height: ' + taglineHeight + 'px; padding: ' + taglinePaddingInit + ' 0px; display:! block;')
+        .attr('data-150', 'opacity: 0; height: ' + taglineHeight / 2 + 'px; padding: 0px 0px;')
+        .attr('data-200', 'opacity: 0; height: 0px; padding: 0px 0px; display:! none;');
+
+      $('#main_navigation')
+        .attr('data-0', 'opacity: 0;') 
+        .attr('data-100', 'opacity: 0;')
+        .attr('data-250', 'opacity: 1;');
+    }
   }
+
   dsm('skrollr data is in place...');
 }
 
@@ -114,17 +112,14 @@ var initScripts = function() {
   skrollrData();
 }
 
-
-
 var homeScripts = function()  {
   // skrollr functions
   var s = skrollr.init({
-    forceHeight: false,
+    //forceHeight: false,
     easing: 'easeInOutCubic',
-      render: function(data) {
-        scrollPosition = data.curTop;
-        console.log(scrollPosition);
-      }
+    render: function(data) {
+      scrollPosition = data.curTop;
+    }
   });
 }
 
