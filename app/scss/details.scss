@@ -325,20 +325,29 @@ ul {
 /* --:[Buttons]:--- */
 
 @mixin button-base {
-  padding: $base-spacing-unit/2 $base-spacing-unit;
   display: inline-block;
   text-decoration: none!important;
   line-height: 1em;
+  &:after, &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    @include transition(0.3s);
+  }
+  &:hover, &:focus {
+    outline: none;
+  }
 }
 
-@mixin button($accent-color, $text-color) {
+@mixin button-pill($accent-color, $text-color) {
   @include button-base;
+  padding: $base-spacing-unit/2 $base-spacing-unit;
   background-color: $accent-color;
   color: $text-color!important;
   border-radius: 3em;
   border: none;
   position: relative;
-  @include transition(all 0.3s);
+  @include transition(0.3s);
   &:hover, &:focus, .active {
     background-color: adjust-lightness($accent-color, -10%);
     border: none;
@@ -347,27 +356,53 @@ ul {
     background-color: adjust-lightness($accent-color, -20%);
     @include box-shadow($accent-color 0px 0px 0px 0.2em);
   }
+}
 
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    @include transition( all 0.3s);
+@mixin button($accent-color, $text-color) {
+  @include button-base;
+  padding: $base-spacing-unit/2 $base-spacing-unit;
+  background: transparent;
+  position: relative;
+  color: $text-color;
+  border: 2px solid $accent-color;
+  @include border-radius(0.2em);
+  @include transition(0.3s);
+
+  &:hover, &:focus {
+    color: $accent-color;
+    border-color: $text-color;
   }
+
+  &:active {
+    border-color: adjust-lightness($text-color, -10%);
+    color: adjust-lightness($accent-color, -10%);
+    top: 2px;
+  }
+
+  // Special FX
   &:after {
     width: 0%;
+    height: 100%;
     top: 0;
     left: 0;
-    height: 100%;
     background: $text-color;
   }
-  &:hover:after {
+
+  &:hover:after, &:focus:after {
     width: 100%;
+  }
+
+  &:active:after {
+    background: adjust-lightness($text-color, -10%);
   }
 }
 
 .button, .btn, button {
   @include button($blue, $white);
+}
+
+.button--center {
+  margin: 0 auto;
 }
 
 .ampersand, .amp {
