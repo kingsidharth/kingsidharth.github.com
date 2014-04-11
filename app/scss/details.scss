@@ -145,10 +145,6 @@ ul {
     text-shadow: rgba(0,0,0,0.65) 0 0px 7px;
     color: $white;
 
-    a {
-      color: $white;
-    }
-
     .nav {
       font-size: 0.9em;
     }
@@ -168,10 +164,12 @@ ul {
         width: 100%;
       }
       a {
-        border-bottom: 2px solid $white;
+        border-bottom: 2px solid $blue;
+        color: $white;
         @include transition(border 0.3s);
-        &:hover, &:active, &.active {
-          border-color: $blue;
+        &:hover, &:active, &:focus, &.active {
+          color: $white;
+          border-color: $white;
         }
         @include media-query(palm) {
           width: 100%;
