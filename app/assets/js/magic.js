@@ -87,6 +87,7 @@ var skrollrData = function() {
 
     // Always pad body to adjust content for sticky #header_area
     $(document.body).css('padding-top', stickyOffset);
+    $('#header_area').addClass('sticky');
 
     // HOME skrollr ELEMENTS
     if($(document.body).hasClass('home')) {
@@ -125,7 +126,7 @@ var initScripts = function() {
 var commonScripts = function()  {
   // skrollr functions
   var s = skrollr.init({
-    //forceHeight: false,
+    forceHeight: false,
     easing: 'easeInOutCubic',
     render: function(data) {
       scrollPosition = data.curTop;
