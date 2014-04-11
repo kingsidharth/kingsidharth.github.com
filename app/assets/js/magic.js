@@ -102,14 +102,15 @@ var skrollrData = function() {
         .attr('data-200', 'opacity: 0; height: 0px; padding: 0px 0px; display:! none;');
 
       $('#logo')
-        .attr('data-0',  'transform: translate(100%, 0%);')
-        .attr('data-70', 'transform: translate(100%, 0%);')
-        .attr('data-170', 'transform: translate(0%, 0%;);');
+        .attr('data-0',   'transform: translate(100%, 0%);')
+        .attr('data-100',  'transform: translate(100%, 0%);')
+        .attr('data-200', 'transform: translate(0%, 0%;);');
 
       $('#main_navigation')
-        .attr('data-0', 'opacity: 0;') 
-        .attr('data-100', 'opacity: 0;')
-        .attr('data-200', 'opacity: 1;');
+        .attr('data-0',   'transform: translate(-100%, 0%); opacity: 0;') 
+        .attr('data-100', 'transform: translate(-100%, 0%); opacity: 0;')
+        .attr('data-200', 'transform: translate(0%, 0%);    opacity: 1;');
+
     }
   } // endif device === 'desk' | 'desk-wide'
 

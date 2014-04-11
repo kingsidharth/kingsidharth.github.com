@@ -90,7 +90,6 @@ ul {
 
 #logo {
   @extend %logo;
-  transition: 0.3s;
   padding-top: $half-spacing-unit;
   padding-bottom: $half-spacing-unit;
   .skrollable-after & {
@@ -100,6 +99,10 @@ ul {
     font-size: 1em;
   }
 }
+
+  #logo, #main_navigation {
+    @include transition(0.3s);
+  }
 
 .tagline {
   @extend .serif;
