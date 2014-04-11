@@ -30,6 +30,7 @@ body {
     @extend .serif;
     margin-bottom: 0.7em;
     margin-top: $base-spacing-unit;
+    font-weight: normal;
   }
 
 }
@@ -367,4 +368,8 @@ ul {
 
 .button, .btn, button {
   @include button($blue, $white);
+}
+
+.ampersand, .amp {
+  font-family: $ampersand;
 }
