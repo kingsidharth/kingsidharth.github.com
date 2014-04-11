@@ -1,3 +1,8 @@
+
+{% if page.slug == 'home' %}
+  <div id="first_screen">
+{% endif %}
+
 <header id="header_area" class="grid" style="background-image: url({% if page.backgroundurl %}'{{page.backgroundurl}}'{% else %}'/images/backgrounds/{{page.background}}'{%endif%});">
   <div class="page" >
     <div id="header">

@@ -101,7 +101,7 @@ var skrollrData = function() {
 
     // Always pad body to adjust content for sticky #header_area
     $(document.body).css('padding-top', stickyOffset);
-    $('#header_area').addClass('sticky');
+    $('#header_area').addClass('stickys');
 
     // HOME skrollr ELEMENTS
     if($(document.body).hasClass('home')) {
@@ -110,6 +110,18 @@ var skrollrData = function() {
       // Tagline
       var taglinePaddingInit = $('.tagline').css('padding-top');
       var taglineHeight = parseInt($('.tagline').css('height'), 10) + (parseInt(taglinePaddingInit, 10) * 2);
+
+      $('#first_screen')
+        .attr('data-0', 'transform: translate(0%, 0%);')
+        .attr('data-_header-0', 'transform: translate(0%, 0%);')
+        .attr('data-_header-100', 'transform: translate(0%, 0%);')
+        .attr('data-_header-200', 'transform: translate(0%, -100%);');
+
+      $('#instamojo')
+        .attr('data-_instamojo-0', 'transform: translate(0%, 100%);')
+        .attr('data-_instamojo-100', 'transform: transfate(0%, 0%);')
+        .attr('data-_instamojo-300', 'transform: translate(0%, 0%);')
+        .attr('data-_instamojo-350', 'transform: translate(0%, -100%);');
 
       $('.tagline')
         .attr('data-0', 'opacity: 1; height: ' + taglineHeight + 'px; padding: ' + taglinePaddingInit + ' 0px; display:! block;')
@@ -142,6 +154,10 @@ var commonScripts = function()  {
   var s = skrollr.init({
     forceHeight: false,
     easing: 'easeInOutCubic',
+    constants: {
+      header: 0,
+      instamojo: '100p',
+    },
     render: function(data) {
       scrollPosition = data.curTop;
     }
