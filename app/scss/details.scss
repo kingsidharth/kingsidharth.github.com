@@ -306,6 +306,25 @@ ul {
     padding-top: 1em;
     .main-body {
       padding: 0 1em;
+#instamojo {
+  h2 {
+    position: relative;
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      border-top-width: 2px;
+      border-top-style: solid;
+      top: 100%;
+      width: 15%;
+      z-index: -1;
+    }
+    &:before{
+      border-top-color: $im_blue;
+      left: 0%;
+    }
+    &:after {
+      border-top-color: $im_green;
+      left: 15%;
     }
   }
 }
