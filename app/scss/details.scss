@@ -252,7 +252,7 @@ ul {
   quotes: "“" "”";
   &:before, &:after {
     font-size: 1.3em;
-    font-family: 'Noto Serif', Georgia, sans-serif;
+    font-family: $ampersand;
     color: $grey;
   }
   &:before {
@@ -264,14 +264,6 @@ ul {
 }
 
 #intro_area {
-  @include media-query(lap-and-up) {
-    //margin-top: 260px;
-  }
-  > .page {
-    > div {
-      @extend .palm-center;
-    }
-  }
   blockquote {
     @extend .delta;
     @extend .no-bottom-margin;
@@ -285,27 +277,13 @@ ul {
   }
 }
 
-  #tagline {
-    @extend .text--center;
-    @extend .delta;
-    font-weight: normal;
-    letter-spacing: 0.5px;
+.home #content_area {
+  section {
+    margin-top: $base-spacing-unit;
+    margin-bottom: $base-spacing-unit;
   }
-
-.circle {
-  border-radius: 50%;
 }
 
-
-/* ----:[Responsive]:---- */
-@include media-query(palm) {
-  #social-media-follow {
-    display: none;
-  }
-  #content {
-    padding-top: 1em;
-    .main-body {
-      padding: 0 1em;
 #instamojo {
   h2 {
     position: relative;
