@@ -282,8 +282,9 @@ ul {
 
 .home #content_area {
   section {
-    margin-top: $base-spacing-unit;
-    margin-bottom: $base-spacing-unit;
+    margin-top: $base-spacing-unit*2;
+    margin-bottom: $base-spacing-unit*2;
+  }
 
   #contact {
     .sc__tw {
