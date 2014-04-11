@@ -127,11 +127,10 @@ ul {
 /* __________ AREAS __________ */
 
 #header_area {
-  @extend %sticky;
   background-repeat: no-repeat;
   background-color: #5e5958;
   z-index: 10000;
-  @include transition(1s);
+  @include transition(height 1s);
   @include media-query(lap-and-up) {
     @include translate( 0%, 0%);
     background-size: 110%;
@@ -182,7 +181,7 @@ ul {
       }
     } /* .nav--block li */
   }
-    #banner {
+    .sticky #banner {
       padding-left: $base-spacing-unit/2;
     }
 
