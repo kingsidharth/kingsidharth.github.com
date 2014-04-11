@@ -13,6 +13,20 @@ var debug_stage_msg = function(message) {
 
 var dsm = debug_stage_msg; // Alias
 
+
+// Event Tracking Wrapper
+var shoutOut = function(category, action, opt_label, opt_value) {
+
+  opt_label = opt_label || false;
+  opt_value = opt_value || false;
+
+  // Google Analytics Shit
+  _gaq.push(['_trackEvent', category, action, opt_label, opt_value]);
+
+  dsm("An event was logged");
+
+}
+
 // CSS Methods
 var setCSS = function(target, property, value) {
   $(target).css(property, value);
