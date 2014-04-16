@@ -231,6 +231,7 @@ $floats: left right none;
     margin-left: 0;
     top: 0px;
     left: 0px;
-    // Override.
+    // Prevent repaint
+    @include transform(translateZ(0));
   }
 }

@@ -100,8 +100,8 @@ var skrollrData = function() {
     dsm('Desktop detected, running skrollr...');
 
     // Always pad body to adjust content for sticky #header_area
-    $(document.body).css('padding-top', stickyOffset);
-    $('#header_area').addClass('stickys');
+    //$(document.body).css('padding-top', stickyOffset);
+    $('#header_area').addClass('sticky');
 
     // HOME skrollr ELEMENTS
     if($(document.body).hasClass('home')) {
@@ -111,17 +111,56 @@ var skrollrData = function() {
       var taglinePaddingInit = $('.tagline').css('padding-top');
       var taglineHeight = parseInt($('.tagline').css('height'), 10) + (parseInt(taglinePaddingInit, 10) * 2);
 
-      $('#first_screen')
+      /*$('#first_scrseen')
+        .attr('style', 'height: 100%;')
         .attr('data-0', 'transform: translate(0%, 0%);')
-        .attr('data-_header-0', 'transform: translate(0%, 0%);')
-        .attr('data-_header-100', 'transform: translate(0%, 0%);')
-        .attr('data-_header-200', 'transform: translate(0%, -100%);');
+        .attr('data-100', 'transform: translate(0%, 0%);')
+        .attr('data-200', 'transform: translate(0%, 100%);');*/
+    
+      $('#intro_area')
+        .attr('data-0', 'transform: translate(0%, 100%);')
+        .attr('data-100', 'transform: translate(0%, 50%);')
+        .attr('data-300', 'transform: translate(0%, -100%);');
 
       $('#instamojo')
-        .attr('data-_instamojo-0', 'transform: translate(0%, 100%);')
-        .attr('data-_instamojo-100', 'transform: transfate(0%, 0%);')
-        .attr('data-_instamojo-300', 'transform: translate(0%, 0%);')
-        .attr('data-_instamojo-350', 'transform: translate(0%, -100%);');
+        .attr('data-0', 'transform: translate(0%, 250%);')
+        .attr('data-100', 'transform: translate(0%, 250%);')
+        .attr('data-150', 'transform: translate(0%, 60%);')
+        .attr('data-450', 'transform: translate(0%, 60%);')
+        .attr('data-500', 'transform: translate(0%, -150%);');
+
+      $('#writing')
+        .attr('data-0', 'transform: translate(0%, 250%);')
+        .attr('data-500', 'transform: translate(0%, 250%);')
+        .attr('data-550', 'transform: translate(0%, 60%);')
+        .attr('data-850', 'transform: translate(0%, 60%);')
+        .attr('data-900', 'transform: translate(0%, -150%);');
+
+      $('#talks')
+        .attr('data-900', 'transform: translate(0%, 250%);')
+        .attr('data-950', 'transform: translate(0%, 60%);')
+        .attr('data-1250', 'transform: translate(0%, 60%);')
+        .attr('data-1300', 'transform: translate(0%, -150%);');
+
+      $('#epilogue')
+        .attr('data-1300', 'transform: translate(0%, 250%);')
+        .attr('data-1350', 'transform: translate(0%, 60%);')
+        .attr('data-1650', 'transform: translate(0%, 60%);')
+        .attr('data-1700', 'transform: translate(0%, -150%);');
+
+      $('#contact')
+        .attr('data-1700', 'transform: translate(0%, 250%);')
+        .attr('data-1750', 'transform: translate(0%, 60%);')
+        .attr('data-2050', 'transform: translate(0%, 60%);')
+        .attr('data-2100', 'transform: translate(0%, -150%);');
+
+      $('#footer_area')
+        .attr('data-1700', 'transform: translate(0%, 350%);')
+        .attr('data-1750', 'transform: translate(0%, 150%);')
+        .attr('data-2450', 'transform: translate(0%, 150%);')
+        .attr('data-2500', 'transform: translate(0%, -150%);');
+
+      $(document.body).attr( 'style', 'min-height: 2800px;');
 
       $('.tagline')
         .attr('data-0', 'opacity: 1; height: ' + taglineHeight + 'px; padding: ' + taglinePaddingInit + ' 0px; display:! block;')
@@ -156,10 +195,13 @@ var commonScripts = function()  {
     easing: 'easeInOutCubic',
     constants: {
       header: 0,
-      instamojo: '100p',
+      instamojo: '500',
+      epilogue: '1300'
     },
     render: function(data) {
       scrollPosition = data.curTop;
+      if(scrollPosition > 10) {
+      }
     }
   });
 }
