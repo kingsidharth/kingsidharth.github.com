@@ -93,15 +93,16 @@ var layout = function() {
 }
 
 var skrollrData = function() {
-  var stickyOffset = $('#header_area').height();
-  var staticHeaderHeight = 46 + ( 37*2 ); 
-
   if (device === 'desk-wide' || device === 'desk') { 
     dsm('Desktop detected, running skrollr...');
 
-    // Always pad body to adjust content for sticky #header_area
-    //$(document.body).css('padding-top', stickyOffset);
     $('#header_area').addClass('sticky');
+    
+    var stickyOffset = $('#header_area').height()+'px';
+    var staticHeaderHeight = 46 + ( 37*2 ); 
+      
+    // Always pad body to adjust content for sticky #header_area
+    $(document.body).css('margin-top', stickyOffset);
 
     // HOME skrollr ELEMENTS
     if($(document.body).hasClass('home')) {
@@ -111,34 +112,54 @@ var skrollrData = function() {
       var taglinePaddingInit = $('.tagline').css('padding-top');
       var taglineHeight = parseInt($('.tagline').css('height'), 10) + (parseInt(taglinePaddingInit, 10) * 2);
 
-      /*$('#first_scrseen')
-        .attr('style', 'height: 100%;')
-        .attr('data-0', 'transform: translate(0%, 0%);')
-        .attr('data-100', 'transform: translate(0%, 0%);')
-        .attr('data-200', 'transform: translate(0%, 100%);');*/
-    
+      var arr = [ 'this: that;', 'that', 'then', 'last' ]
+
+      var getScrollInterval = function(seed, length) {
+        if(length === 0 || length === 1) {
+          return seed + 50*length;
+        }
+        else if (length === 2) {
+          return seed + 50*(length*2);
+        }
+        else if (length === 3) {
+          return seed + 50*(length*2) + 50;
+        }
+      }
+
+      var applyDataToAttributes = function(element, values, seed) {
+        values.forEach(function(entry, length) {
+          
+          var interval = getScrollInterval(seed, length);
+          $(element)
+            .attr('data-' + interval , entry);
+        });
+      }
+
+      applyDataToAttributes('#header_area', arr, 50);
+
       $('#intro_area')
-        .attr('data-0', 'transform: translate(0%, 100%);')
-        .attr('data-100', 'transform: translate(0%, 50%);')
-        .attr('data-300', 'transform: translate(0%, -100%);');
+        .attr('data-50',   'transform: translate(0%, 100%);')
+        .attr('data-100',  'transform: translate(0%, 50%);')
+        .attr('data-350',  'transform: translate(0%, 50%);')
+        .attr('data-400',  'transform: translate(0%, -100%);'); 
 
       $('#instamojo')
-        .attr('data-0', 'transform: translate(0%, 250%);')
-        .attr('data-100', 'transform: translate(0%, 250%);')
-        .attr('data-150', 'transform: translate(0%, 60%);')
-        .attr('data-450', 'transform: translate(0%, 60%);')
-        .attr('data-500', 'transform: translate(0%, -150%);');
+        .attr('data-0',    'transform: translate(0%, 250%);')
+        .attr('data-100',  'transform: translate(0%, 250%);')
+        .attr('data-150',  'transform: translate(0%, 60%);')
+        .attr('data-450',  'transform: translate(0%, 60%);')
+        .attr('data-500',  'transform: translate(0%, -150%);');
 
       $('#writing')
-        .attr('data-0', 'transform: translate(0%, 250%);')
-        .attr('data-500', 'transform: translate(0%, 250%);')
-        .attr('data-550', 'transform: translate(0%, 60%);')
-        .attr('data-850', 'transform: translate(0%, 60%);')
-        .attr('data-900', 'transform: translate(0%, -150%);');
+        .attr('data-0',    'transform: translate(0%, 250%);')
+        .attr('data-500',  'transform: translate(0%, 250%);')
+        .attr('data-550',  'transform: translate(0%, 60%);')
+        .attr('data-850',  'transform: translate(0%, 60%);')
+        .attr('data-900',  'transform: translate(0%, -150%);');
 
       $('#talks')
-        .attr('data-900', 'transform: translate(0%, 250%);')
-        .attr('data-950', 'transform: translate(0%, 60%);')
+        .attr('data-900',  'transform: translate(0%, 250%);')
+        .attr('data-950',  'transform: translate(0%, 60%);')
         .attr('data-1250', 'transform: translate(0%, 60%);')
         .attr('data-1300', 'transform: translate(0%, -150%);');
 
@@ -160,7 +181,8 @@ var skrollrData = function() {
         .attr('data-2450', 'transform: translate(0%, 150%);')
         .attr('data-2500', 'transform: translate(0%, -150%);');
 
-      $(document.body).attr( 'style', 'min-height: 2800px;');
+      // Enough Length to Scroll
+      $(document.body).css( 'min-height', '2800px');
 
       $('.tagline')
         .attr('data-0', 'opacity: 1; height: ' + taglineHeight + 'px; padding: ' + taglinePaddingInit + ' 0px; display:! block;')

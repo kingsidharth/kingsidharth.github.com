@@ -107,12 +107,20 @@ ul {
 
 .tagline {
   @extend .serif;
-  letter-spacing: 1px;
   line-height: 2em;
   padding-top: $base-spacing-unit*4;
   padding-bottom: $base-spacing-unit*4;
-  span {
-    letter-spacing: normal;
+  .highlight {
+    position: relative;
+  }
+  .highlight:after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 0px;
+    width: 100%;
+    letter-spacing: 1px;
+    border-bottom: 2px solid $grey;
   }
 }
 
@@ -136,7 +144,8 @@ ul {
     background-size: 110%;
   }
   @include media-query(portable) {
-    background-size: cover;
+    background-size: 90%;
+    background-position: right 0px;
   }
 
   .page {
@@ -145,7 +154,7 @@ ul {
 }
 
   #header {
-    text-shadow: rgba(0,0,0,0.65) 0 0px 7px;
+    //text-shadow: rgba(0,0,0,0.65) 0 0px 7px;
     color: $white;
 
     a {
