@@ -14,50 +14,12 @@
 
 @import "helper";
 @import "buttons";
+@import "override";
 
 /* The Rules */
 
 /* __________ GENERAL RULES __________ */
-body {
-  @extend .text--center;
-  background: $black;
-  color: $white;
 
-  .serif {
-    font-family: $serif;
-  }
-
-  h1:not(#logo), h2, h3, h4, h5, h6 {
-    @extend .serif;
-    margin-bottom: 0.7em;
-    margin-top: $base-spacing-unit;
-    font-weight: normal;
-  }
-
-}
-
-::selection {
-  background: $blue;
-  color: $white;
-}
-
-a {
-  color: $blue;
-  text-decoration: none;
-  border-bottom: 1px dotted $blue;
-  &:hover, &:active {
-    border-bottom-style: solid;
-  }
-  &:active {
-    border-bottom-color: adjust-lightness($blue, -10%);
-    color: adjust-lightness($blue, -10%);
-  }
-}
-
-ul {
-  list-style-type: square;
-  margin-left: 2rem;
-}
 
 .page {
   @extend .text--left;
