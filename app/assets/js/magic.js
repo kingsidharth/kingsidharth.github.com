@@ -26,6 +26,13 @@ var layout = function() {
   }
 }
 
+var initScripts = function() {
+  // Getter Scripts
+  layout();
+
+  // Setter Scripts
+}
+
 var skrollrData = function() {
   var taglinePaddingInit = height/6;
   taglinePaddingInit = [ taglinePaddingInit, percentage(taglinePaddingInit, 75), percentage(taglinePaddingInit, 50), percentage(taglinePaddingInit, 25) ];
@@ -42,23 +49,7 @@ var skrollrData = function() {
     .attr('data-200', 'opacity: 0;  height: 0px; padding: 0px 0px; display:! none;');
 }
 
-var postSkrollr = function() {
-  $('body').css('margin-top', $('#header_area').css('height'));
-  return document.body;
-}
-
-var initScripts = function() {
-  // Getter Scripts
-  layout();
-
-  // Setter Scripts
-}
-
-var commonScripts = function()  {
-
-  skrollrData();
-
-  // skrollr functions
+var skrollrInit = function() {
   var s = skrollr.init({
     forceHeight: false,
     easing: 'easeInOutCubic',
@@ -70,8 +61,21 @@ var commonScripts = function()  {
     }
     
   });
+}
 
-  postSkrollr();
+var postSkrollr = function() {
+  $('body').css('margin-top', $('#header_area').css('height'));
+  return document.body;
+}
+
+var commonScripts = function()  {
+
+  // skrollrInit
+  if(device === 'desk-wide' || device === 'desk') { 
+    skrollrData();
+    skrollrInit();
+    postSkrollr();
+  }
   
 }
 
