@@ -73,7 +73,7 @@
   .highlight {
     @include after-element;
     &:after {
-      bottom: 3px;
+      bottom: 0.4em;
       left: 0px;
       width: 100%;
       letter-spacing: 1px;
@@ -100,7 +100,7 @@
   @include media-query(lap-and-up) {
     @include translate( 0%, 0%);
     background-size: cover;
-    background-position: right center;
+    background-position: right top;
   }
   @include media-query(portable) {
     background-size: cover;
@@ -219,7 +219,6 @@
 %blockquote {
   quotes: "“" "”";
   &:before, &:after {
-    font-size: 1.3em;
     font-family: $ampersand;
     color: $grey;
   }
@@ -233,10 +232,12 @@
 
 #intro_area {
   blockquote {
-    @extend .delta;
+    @include font-size($h2-size);
     @extend .no-bottom-margin;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1em;
     // Dirty, dirty hacks
-    font-weight: bold;
     margin-left: 8px;
     margin-right: -6px;
   }
@@ -253,13 +254,13 @@
 
   #contact {
     .sc__tw {
-      @include button($accent_twitter, $white, $white, $accent_twitter );
+      @include button($accent_twitter, $white, $white, adjust-lightness($accent_twitter, -10%) );
     }
     .sc__fb {
-      @include button($accent_fb, $white, $white, $accent_fb);
+      @include button($accent_fb, $white, $white, adjust-lightness($accent_fb, -10%));
     }
     .sc__gh {
-      @include button(#CCC, $white, $black , #CCC);
+      @include button(#CCC, $white, $black , #EEE);
     }
   }
 }

@@ -36,10 +36,10 @@
 
 @mixin button($accent-color, $text-color, $hover-text-color, $hover-background-color) {
   @include button-base;
-  @include border-radius(0.2em);
+  @include border-radius(0.35em);
   @include transition(0.3s);
   padding: $base-spacing-unit/2 $base-spacing-unit;
-  background: transparent;
+  background: $accent-color;
   position: relative;
 
   color: $text-color;
@@ -48,6 +48,7 @@
   &:hover, &:focus {
     color: $hover-text-color;
     border-color: $hover-background-color;
+    background: $hover-background-color;
   }
 
   &:active {
@@ -66,7 +67,7 @@
   }
 
   &:hover:after, &:focus:after {
-    width: 100%;
+    //width: 100%;
   }
 
   &:active:after {
@@ -75,7 +76,7 @@
 }
 
 .button, .btn, button {
-  @include button($blue, $white, $blue, $white);
+  @include button($white, $blue, $white, $blue);
 }
 
 .button--center {
