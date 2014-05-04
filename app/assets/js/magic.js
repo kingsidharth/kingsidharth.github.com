@@ -105,116 +105,21 @@ var layout = function() {
 }
 
 var skrollrData = function() {
-  if (device === 'desk-wide' || device === 'desk') { 
-    dsm('Desktop detected, running skrollr...');
+  var taglinePaddingInit = height/6;
+  taglinePaddingInit = [ taglinePaddingInit, percentage(taglinePaddingInit, 75), percentage(taglinePaddingInit, 50), percentage(taglinePaddingInit, 25) ];
 
-    $('#header_area').addClass('sticky');
-    
-    var stickyOffset = $('#header_area').height()+'px';
-    var staticHeaderHeight = 46 + ( 37*2 ); 
-      
-    // Always pad body to adjust content for sticky #header_area
-    $(document.body).css('margin-top', stickyOffset);
+  var taglineHeight = parseInt($('.tagline').height(), 10) * 2;
+  taglineHeight = [ taglineHeight, percentage(taglineHeight, 75), percentage(taglineHeight, 50), percentage(taglineHeight, 25) ];
+  dsm(taglineHeight);
+  
+  $('.tagline')
+    .attr('data-0', 'opacity: 1;    height: '+ taglineHeight[0] + 'px; padding: ' + taglinePaddingInit[0] +'px 0px; display:! block;')
+    .attr('data-50', 'opacity: 0.5; height: '+ taglineHeight[1] + 'px; padding: ' + taglinePaddingInit[1] +'px 0px; display:! block;')
+    .attr('data-100', 'opacity: 0;  height: '+ taglineHeight[2] + 'px; padding: ' + taglinePaddingInit[2] +'px 0px; display:! block;')
+    .attr('data-150', 'opacity: 0;  height: '+ taglineHeight[3] + 'px; padding: ' + taglinePaddingInit[3] +'px 0px; display:! block;')
+    .attr('data-200', 'opacity: 0;  height: 0px; padding: 0px 0px; display:! none;');
+}
 
-    // HOME skrollr ELEMENTS
-    if($(document.body).hasClass('home')) {
-      dsm('Home Page signal');
-
-      // Tagline
-      var taglinePaddingInit = $('.tagline').css('padding-top');
-      var taglineHeight = parseInt($('.tagline').css('height'), 10) + (parseInt(taglinePaddingInit, 10) * 2);
-
-      var arr = [ 'this: that;', 'that', 'then', 'last' ]
-
-      var getScrollInterval = function(seed, length) {
-        if(length === 0 || length === 1) {
-          return seed + 50*length;
-        }
-        else if (length === 2) {
-          return seed + 50*(length*2);
-        }
-        else if (length === 3) {
-          return seed + 50*(length*2) + 50;
-        }
-      }
-
-      var applyDataToAttributes = function(element, values, seed) {
-        values.forEach(function(entry, length) {
-          
-          var interval = getScrollInterval(seed, length);
-          $(element)
-            .attr('data-' + interval , entry);
-        });
-      }
-
-      applyDataToAttributes('#header_area', arr, 50);
-
-      $('#intro_area')
-        .attr('data-50',   'transform: translate(0%, 100%);')
-        .attr('data-100',  'transform: translate(0%, 50%);')
-        .attr('data-350',  'transform: translate(0%, 50%);')
-        .attr('data-400',  'transform: translate(0%, -100%);'); 
-
-      $('#instamojo')
-        .attr('data-0',    'transform: translate(0%, 250%);')
-        .attr('data-100',  'transform: translate(0%, 250%);')
-        .attr('data-150',  'transform: translate(0%, 60%);')
-        .attr('data-450',  'transform: translate(0%, 60%);')
-        .attr('data-500',  'transform: translate(0%, -150%);');
-
-      $('#writing')
-        .attr('data-0',    'transform: translate(0%, 250%);')
-        .attr('data-500',  'transform: translate(0%, 250%);')
-        .attr('data-550',  'transform: translate(0%, 60%);')
-        .attr('data-850',  'transform: translate(0%, 60%);')
-        .attr('data-900',  'transform: translate(0%, -150%);');
-
-      $('#talks')
-        .attr('data-900',  'transform: translate(0%, 250%);')
-        .attr('data-950',  'transform: translate(0%, 60%);')
-        .attr('data-1250', 'transform: translate(0%, 60%);')
-        .attr('data-1300', 'transform: translate(0%, -150%);');
-
-      $('#epilogue')
-        .attr('data-1300', 'transform: translate(0%, 250%);')
-        .attr('data-1350', 'transform: translate(0%, 60%);')
-        .attr('data-1650', 'transform: translate(0%, 60%);')
-        .attr('data-1700', 'transform: translate(0%, -150%);');
-
-      $('#contact')
-        .attr('data-1700', 'transform: translate(0%, 250%);')
-        .attr('data-1750', 'transform: translate(0%, 60%);')
-        .attr('data-2050', 'transform: translate(0%, 60%);')
-        .attr('data-2100', 'transform: translate(0%, -150%);');
-
-      $('#footer_area')
-        .attr('data-1700', 'transform: translate(0%, 350%);')
-        .attr('data-1750', 'transform: translate(0%, 150%);')
-        .attr('data-2450', 'transform: translate(0%, 150%);')
-        .attr('data-2500', 'transform: translate(0%, -150%);');
-
-      // Enough Length to Scroll
-      $(document.body).css( 'min-height', '2800px');
-
-      $('.tagline')
-        .attr('data-0', 'opacity: 1; height: ' + taglineHeight + 'px; padding: ' + taglinePaddingInit + ' 0px; display:! block;')
-        .attr('data-150', 'opacity: 0; height: ' + taglineHeight / 2 + 'px; padding: 0px 0px;')
-        .attr('data-200', 'opacity: 0; height: 0px; padding: 0px 0px; display:! none;');
-
-      $('#logo')
-        .attr('data-0',   'transform: translate(100%, 0%);')
-        .attr('data-100',  'transform: translate(100%, 0%);')
-        .attr('data-200', 'transform: translate(0%, 0%;);');
-
-      $('#main_navigation')
-        .attr('data-0',   'transform: translate(-100%, 0%); opacity: 0;') 
-        .attr('data-100', 'transform: translate(-100%, 0%); opacity: 0;')
-        .attr('data-200', 'transform: translate(0%, 0%);    opacity: 1;');
-
-    }
-  } // endif device === 'desk' | 'desk-wide'
-
-  dsm('skrollr data is in place...');
 }
 
 var initScripts = function() {
