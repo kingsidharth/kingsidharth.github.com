@@ -136,7 +136,7 @@ module.exports = function (grunt) {
         options: {
           debugInfo: true,
           generatedImagesDir: '.tmp/images/generated',
-          cssDir: '.tmp/assets/css'          
+          cssDir: '.tmp/assets/css'
         }
       }
     },
