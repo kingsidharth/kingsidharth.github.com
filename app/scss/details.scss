@@ -43,13 +43,13 @@
   font-family: $base-font-family;
 
   a {
+    color: $white;
     text-decoration: none;
     &:hover {
       text-decoration: none;
     }
   }
 }
-
 
 #logo {
   @extend %logo;
@@ -58,9 +58,7 @@
   .skrollable-after & {
     bottom-margin: none;
   }
-  .home & {
-    font-size: 1em;
-  }
+  @include font-size($h6-size);
 }
 
   #logo, #main_navigation {
@@ -70,19 +68,17 @@
 .tagline {
   @extend .serif;
   line-height: 2em;
-  padding-top: $base-spacing-unit*4;
-  padding-bottom: $base-spacing-unit*4;
+  padding-top: $base-spacing-unit*2;
+  padding-bottom: $base-spacing-unit*2;
   .highlight {
-    position: relative;
-  }
-  .highlight:after {
-    content: '';
-    position: absolute;
-    bottom: 3px;
-    left: 0px;
-    width: 100%;
-    letter-spacing: 1px;
-    border-bottom: 2px solid $grey;
+    @include after-element;
+    &:after {
+      bottom: 3px;
+      left: 0px;
+      width: 100%;
+      letter-spacing: 1px;
+      border-bottom: 2px solid $grey;
+    }
   }
 }
 
@@ -103,20 +99,20 @@
   @include transition(height 1s);
   @include media-query(lap-and-up) {
     @include translate( 0%, 0%);
-    background-size: 110%;
+    background-size: cover;
+    background-position: right center;
   }
   @include media-query(portable) {
-    background-size: 90%;
-    background-position: right 0px;
+    background-size: cover;
+    background-position: right center;
   }
 
   .page {
-    max-width: 800px;
+    //max-width: 800px;
   }
 }
 
   #header {
-    //text-shadow: rgba(0,0,0,0.65) 0 0px 7px;
     color: $white;
 
     a {
@@ -125,37 +121,30 @@
       border: none;
     }
 
-    .nav {
-      font-size: 0.9em;
-    }
-
-    .nav--block li {
-      margin-left: $base-spacing-unit/8;
-      margin-right: $base-spacing-unit/8;
-      &:first-child, &.first {
-        margin-left: 0px;
-      }
-      &:last-child, &.last {
-        margin-right: 0px;
-      }
-
-      @include media-query(palm) {
-        display: block;
-        width: 100%;
-      }
+    .nav li {
       a {
-        border-bottom: 2px solid $blue;
-        @include transition(border 0.3s);
+        @include after-element;
+        padding: $base-spacing-unit/2 0px;
+        @include font-size($h6-size);
+        @include transition(0.3s);
+        &:after {
+          @include transition(0.3s);
+          border-bottom: 2px solid $blue;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+        }
         &:hover, &:active, &:focus, &.active {
-          color: $white;
-          border-color: $white;
+          &:after {
+            border-color: $white;
+          }
         }
         @include media-query(palm) {
           width: 100%;
           display: block;
         }
       }
-    } /* .nav--block li */
+    } /* .nav li */
   }
     .sticky #banner {
       padding-left: $base-spacing-unit/2;

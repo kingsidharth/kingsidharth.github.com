@@ -21,6 +21,15 @@
 }
 
 
+/* PSEUDO ELEMENTS */
+@mixin after-element {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+  }
+}
+
 /* _____ ALIGNMENTS _____ */
 
 // Normal
