@@ -71,9 +71,10 @@
   padding-top: $base-spacing-unit*2;
   padding-bottom: $base-spacing-unit*2;
   .highlight {
+    display: block;
     @include after-element;
     &:after {
-      bottom: 3px;
+      bottom: 0.4em;
       left: 0px;
       width: 100%;
       letter-spacing: 1px;
@@ -219,7 +220,6 @@
 %blockquote {
   quotes: "“" "”";
   &:before, &:after {
-    font-size: 1.3em;
     font-family: $ampersand;
     color: $grey;
   }
@@ -233,10 +233,12 @@
 
 #intro_area {
   blockquote {
-    @extend .delta;
+    @include font-size($h2-size);
     @extend .no-bottom-margin;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1em;
     // Dirty, dirty hacks
-    font-weight: bold;
     margin-left: 8px;
     margin-right: -6px;
   }
