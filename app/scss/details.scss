@@ -100,7 +100,7 @@
   @include media-query(lap-and-up) {
     @include translate( 0%, 0%);
     background-size: cover;
-    background-position: right center;
+    background-position: right top;
   }
   @include media-query(portable) {
     background-size: cover;
