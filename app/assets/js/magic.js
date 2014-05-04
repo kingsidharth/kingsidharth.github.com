@@ -40,6 +40,18 @@ var setHeight = function(target, value) {
   setCSS(target, 'min-height', Math.round(value));
 }
 
+var percentage = function(number, percentage, decimalPlaces) {
+  decimalPlaces = decimalPlaces || false; 
+
+  var result = (percentage/100) * number; 
+
+  if (decimalPlaces) {
+    return Math.floor(result * (10 * decimalPlaces)) / (10 * decimalPlaces);
+  } else {
+    return result;
+  }
+}
+
 // Get Device Type — Responsive Querries
 var getDeviceType = function(width, height) {
   if (width > 1600 && height > 1100) {
