@@ -91,7 +91,7 @@ var deviceDimensions = function() {
 
 // Classes that need viewport data to Initialize
 var viewportDependentClasses = function(device) {
-  if(device != 'desk-wide') {
+  if(!device === 'desk-wide') {
     $('.full-height').css('min-height', height);
     $('.half-height').css('min-height', height / 2);
   } else {
