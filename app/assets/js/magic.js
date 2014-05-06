@@ -29,7 +29,7 @@ var layout = function() {
 var initScripts = function() {
   // Getter Scripts
   layout();
-  addResNavElements('#main_navigation .nav');
+  responsiveNavigation('#main_navigation .nav');
 
   // Setter Scripts
 }
