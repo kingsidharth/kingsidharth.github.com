@@ -104,19 +104,42 @@ var viewportDependentClasses = function(device) {
 
 
 // Responsive Navigation
-var responsiveNavigationInit = function(element) {
-  var clickTargetText = '<span>' + $(element).data('nav-title') + '</span>';
-  var clickActiveText = '<span style="display: none;">&times; Close</span>';
-  var text = clickTargetText + clickActiveText;
-  var clickTarget = '<li class="palm-show"><a class="nav_state_toggle switch_span" href="#">' + text + '</a></li>';
+var _getNavTitle = function(element) {
+  if($(element).data('nav-title')) {
+    return $(element).data('nav-title');
+  } else {
+    return 'Navigation';
+  }
+}
 
-  $(element).children().hide();
+var _responsiveNavigationInit = function(element, navTitle, closeText, liClass, aClass ) {
+
+  // Initialize Data
+  var navTitle = navTitle || _getNavTitle(element);
+  var closeText = closeText || '&times; Close';
+  var liClass = liClass || '';
+  var aClass = aClass || '';
+
+  // Build Nav Item to Append
+  var clickTarget = 
+    '<li class="palm-show ' + liClass + '">' +
+      '<a href="#" class="nav_state_toggle switch_span ' + aClass + '">' +
+        '<span>' + navTitle + '</span>' +
+        '<span style="display: none;">' + closeText + '</span>' +
+      '</a>' +
+    '</li>';
+
+  // Hide children if mobile
+  if(device === 'palm') {
+    $(element).children().hide();
+  }
+
   $(element).prepend(clickTarget);
 
   return element;
 }
 
-var responsiveNavigationListeners = function() {
+var _responsiveNavigationListeners = function() {
   $('body').on('click', '.nav_state_toggle', function(e) {
     e.preventDefault();
     $(this).toggleClass('active');
@@ -126,6 +149,6 @@ var responsiveNavigationListeners = function() {
 }
 
 var responsiveNavigation = function(element) {
-  responsiveNavigationInit(element);
-  responsiveNavigationListeners();
+  _responsiveNavigationInit(element);
+  _responsiveNavigationListeners();
 }
