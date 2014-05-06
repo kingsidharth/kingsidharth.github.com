@@ -1,5 +1,11 @@
 // Overriding Defaults of inuit.css
 
+html {
+  @include media-query(palm) {
+    font-size: 15px;
+  }
+}
+
 body {
   @extend .text--center;
   background: $black;
@@ -26,6 +32,16 @@ body {
 }
 
 
+// Navigation
+.nav {
+  letter-spacing: normal;
+  word-spacing: normal;
+  li {
+    margin-bottom: 0px;
+  }
+}
+
+
 // Links
 a {
   color: $blue;
@@ -44,6 +60,12 @@ a {
 ul {
   list-style-type: square;
   margin-left: 2rem;
+  @include media-query(palm) {
+    margin-left: 1rem;
+    li {
+      margin-bottom: $base-spacing-unit/2;
+    }
+  }
 }
 
 

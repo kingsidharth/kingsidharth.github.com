@@ -91,7 +91,7 @@ var deviceDimensions = function() {
 
 // Classes that need viewport data to Initialize
 var viewportDependentClasses = function(device) {
-  if(device != 'desk-wide') {
+  if(!device === 'desk-wide') {
     $('.full-height').css('min-height', height);
     $('.half-height').css('min-height', height / 2);
   } else {
@@ -100,4 +100,55 @@ var viewportDependentClasses = function(device) {
   }
 
   return false; 
+}
+
+
+// Responsive Navigation
+var _getNavTitle = function(element) {
+  if($(element).data('nav-title')) {
+    return $(element).data('nav-title');
+  } else {
+    return 'Navigation';
+  }
+}
+
+var _responsiveNavigationInit = function(element, navTitle, closeText, liClass, aClass ) {
+
+  // Initialize Data
+  var navTitle = navTitle || _getNavTitle(element);
+  var closeText = closeText || '&times; Close';
+  var liClass = liClass || '';
+  var aClass = aClass || '';
+
+  // Build Nav Item to Append
+  var clickTarget = 
+    '<li class="palm-show ' + liClass + '">' +
+      '<a href="#" class="nav_state_toggle switch_span ' + aClass + '">' +
+        '<span>' + navTitle + '</span>' +
+        '<span style="display: none;">' + closeText + '</span>' +
+      '</a>' +
+    '</li>';
+
+  // Hide children if mobile
+  if(device === 'palm') {
+    $(element).children().hide();
+  }
+
+  $(element).prepend(clickTarget);
+
+  return element;
+}
+
+var _responsiveNavigationListeners = function() {
+  $('body').on('click', '.nav_state_toggle', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('active');
+    var nav = $(this).parent().parent();
+    nav.children().not('.palm-show').slideToggle();
+  });
+}
+
+var responsiveNavigation = function(element) {
+  _responsiveNavigationInit(element);
+  _responsiveNavigationListeners();
 }

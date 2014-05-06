@@ -31,6 +31,11 @@
     padding-top: $base-spacing-unit*2;
     padding-bottom: $base-spacing-unit*2;
   }
+
+  @include media-query(palm) {
+    padding-left: $base-spacing-unit/2;
+    padding-right: $base-spacing-unit/2;
+  }
 }
 
 
@@ -63,21 +68,32 @@
 
   #logo, #main_navigation {
     @include transition(0.3s);
+    @include media-query(palm) {
+      text-align: center;
+    }
   }
 
 .tagline {
   @extend .serif;
   line-height: 2em;
-  padding-top: $base-spacing-unit*2;
-  padding-bottom: $base-spacing-unit*2;
-  .highlight {
-    @include after-element;
-    &:after {
-      bottom: 0.4em;
-      left: 0px;
-      width: 100%;
-      letter-spacing: 1px;
-      border-bottom: 2px solid $grey;
+  @include media-query(lap-and-up) {
+       padding-top: $base-spacing-unit*2;
+    padding-bottom: $base-spacing-unit*2;
+  }
+  @include media-query(palm) {
+       padding-top: $base-spacing-unit;
+    padding-bottom: $base-spacing-unit;
+  }
+  @include media-query(lap-and-up) {
+    .highlight {
+      @include after-element;
+      &:after {
+        bottom: 0.4em;
+        left: 0px;
+        width: 100%;
+        letter-spacing: 1px;
+        border-bottom: 2px solid $grey;
+      }
     }
   }
 }
@@ -86,29 +102,33 @@
   text-shadow: rgba(0, 0, 0, 0.8) 0 1px 10px;
 }
 
-.grid__item--rev-padding {
-  padding-left: 0px;
-  padding-right: $base-spacing-unit;
+.desk-grid__item--rev-padding {
+  @include media-query(lap-and-up) {
+    padding-left: 0px;
+    padding-right: $base-spacing-unit;
+  }
 }
 /* __________ AREAS __________ */
 
 #header_area {
+  @include transition(height 1s);
   background-repeat: no-repeat;
   background-color: #5e5958;
+  background-size: cover;
   z-index: 10000;
-  @include transition(height 1s);
+
   @include media-query(lap-and-up) {
     @include translate( 0%, 0%);
-    background-size: cover;
     background-position: right top;
   }
   @include media-query(portable) {
-    background-size: cover;
     background-position: right center;
   }
 
   .page {
-    //max-width: 800px;
+    @include media-query(palm) {
+      background: rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
@@ -231,6 +251,11 @@
 }
 
 #intro_area {
+  .page > div {
+    @include media-query(palm) {
+      text-align: center;
+    }
+  }
   blockquote {
     @include font-size($h2-size);
     @extend .no-bottom-margin;
@@ -238,8 +263,10 @@
     font-style: italic;
     line-height: 1em;
     // Dirty, dirty hacks
-    margin-left: 8px;
-    margin-right: -6px;
+    @include media-query(lap-and-up) {
+      margin-left: 8px;
+      margin-right: -6px;
+    }
   }
   p {
     color: $white;
@@ -266,6 +293,7 @@
 }
 
 #instamojo {
+  margin-top: 0px;
   @include transition(0.5s);
   h2 {
     position: relative;
@@ -290,15 +318,24 @@
 }
 
 /* ---:[Helper Classes]:--- */
+
 .no-bottom-margin {
   margin-bottom: 0px!important;
 }
 
-.nav {
-  letter-spacing: normal;
-  word-spacing: normal;
-}
-
 .ampersand, .amp {
   font-family: $ampersand;
+}
+
+.palm-nav--stacked {
+  @include media-query(palm) {
+    li {
+      display: block;
+      width: 100%;
+      a {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
 }
