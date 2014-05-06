@@ -1,5 +1,11 @@
 // Overriding Defaults of inuit.css
 
+html {
+  @include media-query(palm) {
+    font-size: 15px;
+  }
+}
+
 body {
   @extend .text--center;
   background: $black;
