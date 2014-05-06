@@ -111,22 +111,24 @@
 /* __________ AREAS __________ */
 
 #header_area {
+  @include transition(height 1s);
   background-repeat: no-repeat;
   background-color: #5e5958;
+  background-size: cover;
   z-index: 10000;
-  @include transition(height 1s);
+
   @include media-query(lap-and-up) {
     @include translate( 0%, 0%);
-    background-size: cover;
     background-position: right top;
   }
   @include media-query(portable) {
-    background-size: cover;
     background-position: right center;
   }
 
   .page {
-    //max-width: 800px;
+    @include media-query(palm) {
+      background: rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
