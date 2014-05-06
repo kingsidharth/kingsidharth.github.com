@@ -29,6 +29,7 @@ var layout = function() {
 var initScripts = function() {
   // Getter Scripts
   layout();
+  addResNavElements('#main_navigation .nav');
 
   // Setter Scripts
 }
@@ -76,7 +77,15 @@ var commonScripts = function()  {
     skrollrInit();
     postSkrollr();
   }
-  
+
+  $('.switch_span').click(function() {
+    $(this).children().toggle();
+  });
+
+  $('palm-nav--toggle').click(function(e) {
+    e.preventDefault();
+    console.log(this);
+  });
 }
 
 $(document).ready(function() {

@@ -203,7 +203,8 @@ module.exports = function (grunt) {
         dirs: ['<%= yeoman.dist %>/**/*']
       },
       html: ['<%= yeoman.dist %>/**/*.html'],
-      css: ['<%= yeoman.dist %>/assets/css/**/*.css']
+      css: ['<%= yeoman.dist %>/assets/css/**/*.css'],
+      js: ['<%= yeoman.dist %>/assets/js/**/*.js']
     },
     htmlmin: {
       dist: {
@@ -222,11 +223,9 @@ module.exports = function (grunt) {
       }
     },
     // Usemin adds files to concat
-    /* concat: {
-     
-    },*/
+    // concat: {},
     // Usemin adds files to uglify
-    //uglify: {},
+    // uglify: {},
     // Usemin adds files to cssmin
     cssmin: {
       minify: {
@@ -276,11 +275,13 @@ module.exports = function (grunt) {
             // Usemin moves CSS and javascript inside of Usemin blocks.
             // Copy moves asset files and directories.
             'images/**/*',
-            //'assets/fonts/**/*',
-            // Like Jekyll, exclude files & folders prefixed with an underscore.
-            '!**/_*{,/**}'
-            // Explicitly add any files your site needs for distribution here.
-            //'_bower_components/jquery/jquery.js',
+            '!**/_*{,/**}',
+
+            'assets/js/lib.js',
+            'assets/js/magic.js',
+
+            '_bower_components/jquery/jquery.min.js',
+            '_bower_components/skrollr/dist/skrollr.min.js'
             //'favicon.ico',
             //'apple-touch*.png'
           ],
@@ -406,16 +407,15 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'compass:dist',
     'concurrent:dist',
     'useminPrepare',
-    //'compass:server',
-    //'concat',
+    'compass:server',
+    'concat',
     'autoprefixer:dist',
     'cssmin',
-    //'uglify',
+    'uglify',
     'imagemin',
     'svgmin',
     'rev',

@@ -26,6 +26,13 @@ body {
 }
 
 
+// Navigation
+.nav {
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+
 // Links
 a {
   color: $blue;
@@ -44,6 +51,12 @@ a {
 ul {
   list-style-type: square;
   margin-left: 2rem;
+  @include media-query(palm) {
+    margin-left: 1rem;
+    li {
+      margin-bottom: $base-spacing-unit/2;
+    }
+  }
 }
 
 

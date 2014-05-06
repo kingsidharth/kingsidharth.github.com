@@ -101,3 +101,18 @@ var viewportDependentClasses = function(device) {
 
   return false; 
 }
+
+
+// Responsive Navigation
+var addResNavElements = function(element) {
+  var clickTargetText = '<span>' + $(element).data('nav-title') + '</span>';
+  var clickActiveText = '<span style="display: none;">&multi; Close</span>';
+  var text = clickTargetText + clickActiveText;
+
+  var clickTarget = 
+    '<li class="palm-show"><a class="palm-nav--toggle switch_span" href="#">' +
+    text +
+    '</a></li>';
+  $(element).children().addClass('desk-show');
+  $(element).prepend(clickTarget);
+}
