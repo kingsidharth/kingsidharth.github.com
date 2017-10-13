@@ -4,11 +4,11 @@
 # 3. config.yml
 
 name: King Sidharth
-permalink: /:categories/:title
+permalink: /:title/
 url: http://www.kingsidharth.com
 author:
   name: King Sidharth
-  email: king.sidharth@yahoo.com
+  email: king@kingsidharth.com
 
 # Grunt handles images and assets.
 exclude: ['images', 'css', 'js', 'fonts',
