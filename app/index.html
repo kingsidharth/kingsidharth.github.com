@@ -2,36 +2,65 @@
 layout: base
 title: "King Sidharth"
 slug: "home"
-background: king-sidharth-meditation.jpg 
 ---
 
 {% include header.html %}
 
-<div id="intro_area" class="grid" >
-  <div class="page page--double-padding">
-    <div class="grid__item one-half palm-one-whole">
-      <blockquote class="serif">That you are</blockquote>
-      <p class="milli">Tat-tvam-asi &bull; तत् त्वम् असि</p>
-    </div><!--
-    --><div class="grid__item  one-half palm-one-whole desk-right desk-grid__item--rev-padding">
-      <blockquote class="serif">That I am</blockquote>
-      <p class="milli">So-aham &bull; सो ऽहम्</p>
-    </div>
+
+<div id="intro_area" class="background--black" >
+  <div class="grid-container">
+    <div id="intro" class="grid-x grid-margin-x">
+
+      <div class="cell small-12 medium-3 text-right">
+        <img src="/assets/images/king-sidharth.jpg"
+          width="140px"
+          alt="King Sidharth"
+          class="img--circle photo"
+        >
+      </div>
+
+      <div class="cell small-12 medium-9">
+        <h1 class="headline">
+          <div class="logo">@king<strong>sidharth</strong></div>
+          Entrepreneur, Design & Product, Artist, and Public Speaker
+        </h1>
+
+        <p class="small-12 medium-8">
+          I head Product & UX at <a href="https://www.instamojo.com">Instamojo</a>.
+        </p>
+
+        <p class="text--teal small-12 medium-8">
+          Also, I speak at college events about entrepreneurship & career-life choices. And about design at startup & design event.
+    Sometimes I play rāgas on the guitar.
+        </p>
+      </div>
+
+        <!--
+        <div class="cell small-6">
+          <blockquote class="serif">That you are</blockquote>
+          <p class="milli">Tat-tvam-asi &bull; तत् त्वम् असि</p>
+        </div>
+        <div class="cell small-6">
+          <blockquote class="serif">That I am</blockquote>
+          <p class="milli">So-aham &bull; सो ऽहम्</p>
+        </div>-->
+
+    </div><!-- #intro -->
   </div>
 </div><!-- #intro_area -->
 
 </div><!-- #first_screen -->
 
-<div id="content_area" class="grid has_multi_page">
-  <div class="page">
+<div id="content_area" class="grid-container">
+  <div class="grid-x grid-margin-x">
 
-    <section id="instamojo" class="grid__item one-whole">
+    <section id="instamojo" class="cell one-whole">
       <h2>I build <em>Instamojo</em> with crazy people</h2>
       <p>Online payments were a luxury that only big companies or developers could afford. Instamojo is bringing online payments to the masses. The life changing possibilities are exciting.</p>
       <p><a href="https://www.instamojo.com?partner=team" target="_blank" class="btn">Check out <strong>Instamojo</strong></a></p>
     </section><!-- #instamojo -->
 
-    <section id="writing" class="grid__item one-whole">
+    <section id="writing" class="cell one-whole">
       <h2>Writings</h2>
       <p>Writing is good; editing is profound. I use the writing-editing process to sort, express &amp; play-around with thoughts. I write at:</p>
       <ul class="block-list">
@@ -42,20 +71,20 @@ background: king-sidharth-meditation.jpg
       <p><a href="/writings" class="btn">See more of these <strong>writings</strong></a></p>
     </section><!-- #writing -->
 
-    <section id="talks" class="grid__item one-whole">
+    <section id="talks" class="cell one-whole">
       <h2>I talk a lot</h2>
       <p>A little too much. Often they invite me to talk about <strong>Entrepreneurship, Design</strong> &amp; other stuff. I've given talks at <strong>TEDx, WordCamps,</strong> Startup Saturday, Engineering Colleges, Schools, etc.</p>
       <p><a class="btn" href="http://www.64notes.com/speaking">See all my <strong>talks</strong></a></p>
     </section><!-- #talks -->
 
-    <section id="epilogue" class="grid__item one-whole">
+    <section id="epilogue" class="cell one-whole">
       <h3>... and stuff</h3>
-      <p>It's also been noted that I'm obsessed with The Teachings of Abraham, Pink Floyd, Lucy in the Sky with Diamonds, shoes, <span class="amp">&amp;</span> ampersand.</p> 
+      <p>It's also been noted that I'm obsessed with The Teachings of Abraham, Pink Floyd, Lucy in the Sky with Diamonds, shoes, <span class="amp">&amp;</span> ampersand.</p>
       <p>People find it interesting that I dropped-out of college.</p>
       <p>I'm often called weirdo, madly optimistic retard, that cute kid, etc. But online, I am the King.</p>
     </section><!-- #epilogue -->
 
-    <section id="contact" class="grid__item one-whole">
+    <section id="contact" class="cell one-whole">
       <h2>Find me here:</h2>
       <ul class="nav nav--block palm-nav--stacked nav--social-connect half-bottom-margin">
         <li><a class="sc__tw" href="https://twitter.com/kingsidharth" onclick="shoutOut('Home Page', 'Twitter Link Clicked');">@kingsidharth</a></li>

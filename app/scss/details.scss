@@ -5,8 +5,12 @@
 @import "settings";
 @import "../../node_modules/foundation-sites/scss/foundation";
 
-
+@import "objects/objects";
+@import "components/components";
+@import "pages/pages";
 
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
 @include foundation-typography;
+
+@include foundation-menu;
