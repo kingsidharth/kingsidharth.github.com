@@ -8,21 +8,24 @@
   <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#263541" />
+    <meta charset="utf-8">
 
     <title>{{ page.title }}</title>
     <link rel="icon" href="/images/favicons/favicon_32.png" type="image/x-icon">
 
     <!-- CSS -->
     <link href="/assets/css/details.css" media="all" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,400italic,700,300|Sorts+Mill+Goudy:400,400italic|Goudy+Bookletter+1911&text=&' rel='stylesheet' type='text/css'>
 
     {% if page.slug == 'home' %}
     {% include _home_meta.html %}
     {% endif %}
   </head>
+
   <body class="{{ page.slug }}">
-  {{ content }}
+    {{ content }}
   </body>
+
   {% include trackers.ext %}
 </html>
 <!-- Looking for soruce code? Check this https://github.com/kingsidharth/kingsidharth.github.com -->
