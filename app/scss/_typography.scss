@@ -4,6 +4,17 @@ $primary-font: 'Titillium Web', 'Roboto', 'Lucida Grande', sans-serif;
 $headline-font: 'Montserrat', Impact, sans-serf;
 
 
+// SELECTION
+
+::selection {
+  background: $black;
+  color: $white;
+}
+
+::-moz-selection {
+  background: $pink;
+  color: $white;
+}
 
 // HEADLINES
 
