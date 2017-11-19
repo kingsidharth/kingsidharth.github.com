@@ -1,11 +1,29 @@
 ---
-layout: default
+layout: base
 ---
-<div class="pages {{page.slug}} main-body grid__item one-whole">
-  <div class="headline_area">
-    <h1 class="entry-title">{{ page.title }}</h1>
-    <h2 class="sub-title">{{ page.subtitle }}</h2>
+
+<div id="headline_area" class="area--padded background--black">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+
+      <h1 class="cell small-12 medium-6">
+        {{ page.title }}
+      </h1>
+
+      <p class="cell small-12 medium-6 text-right text--teal">
+        {{ page.subtitle }}
+      </p>
+
+    </div>
   </div>
-  {{ content }}
-</div><!-- page -->
-  
+</div><!-- #headline_area -->
+
+<div id="content_area" class="area--padded">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="cell small-12 medium-8">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div><!-- #content_area -->

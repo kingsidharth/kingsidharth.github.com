@@ -23,7 +23,11 @@
   </head>
 
   <body class="{{ page.slug }}">
+    {% include header.html %}
+
     {{ content }}
+
+    {% include footer.html %}
   </body>
 
   {% include trackers.ext %}
