@@ -1,0 +1,17 @@
+/*
+
+  LINES::OBJECTS
+
+*/
+
+$sizes: 1, 2, 4, 8;
+
+@each $size in $sizes {
+  @each $colour, $value in $colour-map {
+    .line--#{$colour}-#{$size} {
+      border-bottom-width: ($size + px);
+      border-bottom-style: solid;
+      border-bottom-color: $value;
+    }
+  }
+}
