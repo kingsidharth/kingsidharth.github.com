@@ -13,7 +13,7 @@ Icon?
 Thumbs.db
 src/assets/bundle.js
 public
-
+app/.jekyll-metadata
 
 # Always-ignore files and folders #
 *.diff

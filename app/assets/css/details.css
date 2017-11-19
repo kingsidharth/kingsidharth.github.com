@@ -68,6 +68,9 @@ h1 {
   font-weight: normal;
   letter-spacing: 0px; }
 
+.logo--white {
+  color: #FFFFFF !important; }
+
 .box--padded {
   padding: 1rem; }
 
@@ -232,6 +235,9 @@ h1 {
   box-shadow: 0 4px 24px rgba(4, 21, 35, 0.5); }
 #intro .headline {
   text-shadow: 0 4px 12px rgba(4, 21, 35, 0.5); }
+
+#partition section {
+  padding: 2.5rem 2rem 1.5rem 2rem; }
 
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
@@ -2353,11 +2359,11 @@ h6, .h6 {
     font-size: 0.75rem; } }
 a {
   line-height: inherit;
-  color: #2EC2C4;
+  color: #F16B8F;
   text-decoration: none;
   cursor: pointer; }
   a:hover, a:focus {
-    color: #28a7a9; }
+    color: #ed3e6d; }
   a img {
     border: 0; }
 
@@ -2365,7 +2371,7 @@ hr {
   clear: both;
   max-width: 60rem;
   height: 0;
-  margin: 1.25rem auto;
+  margin: 1rem auto;
   border-top: 0;
   border-right: 0;
   border-bottom: 1px solid #A5ACB4;
