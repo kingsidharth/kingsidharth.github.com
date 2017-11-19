@@ -6,14 +6,28 @@
 
 #intro {
 
+  @include breakpoint(small only) {
+    text-align: center;
+  }
+
   .photo {
     box-shadow: 0 4px 24px rgba($black-absolute, 0.50);
   }
 
   .headline {
+    width: 100%;
     text-shadow: 0 4px 12px rgba($black-absolute, 0.50);
   }
 }
+
+#circle {
+  text-align: right;
+  @include breakpoint(small only) {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
 
 #partition {
   section {
