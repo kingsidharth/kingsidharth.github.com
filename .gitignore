@@ -11,7 +11,8 @@ node_modules/
 ehthumbs.db
 Icon?
 Thumbs.db
-src/assets/bundle.js
+app/assets/js/bundle.js
+app/assets/css/
 public
 app/.jekyll-metadata
 
