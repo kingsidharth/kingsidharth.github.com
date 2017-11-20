@@ -4,11 +4,17 @@
 # This takes care of .tmp, .sass-cache, and many others #
 .*/
 
+node_modules/
+
 # Ignore OS generated files #
 .DS_Store*
 ehthumbs.db
 Icon?
 Thumbs.db
+app/assets/js/bundle.js
+app/assets/css/*
+public
+.jekyll-metadata
 
 # Always-ignore files and folders #
 *.diff
@@ -38,3 +44,4 @@ app/_bower_components
 dist
 node_modules
 .tmp
+Gemfile.lock

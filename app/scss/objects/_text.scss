@@ -1,0 +1,19 @@
+/*
+
+  TEXT:OBJECTS
+
+*/
+
+
+
+
+.text--teal {
+  color: $teal;
+}
+
+
+@each $colour, $value in $colour-map {
+  .text--#{$colour} {
+    color: $value;
+  }
+}

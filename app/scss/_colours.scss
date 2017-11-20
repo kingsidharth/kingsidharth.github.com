@@ -1,0 +1,37 @@
+/*
+
+  COLOURS
+
+*/
+
+
+
+// Teal
+$teal-light:  #CAF0EC;
+$teal:        #2EC2C4;
+$teal-dark:   #2498A0;
+
+
+// Pink
+$pink-light:  #FCD6E0;
+$pink:        #F16B8F;
+$pink-dark:   #C34E73;
+
+
+// False Black
+$black-absolute:  #041523;
+$black:       #263541;
+$white:       #FFFFFF;
+
+$grey:        #A5ACB4;
+$grey-light:  #E7EAED;
+
+
+$colour-map: (
+  teal:     $teal,
+  pink:     $pink,
+  black:    $black,
+  white:    $white,
+  grey:     $grey,
+  grey-light:   $grey-light
+)

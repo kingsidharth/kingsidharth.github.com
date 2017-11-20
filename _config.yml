@@ -4,28 +4,33 @@
 # 3. config.yml
 
 name: King Sidharth
-permalink: /:categories/:title
-url: http://www.kingsidharth.com
+permalink: /:title/
+url: https://www.kingsidharth.com
 author:
   name: King Sidharth
-  email: king.sidharth@yahoo.com
+  email: king@kingsidharth.com
 
-# Grunt handles images and assets.
-exclude: ['images', 'css', 'js', 'fonts',
-          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico', 'Readme.md', ]
+source: app
+destination: public
+
+# # # Grunt handles images and assets.
+# exclude: ['images', 'css', 'js', 'fonts',
+#           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico', 'Readme.md', ]
 
 include: ['.htaccess']
+exclude: ['Gemfile', 'Gemfile.lock', 'node_modules', '.git', 'Readme.md', '.sass-cache', 'webpack']
+
+encoding:             "utf-8"
 
 # _config.build.yml sets future and show_drafts to false on `grunt build`
-future: true
-show_drafts: true
+future: false
+show_drafts: false
+
 
 # Markdown library
-markdown: maruku
+# markdown: maruku
 #   use_tex:    false
 #   use_divs:   false
 #   png_engine: blahtex
 #   png_dir:    images/latex
 #   png_url:    /images/latex
-
-pygments: false

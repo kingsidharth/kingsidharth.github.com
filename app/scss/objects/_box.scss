@@ -1,0 +1,20 @@
+.box--padded {
+  padding: 1rem;
+}
+
+.area--padded {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.padding {
+  padding: 1rem;
+}
+
+$directions: top, left, bottom, right;
+
+@each $direction in $directions {
+  .padding--#{$direction} {
+    padding-#{$direction}: 1rem;
+  }
+}

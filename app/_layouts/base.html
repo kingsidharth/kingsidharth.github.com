@@ -5,32 +5,33 @@
 <!--[if gt IE 8]><!-->
 <html class='no-js'>
   <!--<![endif]-->
-  <head
-    {% if page.slug == 'home' %}
-    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#"
-    {% endif %}
-  >
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#263541" />
+    <meta charset="utf-8">
+
     <title>{{ page.title }}</title>
-    <link rel="icon" href="/images/favicons/favicon_32.png" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
 
     <!-- CSS -->
-    <!-- build:css /assets/css/details.min.css -->
-    <link href="/assets/css/details.css" media="all" rel="stylesheet" type="text/css">
-    <!-- endbuild -->
+    <link href="/assets/css/details.css?stamp=140205333" media="all" rel="stylesheet" type="text/css">
 
-
-    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,400italic,700,300|Sorts+Mill+Goudy:400,400italic|Goudy+Bookletter+1911&text=&' rel='stylesheet' type='text/css'>
-    
     {% if page.slug == 'home' %}
     {% include _home_meta.html %}
     {% endif %}
   </head>
+
   <body class="{{ page.slug }}">
-  {{ content }}
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
   </body>
-  {% include trackers.ext %}
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Titillium+Web:400,400i,700,700i" rel="stylesheet">
+
+  {% include trackers.html %}
 </html>
 <!-- Looking for soruce code? Check this https://github.com/kingsidharth/kingsidharth.github.com -->

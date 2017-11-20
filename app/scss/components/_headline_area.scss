@@ -1,0 +1,22 @@
+/*
+
+  HEADLINE AREA::COMPONENTS
+
+*/
+
+#headline_area {
+  .headline {
+    @include breakpoint(small only) {
+      text-align: center;
+    }
+  }
+
+  .subheader {
+    color: $teal;
+    text-align: right;
+    
+    @include breakpoint(small only) {
+      text-align: center;
+    }
+  }
+}
