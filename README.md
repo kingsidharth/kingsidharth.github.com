@@ -16,3 +16,12 @@ But **NOT** giving it an open source license because - hey my photos and many ot
 * [Jekyll](http://jekyllrb.com)
 * [inuit.css](http://inuitcss.com)
 * [GitHub](http://github.com)
+
+## Installation
+
+1. Install rbenv, Ruby
+2. Set global version of with rbenv, if not already set
+3. Install Jekyll and Bundler `gem install bundler jekyll`
+4. Run `bundle install`
+5. Run `bundle exec jekyll serve`
+
