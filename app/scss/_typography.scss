@@ -1,13 +1,13 @@
 
 
 $primary-font: 'Titillium Web', 'Roboto', 'Lucida Grande', sans-serif;
-$headline-font: 'Montserrat', Impact, sans-serf;
+$headline-font: 'Lora', 'Garamond', 'Georgia', sans-serif;
 
 
 // SELECTION
 
 ::selection {
-  background: $black;
+  background: $pink;
   color: $white;
 }
 
@@ -18,10 +18,71 @@ $headline-font: 'Montserrat', Impact, sans-serf;
 
 // HEADLINES
 
-h1, h2, h4, h4, h5, h6 {
-  text-transform: uppercase;
+body {
+
+  @include breakpoint(medium up) {
+    font-size: 140%;
+  }
+
+  h1, h2, h4, h4, h5, h6 {
+
+  }
+
+  h1 {
+    letter-spacing: -1px;
+  }
+
+  h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: $black;
+  }
+
+  a {
+    border-bottom: 1px dashed $pink;
+    &:hover {
+      border-bottom: 1px solid scale-color($pink, $lightness: -14%);
+    }
+  }
+
+  ul, ol {}
+
+  li {
+    margin-bottom: 1em;
+  }
+
 }
 
-h1 {
-  letter-spacing: -1px;
+
+.title {
+  font-style: italic;
+  @include breakpoint(medium up) {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+  }
+}
+
+.title--tilt-90 {
+  @include breakpoint(medium up) {
+    transform: rotate(90deg);
+  }
+}
+
+.title--tilt-180 {
+  @include breakpoint(medium up) {
+    transform: rotate(180deg);
+  }
+}
+
+.title--tilt-270 {
+  @include breakpoint(medium up) {
+    transform: rotate(270deg);
+  }
+}
+
+.title--tilt-360 {
+  @include breakpoint(medium up) {
+    transform: rotate(360deg);
+  }
 }

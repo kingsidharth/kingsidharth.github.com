@@ -13,6 +13,13 @@ author:
 source: app
 destination: public
 
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+
 # # # Grunt handles images and assets.
 # exclude: ['images', 'css', 'js', 'fonts',
 #           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico', 'Readme.md', ]
@@ -20,7 +27,7 @@ destination: public
 include: ['.htaccess']
 exclude: ['Gemfile', 'Gemfile.lock', 'node_modules', '.git', 'Readme.md', '.sass-cache', 'webpack']
 
-encoding:             "utf-8"
+encoding: "utf-8"
 
 # _config.build.yml sets future and show_drafts to false on `grunt build`
 future: false

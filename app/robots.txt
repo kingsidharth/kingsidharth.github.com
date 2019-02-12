@@ -1,2 +1,8 @@
 User-agent: *
+Disallow: /scss/
 Disallow: /design/
+Disallow: /colophon/
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /contact/
+Disallow: /writing/

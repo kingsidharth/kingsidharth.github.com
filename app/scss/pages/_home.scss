@@ -12,30 +12,65 @@
 
   .photo {
     box-shadow: 0 4px 24px rgba($black-absolute, 0.50);
+    @include breakpoint(medium up) {
+      margin-top: 1.4em;
+    }
+  }
+
+  .logo {
+    margin-bottom: 1em;
   }
 
   .headline {
     width: 100%;
-    text-shadow: 0 4px 12px rgba($black-absolute, 0.50);
   }
 }
 
 #circle {
   text-align: right;
+
   @include breakpoint(small only) {
     text-align: center;
     margin-bottom: 1rem;
   }
 }
 
-
-#partition {
-  section {
-    padding: 2.5rem 2rem 1.5rem 2rem;
-  }
+#speaking, #writing {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 #instamojo-logo {
   margin-top: 2rem;
   margin-bottom: 1.5rem;
+}
+
+#title-1 {
+  display: none;
+  @include breakpoint(medium up) {
+    display: inline-block;
+    top: -80px;
+    left: -390px;
+  }
+}
+
+#title-2 {
+  @include breakpoint(medium up) {
+    top: 100px;
+    left: 70px;
+  }
+}
+
+#title-3 {
+  @include breakpoint(medium up) {
+    top: 90px;
+    left: 210px;
+  }
+}
+
+#title-4 {
+  @include breakpoint(medium up) {
+    top: 90px;
+    left: -110px;
+  }
 }
