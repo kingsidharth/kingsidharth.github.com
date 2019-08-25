@@ -1,19 +1,19 @@
 
 
-$primary-font: 'Titillium Web', 'Roboto', 'Lucida Grande', sans-serif;
-$headline-font: 'Lora', 'Garamond', 'Georgia', sans-serif;
+$primary-font: 'myriad-pro', 'Myriad Pro', 'Roboto', 'Lucida Grande', sans-serif;
+$headline-font: 'myriad-pro', 'Myriad Pro', 'Roboto', 'Roboto', sans-serif;
 
 
 // SELECTION
 
 ::selection {
-  background: $pink;
-  color: $white;
+  background: $black;
+  color: $highlight;
 }
 
 ::-moz-selection {
-  background: $pink;
-  color: $white;
+  background: $black;
+  color: $highlight;
 }
 
 // HEADLINES
@@ -24,65 +24,27 @@ body {
     font-size: 140%;
   }
 
-  h1, h2, h4, h4, h5, h6 {
-
-  }
-
   h1 {
     letter-spacing: -1px;
   }
 
-  h2 {
-    margin-top: 2em;
+  h2, h3 {
     margin-bottom: 1em;
-    color: $black;
   }
 
   a {
-    border-bottom: 1px dashed $pink;
+    border-bottom: 1px solid $blue;
     &:hover {
-      border-bottom: 1px solid scale-color($pink, $lightness: -14%);
+      border-bottom: 1px solid scale-color($blue, $lightness: -14%);
     }
   }
 
-  ul, ol {}
+  .menu a {
+    border-bottom: none;
+  }
 
   li {
     margin-bottom: 1em;
   }
 
-}
-
-
-.title {
-  font-style: italic;
-  @include breakpoint(medium up) {
-    margin: 0;
-    position: relative;
-    display: inline-block;
-  }
-}
-
-.title--tilt-90 {
-  @include breakpoint(medium up) {
-    transform: rotate(90deg);
-  }
-}
-
-.title--tilt-180 {
-  @include breakpoint(medium up) {
-    transform: rotate(180deg);
-  }
-}
-
-.title--tilt-270 {
-  @include breakpoint(medium up) {
-    transform: rotate(270deg);
-  }
-}
-
-.title--tilt-360 {
-  @include breakpoint(medium up) {
-    transform: rotate(360deg);
-  }
 }

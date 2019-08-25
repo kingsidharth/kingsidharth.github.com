@@ -3,8 +3,15 @@
 }
 
 .area--padded {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  @include breakpoint(small only) {
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+  }
+
+  @include breakpoint(medium up) {
+    padding-top: 2em;
+    padding-bottom: 1em;
+  }
 }
 
 .padding {

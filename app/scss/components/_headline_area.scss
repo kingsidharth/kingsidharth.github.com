@@ -12,9 +12,8 @@
   }
 
   .subheader {
-    color: $teal;
     text-align: right;
-    
+
     @include breakpoint(small only) {
       text-align: center;
     }
