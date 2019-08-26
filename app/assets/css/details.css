@@ -12,13 +12,12 @@
   background: #001B24;
   color: #D1FCFF; }
 
-@media screen and (min-width: 40em) {
-  body {
-    font-size: 140%; } }
 body h1 {
   letter-spacing: -1px; }
-body h2, body h3 {
-  margin-bottom: 1em; }
+body h2 {
+  letter-spacing: -0.75px; }
+body h3 {
+  letter-spacing: -0.5px; }
 body a {
   border-bottom: 1px solid #074F58; }
   body a:hover {
@@ -39,6 +38,9 @@ body li {
   color: #FFFFFF; }
   .background--black a {
     color: #FFFFFF; }
+    .background--black a:hover, .background--black a:active {
+      color: #FFFFFF;
+      border-bottom-color: #FFFFFF; }
 
 /*
 
@@ -219,7 +221,7 @@ body li {
   Depdencies: Zurb Foundation 6 for grid
 */
 .c-logo-list--item {
-  margin-bottom: 2rem; }
+  margin-bottom: 1rem; }
 
 /*
 
@@ -2093,7 +2095,7 @@ h2, .h2 {
   margin-bottom: 0.5rem; }
 
 h3, .h3 {
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5;
   margin-top: 0;
   margin-bottom: 0.5rem; }
@@ -2111,11 +2113,29 @@ h5, .h5 {
   margin-bottom: 0.5rem; }
 
 h6, .h6 {
-  font-size: 0.75rem;
+  font-size: 0.625rem;
   line-height: 1.5;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
+@media print, screen and (min-width: 40em) {
+  h1, .h1 {
+    font-size: 2rem; }
+
+  h2, .h2 {
+    font-size: 1.5rem; }
+
+  h3, .h3 {
+    font-size: 1.125rem; }
+
+  h4, .h4 {
+    font-size: 1rem; }
+
+  h5, .h5 {
+    font-size: 0.75rem; }
+
+  h6, .h6 {
+    font-size: 0.75rem; } }
 a {
   line-height: inherit;
   color: #074F58;

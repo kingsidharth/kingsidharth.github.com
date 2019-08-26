@@ -6,5 +6,9 @@
 
   a {
     color: $white;
+    &:hover, &:active {
+      color: $white;
+      border-bottom-color: $white;
+    }
   }
 }

@@ -21,11 +21,12 @@
     <link href="/assets/css/details.css?stamp=i923409u32049h02394b" media="all" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.typekit.net/xbv4hpf.css">
     {% if page.slug == 'home' %}
-    {% include _home_meta.html %}
+    {% include home_meta.html %}
     {% endif %}
   </head>
 
   <body class="{{ page.slug }}">
+    {% include header.html %}
 
     {{ content }}
 
