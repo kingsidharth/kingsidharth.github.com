@@ -214,14 +214,14 @@ body li {
   width: 2.5rem;
   height: 2.5rem; }
 
-/*
-  c-logo-list::components
-  ===
-  Component used to display a responsive grid/list of logos
-  Depdencies: Zurb Foundation 6 for grid
-*/
-.c-logo-list--item {
-  margin-bottom: 1rem; }
+@media screen and (max-width: 39.99875em) {
+  #footer .menu {
+    justify-content: center; } }
+#footer .copyright {
+  text-align: right; }
+  @media screen and (max-width: 39.99875em) {
+    #footer .copyright {
+      text-align: center; } }
 
 /*
 
@@ -255,6 +255,15 @@ body li {
   @media screen and (max-width: 39.99875em) {
     #headline_area .subheader {
       text-align: center; } }
+
+/*
+  c-logo-list::components
+  ===
+  Component used to display a responsive grid/list of logos
+  Depdencies: Zurb Foundation 6 for grid
+*/
+.c-logo-list--item {
+  margin-bottom: 1rem; }
 
 /*
 

@@ -1,0 +1,15 @@
+
+#footer {
+  .menu {
+    @include breakpoint(small only) {
+      justify-content: center;
+    }
+  }
+
+  .copyright {
+    text-align: right;
+    @include breakpoint(small only) {
+      text-align: center;
+    }
+  }
+}
