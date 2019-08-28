@@ -103,7 +103,7 @@ body li {
 @media screen and (min-width: 40em) {
   .area--padded {
     padding-top: 2em;
-    padding-bottom: 1em; } }
+    padding-bottom: 2em; } }
 
 .padding {
   padding: 1rem; }
@@ -229,7 +229,7 @@ body li {
 
 */
 #header {
-  padding: 28px 0; }
+  padding-top: 1em; }
 
 @media screen and (max-width: 39.99875em) {
   #logo {
@@ -272,7 +272,7 @@ body li {
 */
 @media screen and (min-width: 40em) {
   #intro .photo {
-    margin-top: 1.2em;
+    margin-top: 0;
     margin-bottom: 1.2em; } }
 #intro .logo {
   margin-bottom: 1em; }
