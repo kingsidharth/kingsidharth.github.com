@@ -11,14 +11,20 @@
     <meta name="theme-color" content="#074F58" />
     <meta charset="utf-8">
 
-    <title>{{ page.title }}</title>
+    <title>
+      {% if page.seo_title %}
+        {{ page.seo_title }}
+      {% else %}
+        {{ page.title }}
+      {% endif %}
+    </title>
     <link rel="icon" href="/assets/images/favicon.png?stamp=sdf923jfjj2ddh" type="image/x-icon">
 
-    {% if page.meta_description %}
-      <meta name="description" content="{{ page.meta_description }}">
-    {% endif %}
+    <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}
+    {% else %}{{ page.subtitle }}{% endif %}">
+
     <!-- CSS -->
-    <link href="/assets/css/details.css?stamp=sdf923jfjj2ddh" media="all" rel="stylesheet" type="text/css">
+    <link href="/assets/css/details.css?stamp=73hfh99ifjh0038dncb" media="all" rel="stylesheet" type="text/css">
     {% if page.slug == 'home' %}
     {% include home_meta.html %}
     {% endif %}
