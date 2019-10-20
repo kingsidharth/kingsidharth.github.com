@@ -1,14 +1,11 @@
-
-<header id="header_area" class="background--black">
+<header id="header_area" class="">
   <div class="grid-container ">
     <div id="header" class="grid-x grid-margin-x">
-      <div id="banner" class="cell small-12 medium-6">
-        {% if page.slug == 'home' %}
-          <div></div>
-        {% else %}
-          <div id='logo'>
-            <a href="/" class="logo logo--white">@king<strong>sidharth</strong></a>
-          </div>
+      <div id="banner" class="cell small-12 medium-6 hide-for-small">
+        {% if page.slug != 'home' %}
+        <div id='logo'>
+          <a href="/" class="logo">@king<strong>sidharth</strong></a>
+        </div>
         {% endif %}
       </div>
 

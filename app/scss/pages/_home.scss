@@ -19,10 +19,18 @@
 }
 
 #circle {
-  text-align: right;
+  text-align: center;
+  img {
+    background: transparent;
+  }
 
   @include breakpoint(small only) {
     text-align: center;
     margin-bottom: 1rem;
+  }
+
+  @include breakpoint(large up) {
+    position: relative;
+    left: 10%;
   }
 }

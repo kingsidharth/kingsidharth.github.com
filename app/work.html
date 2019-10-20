@@ -4,10 +4,16 @@ title: "Work"
 subtitle: ""
 slug: work
 ---
-<div class="post grid-x grid-margin-x" data-destination="media-mentions">
-  <div class="cell small-12 medium-10 large-8">
-  {% include work/headout.html %}
-  {% include work/instamojo.html %}
-  {% include work/past.html %}
+<article class="post grid-x" data-destination="media-mentions">
+  <div class="[ cell ][ margin--bottom-2x ]">
+    {% include work/headout.html show_list="true" %}
   </div>
-</div>
+  <hr class="[ cell ][ margin--bottom-2x ]">
+  <div class="[ cell ][ margin--bottom-2x ]">
+    {% include work/instamojo.html %}
+  </div>
+  <hr class="[ cell ][ margin--bottom-2x ]">
+  <div class="[ cell ][ margin--bottom-2x ]">
+    {% include work/past.html %}
+  </div>
+</article>

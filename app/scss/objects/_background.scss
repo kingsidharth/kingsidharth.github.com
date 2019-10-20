@@ -1,14 +1,36 @@
 
+@mixin background-base($colour, $text-colour: false, $radius: $global-radius) {
+  border-radius: $radius;
+  background-color: $colour;
 
-.background--black {
-  background-color: $black;
-  color: $white;
+  @if $text-colour != false {
+    color: $text-colour;
+  }
+}
 
+@mixin background-link($link-colour) {
   a {
-    color: $white;
+    color: $link-colour;
     &:hover, &:active {
-      color: $white;
-      border-bottom-color: $white;
+      color: $link-colour;
+      border-bottom-color: $link-colour;
     }
   }
+}
+
+
+.background--black {
+  @include background-base($black, $white);
+  @include background-link($white);
+}
+
+.background--blue {
+  @include background-base($blue, $white);
+  @include background-link($white);
+}
+
+
+.background--white {
+  @include background-base($white);
+  border: 1px solid $blue;
 }

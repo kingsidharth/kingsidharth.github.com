@@ -4,52 +4,66 @@ title: "@kingsidharth —  Designer, Entrepreneur, & Public Speaker from India"
 slug: "home"
 ---
 
-<div id="intro_area" class="background--black area--padded">
+<div id="intro_area" class="area">
   <div class="grid-container">
-    <div id="intro" class="grid-x grid-margin-x">
+    <div id="intro" class="[ grid-x grid-margin-x ][ area--padded margin--bottom-2x ][ background--black ]">
 
-      <div id="circle" class="cell small-12 medium-2 large-1">
-        <img src="{% base64 app/assets/images/king-sidharth.jpg %}"
-          width="140px"
+      <div id="circle" class="[ cell small-12 medium-2 ]">
+        {% comment %}
+        <img src="{% base64 app/assets/images/king-sidharth.jpg %}">
+        {% endcomment %}
+
+        <img src="/assets/images/king-sidharth.png"
           alt="King Sidharth"
           class="img--circle photo"
         >
       </div>
 
-      <!-- <div class="[ cell small-12 medium-11 grid-x grid-margin-x ][ text--white ]"> -->
-        <h1 class="[ headline ][ cell small-12 medium-7 large-11 ]">
-          <div class="logo">@king<strong>sidharth</strong></div>
-          <span class="">Designer, Entrepreneur, & Public Speaker&nbsp;</span>
-        </h1>
+      <h1 class="[ headline ][ cell small-12 medium-10 large-7 large-offset-2 ]">
+        <div class="logo show-for-small-only">@king<strong>sidharth</strong></div>
+        <span class="">Designer, Entrepreneur, & Public Speaker&nbsp;</span>
+      </h1>
 
-        <p class="[ cell small-12 medium-5 large-4 medium-offset-2 large-offset-1 ]">
-          Managing design, UX, product at <a href="/work/#headout" target="_blank">Headout</a>.
-          Been solving user problems at startups for the last 10+ years.
-        </p>
+      <p class="[ cell small-12 medium-10 large-4 large-offset-4 ]">
+        Design, UX, product at <a href="/work/#headout" target="_blank">Headout</a>.
+        Been solving user problems at startups for the last 10+ years.
+      </p>
 
-        <p class="[ cell small-12 medium-5 large-4 ]">
-          <a href="/history">In the past</a>, I worked with startups like
-          <a href="/work/#instamojo">Instamojo</a>,
-          <a href="https://www.cleartax.in?ref=kingsidharth" target="_blank">ClearTax</a>, Akosha & L-pad.
-        </p>
-      <!-- </div> -->
+      <p class="[ cell small-12 medium-10 large-4 ]">
+        <a href="/history">In the past</a>, I worked with startups like
+        <a href="/work/#instamojo">Instamojo</a>,
+        <a href="https://www.cleartax.in?ref=kingsidharth" target="_blank">ClearTax</a>, Akosha & L-pad.
+      </p>
 
     </div><!-- #intro -->
   </div>
 </div><!-- #intro_area -->
 
-</div><!-- #first_screen -->
+<div class="grid-container">
+  <div class="grid-x grid-margin-x">
+    <div class="[ cell small-12 large-5 ][ margin--bottom-2x ]">
+      {% include media.html %}
+    </div><!--.cell-->
 
-<div class="[ grid-x ][ area ]" style="max-width: 1200px; margin: 0 auto;">
-  <div class="[ cell small-12 medium-6 large-4 grid-container ]">
-  {% include work/headout.html %}
-  <a href="/work/" target="_blank">Read More &rarr;</a>
-  {% include media.html %}
+    <div class="[ cell small-12 large-7 ]">
+      <div class="[ area--padded background--white  margin--bottom-2x ]">
+        {% include work/headout.html show_list=false %}
+        <p><a href="/work/" target="_blank">Read More &rarr;</a></p>
+      </div>
+    </div><!-- .cell -->
+
   </div>
-  <div class="[ cell small-12 medium-6 large-4 ]">
-    {% include speaking.html %}
+  <div class="grid-x grid-margin-x">
+
+    <div class="[ cell small-12 ]">
+      <div class="[ area--padded ][ background--blue  margin--bottom-2x ]">
+        {% include speaking.html %}
+      </div>
+    </div><!-- .cell -->
+
+    <div class="[ cell small-12 ]">
+      {% include projects.html %}
+    </div><!-- .cell -->
   </div>
-  <div class="[ cell small-12 medium-6 large-4 ]">
-    {% include projects.html %}
-  </div>
+
 </div>

@@ -64,6 +64,7 @@
 @import "../../node_modules/foundation-sites/scss/util/util";
 @import "colours";
 @import "typography";
+@import "shame";
 
 // 1. Global
 // ---------
@@ -87,12 +88,12 @@ $body-background: $white;
 $body-font-color: $black;
 $body-font-family: $primary-font;
 $body-antialiased: true;
-$global-margin: 1rem;
-$global-padding: 1rem;
+$global-margin: 1.6rem;
+$global-padding: 1.6rem;
 $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 0;
+$global-radius: 2rem;
 $global-menu-padding: 0.75rem 1rem;
 $global-menu-nested-margin: 1rem;
 $global-text-direction: ltr;
@@ -109,10 +110,10 @@ $print-transparent-backgrounds: true;
 
 $breakpoints: (
   small: 0,
-  medium: 640px,
+  medium: 960px,
   large: 1200px,
   xlarge: 1440px,
-  xxlarge: 1800px,
+  xxlarge: 2000px,
 );
 $print-breakpoint: large;
 $breakpoint-classes: (small medium large);
@@ -124,8 +125,8 @@ $grid-row-width: $global-width;
 $grid-column-count: 9;
 $grid-column-gutter: (
   small: 8px,
-  medium: 24px,
-  large: 32px,
+  medium: 16px,
+  large: 24px,
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -158,6 +159,14 @@ $header-styles: (
     'h5': ('font-size': 12),
     'h6': ('font-size': 12),
   ),
+  large: (
+    'h1': ('font-size': 32),
+    'h2': ('font-size': 28),
+    'h3': ('font-size': 24),
+    'h4': ('font-size': 24),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 12),
+  )
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;

@@ -32,6 +32,12 @@ body {
     letter-spacing: -0.5px;
   }
 
+  p, ul, ol, blockquote, {
+    @include breakpoint(large up) {
+      font-size: $global-font-size*1.2;
+    }
+  }
+
   a {
     border-bottom: 1px solid $blue;
     &:hover {

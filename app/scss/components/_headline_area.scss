@@ -12,10 +12,6 @@
   }
 
   .subheader {
-    text-align: right;
-
-    @include breakpoint(small only) {
-      text-align: center;
-    }
+    text-align: center;
   }
 }

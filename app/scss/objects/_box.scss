@@ -4,13 +4,11 @@
 
 .area--padded {
   @include breakpoint(small only) {
-    padding-top: 4rem;
-    padding-bottom: 1.5rem;
+    padding: 1.5em;
   }
 
   @include breakpoint(medium up) {
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding: 2.5em;
   }
 }
 
@@ -21,7 +19,19 @@
 $directions: top, left, bottom, right;
 
 @each $direction in $directions {
+  .padding--#{$direction}-half {
+    padding-#{$direction}: $global-padding/2;
+  }
+
   .padding--#{$direction} {
-    padding-#{$direction}: 1rem;
+    padding-#{$direction}: $global-padding;
+  }
+
+  .margin--#{$direction} {
+    margin-#{$direction}: $global-padding;
+  }
+
+  .margin--#{$direction}-2x {
+    margin-#{$direction}: $global-padding*2;
   }
 }

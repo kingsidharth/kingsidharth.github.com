@@ -2,26 +2,30 @@
 layout: base
 ---
 
-<div id="headline_area" class="area--padded background--black">
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x align-middle">
+<div id="headline_area" class="margin--bottom-2x">
+  <div class="[ [ grid-x grid-x-margin ][ grid-container ]">
+    <div class="[ cell small-12 ]
+                [ area--padded background--black ]">
+      <div class="[ grid-x align-middle align-center ]">
+        <div class="[ headline text-center ][ cell small-12 ]">
+          <h1>{{ page.title }}</h1>
+        </div>
 
-      <div class="[ headline ][ cell small-12 medium-6 ]">
-        <h1>{{ page.title }}</h1>
-      </div>
-
-      <div class="[ subheader ][ cell small-12 medium-6 ]">
-        {{ page.subtitle }}
+        {% if page.subtitle %}
+        <div class="[ subheader text-center ][ cell small-12 ]">
+          {{ page.subtitle }}
+        </div>
+        {% endif %}
       </div>
 
     </div>
   </div>
 </div><!-- #headline_area -->
 
-<div id="content_area" class="area--padded">
+<div id="content_area">
   <div class="grid-container">
-    <div class="grid-x grid-margin-x">
-      <div class="cell small-12 medium-8">
+    <div class="grid-x">
+      <div class="cell small-12 medium-10 large-8">
         {{ content }}
       </div>
     </div>
