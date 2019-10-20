@@ -4,7 +4,7 @@
 # 3. config.yml
 
 name: King Sidharth
-permalink: /:title/
+permalink: /:categories/:title/
 url: https://www.kingsidharth.com
 author:
   name: King Sidharth
@@ -19,10 +19,15 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+  -
+    scope:
+      path: "speaking"
+      type: "posts"
+    values:
+      layout: "talk"
+      categories: "speaking"
 
-# # # Grunt handles images and assets.
-# exclude: ['images', 'css', 'js', 'fonts',
-#           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico', 'Readme.md', ]
+
 
 include: ['.htaccess']
 exclude: ['Gemfile', 'Gemfile.lock', 'node_modules', '.git', 'Readme.md', '.sass-cache', 'webpack']
@@ -32,7 +37,6 @@ encoding: "utf-8"
 # _config.build.yml sets future and show_drafts to false on `grunt build`
 future: false
 show_drafts: false
-
 
 # Markdown library
 # markdown: maruku
