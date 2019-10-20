@@ -32,5 +32,5 @@
 
 .background--white {
   @include background-base($white);
-  border: 1px solid $blue;
+  border: 1px solid $grey-d1;
 }

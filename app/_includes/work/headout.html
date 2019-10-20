@@ -26,14 +26,37 @@
         <p>
           The design & product teams solve customers problems and make their
           experiences more memorable.
-          {% if list == true %}Read more about the team's work:{% endif %}
+          {% if include.show_list %}Read more about the team's work:{% endif %}
         </p>
         {% if include.show_list %}
         <ul>
           <li>
-            <a href="https://www.64notes.com/design/inherited-design-redesign/">
-              How to Make Sense of Inherited Design
-            </a>
+            <div class="[ margin--bottom ]">
+              Write-up:
+              <a href="https://www.64notes.com/design/inherited-design-redesign/">
+                How to Make Sense of Inherited Design
+              </a>
+            </div>
+            <iframe class="[ media--video video--thumbnail-1by2 video--thumbnail ][ margin--bottom-2x ]"
+              width="100%" height="auto"
+              src="https://www.youtube.com/embed/4e9rfgrW3Vo"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </li>
+
+          <li>
+            <div class="[ margin--bottom ]">
+              Ticket Redesign Case Study: Taming crazy design problems with Design Frameworks
+            </div>
+            <iframe class="[ media--video video--thumbnail-1by2 video--thumbnail ][ margin--bottom-2x ]"
+              width="100%" height="auto"
+              src="https://www.youtube.com/embed/KHKkF8efyMo"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
           </li>
         </ul>
         {% endif %}

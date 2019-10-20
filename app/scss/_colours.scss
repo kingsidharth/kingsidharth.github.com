@@ -10,10 +10,15 @@ $highlight: #D1FCFF;
 $black:       #001B24;
 $white:       #FFFFFF;
 
+$grey: #F2F2F2;
+$grey-d1: #E0E0E0;
+
 
 $colour-map: (
   blue:     $blue,
   black:     $black,
   white:    $white,
-  highlight:     $highlight
+  highlight:  $highlight,
+  grey: $grey,
+  grey-d1: $grey-d1
 )
