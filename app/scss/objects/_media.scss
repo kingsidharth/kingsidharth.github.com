@@ -1,0 +1,21 @@
+.media {}
+
+.media--video {
+  margin: 0 auto 2em auto;
+}
+
+.video--thumbnail {
+  max-width: 500px;
+}
+
+.video--thumbnail-1by4 {
+  @include breakpoint(medium up) {
+    min-height: 200px;
+  }
+}
+
+.video--thumbnail-1by2 {
+  @include breakpoint(medium up){
+    min-height: 250px;
+  }
+}

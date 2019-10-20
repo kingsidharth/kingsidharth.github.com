@@ -1,0 +1,147 @@
+---
+layout: pages
+title: "Talks"
+seo_title: "King Sidharth's Talks"
+meta_description: "Spoken at 2x TEDx & 50+ colleges — Entrepreneur, Public Speaker, Head of Product & Design"
+subtitle: "2x TEDx, 50+ talks — about startups, career, design, UX, and product."
+slug: writings
+---
+<article class="[ post ][ grid-x grid-margin-x ]" data-destination="speaking">
+
+  <p class="[ cell small-12 medium-6 ][ lead ]">
+    Spoken at colleges like <strong>IIT, VJTI, BITS Goa, NMIMS, VIT, KNC, NITs, and TEDx</strong>
+    about entrepreneurship, startups, & career.
+  </p>
+  <p class="[ cell small-12 medium-6 ][ lead ]">
+    Talked about design & user experience at <strong>Design Day, The UX Project,
+    Startup Saturday, TechSparks, and WordCamps</strong>.
+  <p>
+
+  <p class="[ cell small-12 ][ margin--top margin--bottom ][ lead ]">
+    Invite Sidharth to speak at your college or company: me@kingsidharth.com
+  </p><!--.cell-->
+
+  <h3 class="[ cell small-12 padding--bottom ]">
+    Some past talks
+  </h3>
+
+  <div id="youtube-videos" class="[ cell small-12 medium-6 large-4 ]">
+    <iframe class="media--video video--thumbnail video--thumbnail-1by4 "
+      width="100%" height="auto"
+      src="https://www.youtube.com/embed/Fly3_nexjR4"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div><!--.cell-->
+
+  <div class="[ cell small-12 medium-6 large-4 ]">
+    <iframe class="media--video video--thumbnail video--thumbnail-1by4 "
+      width="100%"  height="auto"
+      src="https://www.youtube-nocookie.com/embed/8qmJvW5xKjo?rel=0"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div><!--.cell-->
+
+  <div class="[ cell small-12 medium-6 large-4 ]">
+    <iframe class="media--video video--thumbnail video--thumbnail-1by4 "
+      width="100%"  height="auto"
+      src="https://www.youtube-nocookie.com/embed/VN1Mv7DyhZA"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div><!--#youtube-videos-->
+
+
+  <div id="slides" class="[ cell small-12 margin--bottom-2x ]">
+    <div class="[ grid-x grid-margin-x ]">
+      <h3 class="[ cell small-12 padding--bottom ]">
+        Select slides from the past talks
+      </h3>
+
+      <div class="[ cell small-12 medium-6 large-4 padding--bottom ]">
+        <script async
+          class="speakerdeck-embed"
+          data-id="d351295d00a94d1e8d50e1d09e4701ab"
+          data-ratio="1.6" src="//speakerdeck.com/assets/embed.js">
+        </script>
+      </div><!--.cell-->
+
+      <div class="[ cell small-12 medium-6 large-4 padding--bottom ]">
+      <script async
+        class="speakerdeck-embed"
+        data-id="3377227cde124679a84df455d3efa190"
+        data-ratio="1.6" src="//speakerdeck.com/assets/embed.js">
+      </script>
+      </div><!--.cell-->
+
+      <div class="[ cell small-12 medium-6 large-4 padding--bottom ]">
+      <script async
+        class="speakerdeck-embed"
+        data-id="9f9db38b78b944a880e188b3899bb2af"
+        data-ratio="1.6" src="//speakerdeck.com/assets/embed.js">
+      </script>
+      </div><!--.cell-->
+
+      <div class="[ cell small-12 medium-6 large-4 padding--bottom ]">
+      <script async
+        class="speakerdeck-embed"
+        data-id="5017120d38d54db2a046e0d3e5181857"
+        data-ratio="1.6" src="//speakerdeck.com/assets/embed.js">
+      </script>
+      </div><!--.cell-->
+
+      <div class="[ cell small-12 medium-6 large-4 padding--bottom ]">
+      <script async
+        class="speakerdeck-embed"
+        data-id="daa7ef54ae5846caac665e477c31917e"
+        data-ratio="1.6" src="//speakerdeck.com/assets/embed.js">
+      </script>
+      </div><!--.cell-->
+
+    </div>
+  </div><!-- #slides-->
+
+
+  <div class="[ cell small-12 ]">
+    <h3>All past talks</h3>
+    <ul class="[ grid-x grid-margin-x ]">
+      {% for post in site.categories.speaking %}
+      <li class="[ cell small-12 medium-6 large-4 ]" itemscope itemtype="http://data-vocabulary.org/Event">
+        <div itemprop="startDate" datetime="{{ post.date }}">
+
+          <div>
+            <span itemprop="name">{{ post.event }}</span>
+            &middot;
+            <strong itemprop="description">{{ post.title }}</strong>
+          </div>
+
+          <div>
+            <span class="talk__meta post__meta">
+               at <em itemprop="location">{{ post.place }}</em>
+               &middot;
+               <em itemprop="date">{{ post.date | date: "%b, %Y" }}</em>
+            </span>
+
+            <span>
+              {% if post.video_link %} &middot;
+              <a href="{{ post.video_link }}" target="_blank">Video</a>
+              {% endif %}
+              {% if post.slide_link %} &middot;
+              <a href="{{ post.slide_link }}" target="_blank">Slides</a>
+              {% endif %}
+              {% comment %}
+              {% if post.more %} &middot;
+              <a href="{{ post.url }}">See More &rarr;</a>
+              {% endif %}
+              {% endcomment %}
+            </span>
+          </div>
+
+        </div><!-- schema-->
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</article>
