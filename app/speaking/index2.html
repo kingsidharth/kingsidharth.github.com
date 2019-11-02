@@ -1,0 +1,47 @@
+---
+layout: base
+title: Talks by King Sidharth
+slug: speaking
+---
+
+
+<div id="intro_area_2" class="grid-container">
+  <div class="grid-x grid-margin-x">
+    <div class="[ cell small-12 ]">
+
+      <hr class="divider-1-light-grey" style="margin: 2rem 0;"/>
+      <h3>Some Past Talks:</h3>
+
+      <ul class="posts-list list--full">
+        {% for post in site.categories.speaking %}
+        <li class="talk post post--talk" itemscope itemtype="http://data-vocabulary.org/Event">
+          <div itemprop="startDate" datetime="{{ post.date }}">
+
+            <h2 class="talk__title post__title">
+              {{ post.event }} &middot; <em>{{ post.place }}</em>
+            </h2>
+
+            <div class="talk__meta post__meta" itemprop="name">
+              <strong class="text-black" itemprop="description">{{ post.title }}</strong>
+               &middot; {{ post.date | date: "%b, %Y" }}
+              {% if post.video_link %} &middot;
+              <a href="{{ post.video_link }}" target="_blank">Video</a>
+              {% endif %}
+              {% if post.slide_link %} &middot;
+              <a href="{{ post.slide_link }}" target="_blank">Slides</a>
+              {% endif %}
+              {% if post.more %} &middot;
+              <a href="{{ post.url }}">See More &rarr;</a>
+              {% endif %}
+            </div>
+
+        </div><!-- schema-->
+        </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<!-- FUTURE: highlight future ones -->
