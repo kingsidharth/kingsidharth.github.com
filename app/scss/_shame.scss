@@ -1,3 +1,13 @@
 .border--grey {
   border: 1px solid lighten($black, 20%);
 }
+
+#talk_list {
+  @include breakpoint(small only) {
+    li {
+      padding-top: 2rem;
+      border-bottom: 1px solid $grey;
+      padding-bottom: 2rem;
+    }
+  }
+}

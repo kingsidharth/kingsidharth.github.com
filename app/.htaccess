@@ -21,7 +21,7 @@ RewriteRule (.*)$ /$1/ [R=302,L]
 </IfModule>
 
 # Set the cache-control max-age
-<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|svg)$">
   # 1 Month
   Header set Cache-Control "max-age=2592000, public"
 </FilesMatch>
