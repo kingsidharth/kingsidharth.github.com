@@ -2,9 +2,10 @@
 layout: pages
 title: "Talks"
 seo_title: "King Sidharth's Talks"
-meta_description: "Spoken at 2x TEDx & 50+ colleges — Entrepreneur, Public Speaker, Head of Product & Design"
 subtitle: "2x TEDx, 50+ talks — about startups, career, design, UX, and product."
 slug: writings
+meta_description: "King Sidharth has spoken at 2x TEDx & 30+ colleges about entrepreneurship, startups,
+career, design, and user-behaviour. Invite Sidharth to speak at your college or company."
 ---
 <article class="[ post ][ grid-x grid-margin-x ]" data-destination="speaking">
 
@@ -101,7 +102,7 @@ slug: writings
     <h3>All past talks</h3>
     <ul class="[ grid-x grid-margin-x ]" id="talk_list">
       {% for post in site.categories.speaking %}
-      <li class="[ cell small-12 medium-6 large-4 ]" itemscope itemtype="http://data-vocabulary.org/Event">
+      <li class="[ cell small-12 medium-6 large-4 ] talks {% if post.featured %}featured{% endif %}" itemscope itemtype="http://data-vocabulary.org/Event">
         <div itemprop="startDate" datetime="{{ post.date }}">
 
           <div>
@@ -124,11 +125,6 @@ slug: writings
               {% if post.slide_link %} &middot;
               <a href="{{ post.slide_link }}" target="_blank">Slides</a>
               {% endif %}
-              {% comment %}
-              {% if post.more %} &middot;
-              <a href="{{ post.url }}">See More &rarr;</a>
-              {% endif %}
-              {% endcomment %}
             </span>
           </div>
 
@@ -138,3 +134,9 @@ slug: writings
     </ul>
   </div>
 </article>
+
+<script type="text/javascript">
+  console.log("start")
+  var talks = document.querySelectorAll(".talks");
+  talks.each((i) => console.log(i));
+</script>
