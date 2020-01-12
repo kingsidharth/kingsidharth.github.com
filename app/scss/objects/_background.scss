@@ -1,6 +1,5 @@
 
 @mixin background-base($colour, $text-colour: false, $radius: $global-radius) {
-  border-radius: $radius;
   background-color: $colour;
 
   @if $text-colour != false {
@@ -33,4 +32,8 @@
 .background--white {
   @include background-base($white);
   border: 1px solid $grey-d1;
+}
+
+.background--grey {
+  @include background-base(#F2F2F2);
 }

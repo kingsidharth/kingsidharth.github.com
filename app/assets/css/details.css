@@ -46,7 +46,6 @@ body li {
  * Licensed under MIT Open Source
  */
 .background--black {
-  border-radius: 2rem;
   background-color: #001B24;
   color: #FFFFFF; }
   .background--black a {
@@ -56,7 +55,6 @@ body li {
       border-bottom-color: #FFFFFF; }
 
 .background--blue {
-  border-radius: 2rem;
   background-color: #074F58;
   color: #FFFFFF; }
   .background--blue a {
@@ -66,9 +64,11 @@ body li {
       border-bottom-color: #FFFFFF; }
 
 .background--white {
-  border-radius: 2rem;
   background-color: #FFFFFF;
   border: 1px solid #E0E0E0; }
+
+.background--grey {
+  background-color: #F2F2F2; }
 
 /*
 
@@ -129,7 +129,7 @@ body li {
   padding: 0.75rem 1rem; }
 
 .logo {
-  font-family: "myriad-pro", "Myriad Pro", "Roboto", "Lucida Grande", sans-serif;
+  font-family: "Rubik", "Roboto", "Lucida Grande", sans-serif;
   text-transform: none;
   font-size: 1.2rem;
   line-height: 1;
@@ -364,6 +364,9 @@ body li {
   HEADER::COMPONENTS
 
 */
+#header_area {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 2px; }
+
 #header {
   padding-top: 1em; }
 
@@ -378,16 +381,22 @@ body li {
     #main_navigation .menu {
       justify-content: center; } }
 
+#social_nav_area .menu li {
+  text-align: center;
+  margin-bottom: 0; }
+
 /*
 
   HEADLINE AREA::COMPONENTS
 
 */
+#headline_area .headline h1 {
+  font-size: 3rem; }
 @media screen and (max-width: 59.99875em) {
   #headline_area .headline {
     text-align: center; } }
 #headline_area .subheader {
-  text-align: center; }
+  font-size: 1.5rem; }
 
 /*
   c-logo-list::components
@@ -464,7 +473,11 @@ html {
 */
 @media screen and (min-width: 75em) {
   #intro {
-    padding-bottom: 6em; } }
+    margin-top: 6em;
+    margin-bottom: 6em; }
+    #intro h1 {
+      font-size: 3rem;
+      margin-bottom: 4rem; } }
 @media screen and (min-width: 60em) {
   #intro .photo {
     margin-top: 0;
@@ -654,7 +667,7 @@ body {
   margin: 0;
   padding: 0;
   background: #FFFFFF;
-  font-family: "myriad-pro", "Myriad Pro", "Roboto", "Lucida Grande", sans-serif;
+  font-family: "Rubik", "Roboto", "Lucida Grande", sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #001B24;
@@ -2287,7 +2300,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "myriad-pro", "Myriad Pro", "Roboto", "Roboto", sans-serif;
+  font-family: "Asap", "Roboto", "Roboto", sans-serif;
   font-style: normal;
   font-weight: 600;
   color: inherit;

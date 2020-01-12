@@ -6,7 +6,13 @@
 
 #intro {
   @include breakpoint(large up) {
-    padding-bottom: 6em;
+    margin-top: 6em;
+    margin-bottom: 6em;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 4rem;
+    }
   }
 
   .photo {

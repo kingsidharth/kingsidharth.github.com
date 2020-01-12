@@ -6,12 +6,15 @@
 
 #headline_area {
   .headline {
+    h1 {
+      font-size: 3rem;
+    }
     @include breakpoint(small only) {
       text-align: center;
     }
   }
 
   .subheader {
-    text-align: center;
+    font-size: 1.5rem;
   }
 }
