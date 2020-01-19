@@ -5,6 +5,10 @@
 */
 
 #intro {
+  @include breakpoint(small only) {
+    margin-top: 2rem;
+  }
+
   @include breakpoint(large up) {
     margin-top: 6em;
     margin-bottom: 6em;

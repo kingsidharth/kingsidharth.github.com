@@ -1,0 +1,13 @@
+#main_navigation {
+  transition: height 0.3s;
+  @include breakpoint(small only) {
+    li {
+      display: block;
+      width: 100%;
+
+      a {
+        width: 100%;
+      }
+    }
+  }
+}
