@@ -31,3 +31,25 @@
 
 <script type="text/javascript" src="/assets/js/youtube.js?6678sd6ehks238a3d" async>
 </script>
+
+
+<script>
+/*
+    Mobile Navigation
+*/
+function open_navigation(e) {
+  let navigation = document.getElementById('main_navigation');
+  navigation.classList.remove('show-for-medium');
+  document.getElementById('menu-control__close').classList.remove('hide');
+  document.getElementById('menu-control__open').classList.add('hide');
+  return navigation;
+}
+
+function close_navigation(e) {
+  let navigation = document.getElementById('main_navigation');
+  navigation.classList.add('show-for-medium');
+  document.getElementById('menu-control__open').classList.remove('hide');
+  document.getElementById('menu-control__close').classList.add('hide');
+  return navigation;
+}
+</script>
