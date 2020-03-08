@@ -39,7 +39,7 @@ career, design, and user-behaviour. Invite Sidharth to speak at your college or 
   </div><!--.cell-->
 
   <div class="[ cell small-12 medium-6 large-4 ]">
-    {% include components/youtube_video.html id="VN1Mv7DyhZA" %}
+    {% include components/youtube_video.html id="gmRlPl_Ljh8" %}
   </div><!--#youtube-videos-->
 
 
@@ -102,31 +102,41 @@ career, design, and user-behaviour. Invite Sidharth to speak at your college or 
     <h3>All past talks</h3>
     <ul class="[ grid-x grid-margin-x ]" id="talk_list">
       {% for post in site.categories.speaking %}
-      <li class="[ cell small-12 medium-6 large-4 ] talks {% if post.featured %}featured{% endif %}" itemscope itemtype="http://data-vocabulary.org/Event">
-        <div itemprop="startDate" datetime="{{ post.date }}">
+      <li class="[ cell small-12 ] talks {% if post.featured %}featured{% endif %}" itemscope itemtype="http://data-vocabulary.org/Event">
+        <div itemprop="startDate" datetime="{{ post.date }}" class="[ grid-x grid-margin-x ]">
 
-          <div>
-            <span itemprop="name">{{ post.event }}</span>
-            &middot;
-            <strong itemprop="description">{{ post.title }}</strong>
+          <div class="[ cell small-12 medium-8 ]">
+            <div>
+              <strong itemprop="description">{{ post.title }}</strong>
+              &middot;
+              <span itemprop="name">{{ post.event }}</span>
+            </div>
+
+            <div>
+              <span class="talk__meta post__meta">
+                 <span itemprop="location">{{ post.place }}</span>
+                 on
+                 <span itemprop="date">{{ post.date | date: "%b, %Y" }}</span>
+              </span>
+
+              <span>
+                {% if post.video_link %} &middot;
+                <a href="{{ post.video_link }}" target="_blank">Video</a>
+                {% endif %}
+                {% if post.slide_link %} &middot;
+                <a href="{{ post.slide_link }}" target="_blank">Slides</a>
+                {% endif %}
+              </span>
+            </div>
+          </div><!-- .cell -->
+
+          {% if post.youtube_video_id %}
+          <div class="[ cell small-12 medium-4 ][ video--container ]">
+            <div id="youtube-videos" class="[ cell small-12 medium-6 large-4 ]">
+              {% include components/youtube_video.html id=post.youtube_video_id %}
+            </div><!--.cell-->
           </div>
-
-          <div>
-            <span class="talk__meta post__meta">
-               at <em itemprop="location">{{ post.place }}</em>
-               &middot;
-               <em itemprop="date">{{ post.date | date: "%b, %Y" }}</em>
-            </span>
-
-            <span>
-              {% if post.video_link %} &middot;
-              <a href="{{ post.video_link }}" target="_blank">Video</a>
-              {% endif %}
-              {% if post.slide_link %} &middot;
-              <a href="{{ post.slide_link }}" target="_blank">Slides</a>
-              {% endif %}
-            </span>
-          </div>
+          {% endif %}
 
         </div><!-- schema-->
       </li>

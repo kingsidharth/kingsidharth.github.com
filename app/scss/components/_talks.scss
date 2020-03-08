@@ -1,0 +1,21 @@
+#talk_list {
+  list-style-type: none;
+
+  li {
+    border-bottom: 1px solid $grey;
+    @include breakpoint(small only) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    @include breakpoint(medium up) {
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+    }
+  }
+
+  .video--container {
+    @include breakpoint(small only) {
+      margin-top: 1rem;
+    }
+  }
+}
