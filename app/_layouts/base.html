@@ -7,7 +7,7 @@
   <!--<![endif]-->
   <head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="theme-color" content="#074F58" />
     <meta charset="utf-8">
 
@@ -18,15 +18,17 @@
         {{ page.title }}
       {% endif %}
     </title>
-    <link rel="icon" href="/assets/images/favicon.png?stamp=6678sd6ehks238a4e" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.png?stamp=77dhsbduuisd73gdhmmpq" type="image/x-icon">
     <link rel="canonical"
       href="{% if page.canonical_url %}{{ page.canonical_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">
 
     <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}
     {% else %}{{ page.subtitle }}{% endif %}">
-
+    {% if page.no_index == true %}
+      <meta name="robots" content="noindex">
+    {% endif %}
     <!-- CSS -->
-    <link href="/assets/css/details.css?stamp=6678sd6ehks238a4e" media="all" rel="stylesheet" type="text/css">
+    <link href="/assets/css/details.css?stamp=77dhsbduuisd73gdhmmpq" media="all" rel="stylesheet" type="text/css">
     {% if page.slug == 'home' %}
     {% include home_meta.html %}
     {% endif %}

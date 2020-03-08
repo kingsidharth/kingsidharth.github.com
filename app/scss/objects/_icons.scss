@@ -5,6 +5,13 @@
 */
 
 .icon--social {
-  width: 2.5rem;
-  height: 2.5rem;
+  @include breakpoint(medium up) {
+    width: 1em;
+    height: 1em;
+  }
+
+  @include breakpoint(small only) {
+    width: 2.2em;
+    height: 2.2em;
+  }
 }

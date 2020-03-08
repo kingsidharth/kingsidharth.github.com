@@ -50,6 +50,14 @@
 
 }
 
+#work_area {
+  .work-2 {
+    @include breakpoint(small only) {
+      margin-top: 1rem;
+    }
+  }
+}
+
 #circle {
   text-align: center;
   img {
