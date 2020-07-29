@@ -26,11 +26,11 @@ defaults:
     values:
       layout: "talk"
       categories: "speaking"
-
+    output: false
 
 
 include: ['.htaccess']
-exclude: ['Gemfile', 'Gemfile.lock', 'node_modules', '.git', 'Readme.md', '.sass-cache', 'webpack']
+exclude: ['Gemfile', 'Gemfile.lock', 'node_modules', '.git', 'Readme.md', '.sass-cache', 'webpack', 'speaking/_posts']
 
 encoding: "utf-8"
 
